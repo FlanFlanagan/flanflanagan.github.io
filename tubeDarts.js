@@ -176,11 +176,11 @@ function colorChange1(selectObj){
 	messagePopUps(selectObj);
 	if(selectObj.getAttribute('db') == 'yes'){
 		catchChainTracker(selectObj.nextSibling)
-		dbChainSelect(selectObj.nextSibling,catchChainMultipliers[catchChainTotal], selectObj.value);
+		dbChainSelect(selectObj.nextSibling, selectObj.value);
 	}
 	if(selectObj.getAttribute('tb') == 'yes'){
 		catchChainTracker(selectObj.nextSibling)
-		tbChainSelect(selectObj.nextSibling,catchChainMultipliers[catchChainTotal], selectObj.value);
+		tbChainSelect(selectObj.nextSibling, selectObj.value);
 	}
 	selectObj.className = "shotdone";
 	if(testTotal == true){

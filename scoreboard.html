@@ -40,13 +40,16 @@
 			<!-- <button name = "catchChainButton" onclick="catchChainRule(this)"> Turn Catch Chain Off </button> -->
 			<div id="powerUps">
 				<!--<img id ="thief" src = "images/thief.png" width="40" height="40" draggable="true" ondragstart="drag(event)"> 
-				<img id ="doubleBarrel" src = "images/doubleBarrel.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 				<img id ="tripleBarrel" src = "images/tripleBarrel.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
-				<img id ="shock" src = "images/shock.png" width="40" height="40" draggable="true" ondragstart="drag(event)">
+				<img id ="shock" src = "images/shock.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
+				<img id ="doubleBarrel" src = "images/doubleBarrel.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 				<img id ="glove" src = "images/glove.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 				<img id ="blackHole" src = "images/blackHole.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">				
 				-->
 				<img id ="shield" src = "images/shield.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
+				<img id ="tripleBarrel" src = "images/tripleBarrel.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
+				<img id ="shock" src = "images/shock.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">	
+				<img id ="doubleBarrel" src = "images/doubleBarrel.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 				
 			</div>
 		</div>
@@ -159,6 +162,9 @@
 			//Player Debuffs //
 			var player1Sink = 0;
 			var player2Sink = 0;
+			// Player Defense //
+			var player1Def = 0;
+			var player2Def = 0;
 			//Catch Chain Variables //
 			var catchChainTotal = 0;
 			var catchChainName = "";
@@ -199,7 +205,7 @@
             var img1 = document.createElement('img');
             img1.setAttribute('src', ev.dataTransfer.getData("Img"));
             button.appendChild(img1);
-            button.setAttribute('onClick', "readPowerUp(\"blackHole\", this)");
+            button.setAttribute('onClick', "readPowerUp(\""+data+"\", this, 30)");
             ev.target.appendChild(button);
         }
 		</script>

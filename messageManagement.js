@@ -55,21 +55,21 @@ function messagePopUps(selectObj){
 		for(var i = 0; i < scoreTracker1.length; i++){
 			if(i == 0){
 				if(scoreTracker1[i] == 3){
-					powerUpNumber(10);
+					powerUpNumber("player1", 10);
 					splash($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 5){
-					powerUpNumber(30);
+					powerUpNumber("player1", 30);
 					highTide($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 7){
-					powerUpNumber(50);
+					powerUpNumber("player1", 50);
 					typhoonStrike($('#player1Name')[0].value)
 				}						
 			}
 			if(i == 1){
 				if(scoreTracker1[i] == 3){
-					powerUpNumber(10);
+					powerUpNumber("player1", 10);
 					if(Players[$('#player1Name')[0].value].gender == "male"){
 						rojosHohos($('#player1Name')[0].value)
 					}else{
@@ -77,11 +77,11 @@ function messagePopUps(selectObj){
 					}	
 				}
 				if(scoreTracker1[i] == 5){
-					powerUpNumber(20);
+					powerUpNumber("player1", 20);
 					onFire($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 7){
-					powerUpNumber(30);
+					powerUpNumber("player1", 30);
 					theRedDeath($('#player1Name')[0].value)
 				}								
 			}
@@ -90,11 +90,11 @@ function messagePopUps(selectObj){
 					tidalSurge($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 5){
-					powerUpNumber(10);
+					powerUpNumber("player1", 10);
 					angryWeather($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 7){
-					powerUpNumber(20);
+					powerUpNumber("player1", 20);
 					tornadoLightning($('#player1Name')[0].value)
 				}								
 			}	
@@ -118,21 +118,21 @@ function messagePopUps(selectObj){
 		for(var i = 0; i < scoreTracker2.length; i++){
 			if(i == 0){
 				if(scoreTracker2[i] == 3){
-					powerUpNumber(10);
+					powerUpNumber("player2", 10);
 					splash($('#player2Name')[0].value)
 				}
 				if(scoreTracker2[i] == 5){
-					powerUpNumber(30);
+					powerUpNumber("player2", 30);
 					highTide($('#player2Name')[0].value)
 				}
 				if(scoreTracker2[i] == 7){
-					powerUpNumber(50);
+					powerUpNumber("player2", 50);
 					typhoonStrike($('#player2Name')[0].value)
 				}						
 			}
 			if(i == 1){
 				if(scoreTracker2[i] == 3){
-					powerUpNumber(10);
+					powerUpNumber("player2", 10);
 					if(Players[$('#player2Name')[0].value].gender == "male"){
 						rojosHohos($('#player2Name')[0].value)
 					}else{
@@ -140,11 +140,11 @@ function messagePopUps(selectObj){
 					}	
 				}
 				if(scoreTracker2[i] == 5){
-					powerUpNumber(20);
+					powerUpNumber("player2", 20);
 					onFire($('#player2Name')[0].value)
 				}
 				if(scoreTracker2[i] == 7){
-					powerUpNumber(30);
+					powerUpNumber("player2", 30);
 					theRedDeath($('#player2Name')[0].value)
 				}								
 			}
@@ -153,11 +153,11 @@ function messagePopUps(selectObj){
 					tidalSurge($('#player2Name')[0].value)
 				}
 				if(scoreTracker2[i] == 5){
-					powerUpNumber(10);
+					powerUpNumber("player2", 10);
 					angryWeather($('#player2Name')[0].value)
 				}
 				if(scoreTracker2[i] == 7){
-					powerUpNumber(20);
+					powerUpNumber("player2", 20);
 					tornadoLightning($('#player2Name')[0].value)
 				}								
 			}	

@@ -18,7 +18,7 @@ function powerUpMessage(string, playerID, number){
 			subtractorMessage(player, number);
 			break;
 		case ("shock"):
-			shockMessage(player);
+			shockMessage(player, number);
 			break;
 		case ("blackHole"):
 			blackHoleMessage(player);
@@ -57,12 +57,12 @@ function gloveMessage(player){
     testFacyBox(popupHTML);
 }
 
-function shockMessage(player){
+function shockMessage(player, number){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00B366; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
     popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/shock.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> has earned SHOCK </br></b>';
-    popupHTML = popupHTML + '<i style="font-size: 20px;"> When used your opponent\'s next shot is worth half points. <i> </div>'
+    popupHTML = popupHTML + '<i style="font-size: 20px;"> When used your opponent\'s next shot is worth '+number*2+'% less points. <i> </div>'
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
 }

@@ -38,43 +38,31 @@ function catchChainSelect(selectObj, multiplier){
 	selectObj.previousSibling.add(new Option("Del", "delete"));
 }
 
-function dbChainSelect(selectObj, multiplier, value){
-	$(selectObj).before('<select class = "catch" onChange = "colorChange1(this)"></select>');
-	string10 = (10 * multiplier).toString();
-	string30 = (30 * multiplier).toString();
-	string50 = (50 * multiplier).toString();
-	string100 = (100 * multiplier).toString();
+function dbChainSelect(selectObj, value){
+	$(selectObj).before('<select class = "shotdone"></select>');
 	selectObj.previousSibling.add(new Option(value, value));
 	
 	name = selectObj.parentNode.parentNode.id;
 	if (name == 'player1'){
-		$(totalSpan1).text(parseFloat($(totalSpan1).text())+value);
+		$(totalSpan1).text(parseFloat($(totalSpan1).text()) + parseFloat(value));
 	}
 	if (name == 'player2'){
-		$(totalSpan2).text(parseFloat($(totalSpan2).text())+value);
+		$(totalSpan2).text(parseFloat($(totalSpan2).text()) + parseFloat(value));
 	}
 }
 
-function tbChainSelect(selectObj, multiplier, value){
-	$(selectObj).before('<select class = "catch" onChange = "colorChange1(this)"></select>');
-	string10 = (10 * multiplier).toString();
-	string30 = (30 * multiplier).toString();
-	string50 = (50 * multiplier).toString();
-	string100 = (100 * multiplier).toString();
+function tbChainSelect(selectObj, value){
+	console.log(value);
+	$(selectObj).before('<select class = "shotdone"></select>');
 	selectObj.previousSibling.add(new Option(value, value));
-	$(selectObj).before('<select class = "catch" onChange = "colorChange1(this)"></select>');
-	string10 = (10 * multiplier).toString();
-	string30 = (30 * multiplier).toString();
-	string50 = (50 * multiplier).toString();
-	string100 = (100 * multiplier).toString();
+	$(selectObj).before('<select class = "shotdone"></select>');
 	selectObj.previousSibling.add(new Option(value, value));
 	
 	name = selectObj.parentNode.parentNode.id;
 	if (name == 'player1'){
-		$(totalSpan1).text(parseFloat($(totalSpan1).text())+value*2);
+		$(totalSpan1).text(parseFloat($(totalSpan1).text()) + parseFloat(value)*2);
 	}
 	if (name == 'player2'){
-		$(totalSpan2).text(parseFloat($(totalSpan2).text())+value*2);
+		$(totalSpan2).text(parseFloat($(totalSpan2).text()) + parseFloat(value)*2);
 	}
 }
-// Call Your Shot //

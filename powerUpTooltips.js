@@ -13,7 +13,7 @@ function powerUpTooltip(string, number){
 			string2 = subtractorTT(number);
 			break;
 		case ("shock"):
-			string2 = shockTT();
+			string2 = shockTT(number);
 			break;
 		case ("blackHole"):
 			string2 = blackHoleTT();
@@ -42,8 +42,8 @@ function subtractorTT(number){
 	return string;
 }
 
-function shockTT(){
-	string = "Your opponent\'s next shot is worth half points.";
+function shockTT(number){
+	string = "Your opponent\'s next shot is worth "+number*2+"% less points.";
 	return string;
 }
 

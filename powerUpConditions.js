@@ -8,7 +8,6 @@ function powerUpTest(object){
 	} else {
 		popUpSetPoint = 0.05 * (1 + Math.exp(-0.007*p2Diff))
 	}
-	console.log(popUpSetPoint);
 	if (popUp < popUpSetPoint){
 		popUpType = Math.random();
 		if(popUpType < 0.05){
@@ -39,10 +38,12 @@ function powerUpTest(object){
 	}
 }
 
-function powerUpNumber(number){
+function powerUpNumber(parentDivID, number){
 	popUp = Math.random();
 	if (popUp <0.25){
 		popUpString = "subtractor";
+	} else if ( 0.25 <= popUp < 0.5){
+		popUpString = "shock";
 	} else {
 		return;
 	}
@@ -53,5 +54,5 @@ function powerUpNumber(number){
     button.setAttribute('onClick', "readPowerUp(\""+popUpString+"\", this,"+number+")");
     button.setAttribute('title', powerUpTooltip(popUpString, number))
     powerUpDiv.appendChild(button);
-    powerUpMessage(popUpString, parentDivID.id, number);	
+    powerUpMessage(popUpString, parentDivID, number);	
 }
