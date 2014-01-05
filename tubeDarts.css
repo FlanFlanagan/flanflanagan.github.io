@@ -1,0 +1,257 @@
+
+body {
+	background: #00B366;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#topLevel {
+	color: #FFFFFF;
+	font-size: 25px;
+	background: #00bfff;
+	height: 10%;
+	border: 4px solid black;
+	text-align: center;
+	text-shadow: black 0.1em 0.1em 0.1em;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
+   	font-family: Rockwell;
+}
+#sideBar{
+	margin-top: 0.5%;
+	float: left;
+	color: #00B366;
+	background: #00B366;
+	width: 19%;
+	height: 90%;
+}
+
+#scoreCard{
+	margin-top: 0.5%;
+	height: 90%;
+	background: #00B366;
+	width:60%;
+	float: left;
+}
+#scoreCard input {
+	text-align: center;
+}
+#powerUps{
+	text-align: center;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+	background-color: #00bfff;
+	width: 225px;
+	height: 150px;
+	font-size: 30px;
+   	border-radius: 10px;	
+   	border: 2px solid #808080;
+   	padding: 10px;
+   	color:#000000;
+}
+#player1Pups{
+	font-size: 15px;
+	text-align: center;
+   	line-height: 100%;
+	min-height: 90px;
+}
+#player2Pups{
+	font-size: 15px;
+	text-align: center;
+   	line-height: 100%;
+	min-height: 90px;
+}
+#player1Pups button{
+	height: 40px;
+	width: 50px;
+}
+#player1Pups img{
+	height: 30px;
+	width:30px;
+}
+#player2Pups button{
+	height: 40px;
+	width: 50px;
+}
+#player2Pups img{
+	height: 30px;
+	width:30px;
+}
+#player1{
+	font-family: Rockwell;
+	background: #aaaaaa;
+	float: left;
+	width: 48.5%;
+	height: 100%;
+	text-align: center;
+	border: 1px solid #4C4E5A;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 5px;
+   	line-height: 200%;
+}
+
+#player2{
+	font-family: Rockwell;
+	background: #aaaaaa;
+	margin-left: 49%;
+	width: 48.5%;
+	height: 100%;
+	text-align: center;
+	border: 1px solid #4C4E5A;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 5px;
+   	line-height: 200%;
+}
+
+#statistics{
+	margin-top: 0.5%;
+	width: 19%;
+	height: 90%;
+	margin-left: 80.5%;
+	background: #00B366;
+}
+#statistics table {
+	margin-left: 10%;
+	background: #bbbbbb;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
+   	font-family: "Felix Titling";
+   	font-size: 15px;
+	text-align: center;
+}
+.total{
+	font-size: 20px;
+}
+#messages {
+	background-color: #BBBBBB;
+	font-size: 40px;
+	font-weight: bolder;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	text-align: Center;
+   	border-radius: 3px;	
+   	display: none;
+}
+input {
+	background-color: #AAAAAA;
+	color: #000000;
+	height: 20px;
+	font-family: "Felix Titling";
+	font-size: 20px;
+	font-weight: bold;
+}
+select {
+	background-color: #AAAAAA;
+	-moz-box-shadow:    inset 0 0 10px #515151;
+    -webkit-box-shadow: inset 0 0 10px #515151;
+   	box-shadow:         inset 0 0 10px #515151;
+   	font-weight: bold;
+   	font-size: 20px;
+}
+option {
+	-moz-box-shadow:    inset 0 0 10px #515151;
+    -webkit-box-shadow: inset 0 0 10px #515151;
+   	box-shadow:         inset 0 0 10px #515151;
+   	font-weight: bold;
+  	font-size: 20px;
+}
+#player1Total {
+	margin-left: 40%;
+	width: 100px;
+	height: 40px;
+	color: #FFFFFF;
+	font-size: 20px;
+	background: #00bfff;
+	height: 10%;
+	border: 4px solid black;
+	text-align: center;
+	text-shadow: black 0.1em 0.1em 0.1em;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
+   	font-family: Rockwell;
+}
+#player2Total {
+	margin-left: 40%;
+	width: 100px;
+	height: 40px;
+	color: #FFFFFF;
+	font-size: 20px;
+	background: #00bfff;
+	height: 10%;
+	border: 4px solid black;
+	text-align: center;
+	text-shadow: black 0.1em 0.1em 0.1em;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
+   	font-family: Rockwell;
+}
+button {
+	text-align: center;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+	background-color: #00bfff;
+	width: 250px;
+	height: 120px;
+	font-size: 30px;
+   	border-radius: 10px;	
+}
+form button {
+	width: auto;
+	height: auto;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+.catch{
+	background-color:#00BFFF;
+	height: 30px;
+}
+.shotdone{
+	background-color:#00B366;
+	font-size: 20px;
+}
+.achieveImage{
+	float: left;
+	height: 90px;
+}
+.facyboxAch{
+	border-radius: 5px;
+	border: 2px solid gray;
+	min-height: 100 px;
+}
+#player1Total{
+	font-size: 30px;
+}
+#player2Total{
+	font-size: 30px;
+}
+/*#ten{
+	background-color: #00CC00;
+}
+#thirty{
+	background-color: #FF3300;
+}
+#fifty{
+	background-color: #FF8000;
+}
+#hundred{
+	background-color: #0066B3;
+}
+body select:contains(10) {
+	background-color:#00CC00;
+}*/

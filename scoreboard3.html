@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="tubeDarts.css" />
+		<script src="messages.js"> </script>
+		<script src="messageManagement.js"> </script>
+		<script src="totalFuncts.js"> </script>
+		<script src="tableFunctions.js"> </script>
+		<script src="tubeDarts.js"> </script>
+		<script src="Playerstats.js"> </script>
+		<script src="catchChain.js"> </script>		
+		<!--<script src="http://code.jquery.com/jquery-1.7.1.min.js"> </script> -->
+		<script src="jquery.min.js"> </script>
+	    <link href="facybox.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="facybox_urls.css" media="screen" rel="stylesheet" type="text/css" />
+   		<script src="facybox.js" type="text/javascript"> </script>
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>Tube Darts Score Board</title>
+	</head>
+
+	<body>
+		<div id = "topLevel">
+			<header>
+				<h1>Tube Darts Score Card</h1>
+			</header>
+		</div>
+		<div id = "sideBar">
+			<button name = "addNewSet" onClick = "newSet()">Add New Set</button>
+			<button name = "overTime" onClick = "addOverTime()">Overtime</button>
+			<button name = "calcStats" onClick = "calcStats()">Calculate Statistics</button>
+			<button name = "endGame" onClick = "gameWinnerTest()">End Game</button>
+			<button name = "catchChainButton" onclick="catchChainRule(this)"> Turn Catch Chain Off </button>
+			<div id="powerUps">
+				<p>Call Your Shot</p>
+				<select id = "callYourShot" onchange="testfunction()">
+					<option value = "10">10</option>
+					<option value = "30">30</option>
+					<option value = "50">50</option>
+					<option value ="100">100</option>
+				</select>
+			</div>
+		</div>
+		<div id = "scoreCard">
+			<div id = "messages">
+				Player Wins!
+			</div>
+			<div id ="player1">
+				<form> <p><b> Player 1 </b><select id = "player1Name" onchange="submitPlayer1()"></select><button onClick = "submitPlayer1()"> Submit </button></p>
+				</form>
+			</div>
+			<div id ="player2">
+				<form> <p><b> Player 2 </b><select id = "player2Name" onchange="submitPlayer2()"></select><button onClick = "submitPlayer2()"> Submit </button></p>
+				</form>			
+			</div>
+		</div>
+		<div id = "statistics">
+			<table border = "1">
+				<tr>
+					<th colspan="3"> Statistics</th>
+				</tr>
+				<tr>
+					<th> Statistic </th>
+					<th><span class = "player1"> Player 1 </span></th>
+					<th><span class = "player2"> Player 2</span></th>
+				</tr>
+				<tr>
+					<th> Accuracy </th>
+					<td><span class = "accuracy1"> </span></td>
+					<td><span class = "accuracy2"> </span></td>
+				</tr>
+				<tr>
+					<th> 10 - Accuracy </th>
+					<td><span class = "10accuracy1"> </span></td>
+					<td><span class = "10accuracy2"> </span></td>
+				</tr>
+				<tr>
+					<th> 30 - Accuracy </th>
+					<td><span class = "30accuracy1"> </span></td>
+					<td><span class = "30accuracy2"> </span></td>
+				</tr>
+				<tr>
+					<th> 50 - Accuracy </th>
+					<td><span class = "50accuracy1"> </span></td>
+					<td><span class = "50accuracy2"> </span></td>
+				</tr>
+				<tr>
+					<th> Bullseye </th>
+					<td><span class = "bullseye1"> </span></td>
+					<td><span class = "bullseye2"> </span></td>
+				</tr>
+				<tr>
+					<th> Catches</th>
+					<td><span class = "catch1"> </span></td>
+					<td><span class = "catch2"> </span></td>
+				</tr>
+				<tr>
+					<th> Deadliness </th>
+					<td><span class = "deadliness1"> </span></td>
+					<td><span class = "deadliness2"> </span></td>
+				</tr>
+				<tr>
+					<th> High Score </th>
+					<td><span class = "highScore1"> </span></td>
+					<td><span class = "highScore2"> </span></td>
+				</tr>
+			</table>
+		</div>
+		<!-- Variables + Totaling -->
+		<script type = "text/javascript">
+			// Set tracking //
+			var set = 0;
+			var OTround = 0;
+			var OTset = 0;
+			var total1Parse;
+			var total2Parse;
+			var totalSpan1;
+			var totalSpan2;
+			var OTRoundCount = 0;
+			// Win counting //
+			var player1Wins = 0;
+			var player2Wins = 0;
+			// Pop up managemnt //
+			var displayNumber = 0;
+			var endGameNumber = 0;
+			var facyBoxMessage = [];
+			// Conditional Variables //
+			var player1CB75 = false;
+			var player1CB150 = false;
+			var player1CB300 = false;
+			var player2CB75 = false;
+			var player2CB150 = false;
+			var player2CB300 = false;
+			var p1CatchPoints = [0];
+			var p2CatchPoints = [0];
+			var p1CatchNum = 0;
+			var p2CatchNum = 0;
+			//Catch Chain Variables //
+			var catchChainTotal = 0;
+			var catchChainName = "";
+			string5 = (5 * catchChainMultipliers[catchChainTotal]).toString();
+			string10 = (10 * catchChainMultipliers[catchChainTotal]).toString();
+			string15 = (15 * catchChainMultipliers[catchChainTotal]).toString();
+			string25 = (25 * catchChainMultipliers[catchChainTotal]).toString();
+			string30 = (30 * catchChainMultipliers[catchChainTotal]).toString();
+			string50 = (50 * catchChainMultipliers[catchChainTotal]).toString();
+			string100 = (100 * catchChainMultipliers[catchChainTotal]).toString();
+			// Form Override //
+			$("form").submit(function() { return false; });
+		</script>
+		<!-- Player Names -->
+		<script type = "text/javascript">
+		for(key in Players){
+			$('#player1Name').append('<option value = "'+ key +'">'+ key +'</option>')
+			$('#player2Name').append('<option value = "'+ key +'">'+ key +'</option>')
+		}
+		</script>
+		<!-- Winner Pop up -->
+		<script type = "text/javascript">
+			var scoreTrack1	= [0]
+			var scoreTrack2	= [0]
+			var scoreTracker1 = [0, 0, 0, 0]
+			var scoreTracker2 = [0, 0, 0, 0]
+		</script>
+	</body>
+
+</html>
