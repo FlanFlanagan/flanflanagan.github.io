@@ -10,7 +10,7 @@ function powerUpTest(object){
 	}
 	if (popUp < popUpSetPoint){
 		popUpType = Math.random();
-		if(popUpType < 0.05){
+		if(popUpType < 1){
 			popUpString = 'tripleBarrel';
 		}
 		else if( 0.15 > popUpType >= 0.05){

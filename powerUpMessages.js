@@ -43,7 +43,7 @@ function tripleBarrelMessage(player){
     popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/tripleBarrel.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> has earned TRIPLE BARREL </br></b>';
     popupHTML = popupHTML + '<i style="font-size: 20px;"> Your next non-catch shot hits three times and starts a catch chain, <i> </div>'
-    popupHTML = popupHTML + '</div>';
+    popupHTML = popupHTML + '</div><audio autoplay><source src="sound/gun-cocking-01.mp3"></audio>';
     testFacyBox(popupHTML);
 }
 
