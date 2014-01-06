@@ -16,7 +16,10 @@ function readPowerUp(string, object, number){
 			subtractor(object, number);
 			break;
 		case ("blackHole"):
-			blackHole(object);
+			blackHole(object, number);
+			break;
+		case ("shield"):
+			shield(object, number);
 			break;
 	}
 }
@@ -24,25 +27,25 @@ function readPowerUp(string, object, number){
 function shield(object, number){
 	parentDivID = object.parentNode.parentNode.parentNode.id;
 	if (parentDivID == "player1"){
-		player1Def = number / 10;
+		player1Def = Math.floor(number / 10);
 	} else {
-		player2Def = number / 10;
+		player2Def = Math.floor(number / 10);
 	}
 	object.remove();
 }
-function blackHole(object){
+function blackHole(object, number){
 	parentDivID = object.parentNode.parentNode.parentNode.id;
 	if (parentDivID == 'player1'){
 		if (player2Def > 0){
 			player2Def -= 1;
 		} else {
-			player2Sink += 50;
+			player2Sink += number;
 		}
 	} else {
 		if (player1Def > 0){
 			player1Def -= 1;
 		} else {
-			player1Sink += 50;
+			player1Sink += number;
 		}
 	}
 	object.remove();
@@ -148,6 +151,7 @@ function tripleBarrel(object){
 }
 
 function shock(object, percent){
+	percent = percent / 10
 	test = object.parentNode.parentNode.parentNode;
 	if (test.id == "player1") {
 		if (player2Def > 0){

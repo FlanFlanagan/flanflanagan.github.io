@@ -40,29 +40,29 @@ function catchChainSelect(selectObj, multiplier){
 
 function dbChainSelect(selectObj, value){
 	$(selectObj).before('<select class = "shotdone"></select>');
-	selectObj.previousSibling.add(new Option(value, value));
+	selectObj.previousSibling.add(new Option(value*0.5, value*0.5));
 	
 	name = selectObj.parentNode.parentNode.id;
 	if (name == 'player1'){
-		$(totalSpan1).text(parseFloat($(totalSpan1).text()) + parseFloat(value));
+		$(totalSpan1).text(parseFloat($(totalSpan1).text()) + parseFloat(value)*.5);
 	}
 	if (name == 'player2'){
-		$(totalSpan2).text(parseFloat($(totalSpan2).text()) + parseFloat(value));
+		$(totalSpan2).text(parseFloat($(totalSpan2).text()) + parseFloat(value)*.5);
 	}
 }
 
 function tbChainSelect(selectObj, value){
 	console.log(value);
 	$(selectObj).before('<select class = "shotdone"></select>');
-	selectObj.previousSibling.add(new Option(value, value));
+	selectObj.previousSibling.add(new Option(value*0.5, value*0.5));
 	$(selectObj).before('<select class = "shotdone"></select>');
-	selectObj.previousSibling.add(new Option(value, value));
+	selectObj.previousSibling.add(new Option(value*0.25, value*0.25));
 	
 	name = selectObj.parentNode.parentNode.id;
 	if (name == 'player1'){
-		$(totalSpan1).text(parseFloat($(totalSpan1).text()) + parseFloat(value)*2);
+		$(totalSpan1).text(parseFloat($(totalSpan1).text()) + parseFloat(value)*.5 + parseFloat(value)*.25);
 	}
 	if (name == 'player2'){
-		$(totalSpan2).text(parseFloat($(totalSpan2).text()) + parseFloat(value)*2);
+		$(totalSpan2).text(parseFloat($(totalSpan2).text()) + parseFloat(value)*.5 + parseFloat(value)*.25);
 	}
 }

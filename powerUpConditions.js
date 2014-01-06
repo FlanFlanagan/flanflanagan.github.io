@@ -10,7 +10,7 @@ function powerUpTest(object){
 	}
 	if (popUp < popUpSetPoint){
 		popUpType = Math.random();
-		if(popUpType < 1){
+		if(popUpType < 0.05){
 			popUpString = 'tripleBarrel';
 		}
 		else if( 0.15 > popUpType >= 0.05){
@@ -27,14 +27,15 @@ function powerUpTest(object){
 		}else {
 			return;
 		}
+		powerSeed = (Math.random()*50)+50
 		var button = document.createElement('button');
         var img1 = document.createElement('img');
         img1.setAttribute('src', "images/"+popUpString+".jpg");
         button.appendChild(img1);
-        button.setAttribute('onClick', "readPowerUp(\""+popUpString+"\", this, null)");
-        button.setAttribute('title', powerUpTooltip(popUpString, null))
+        button.setAttribute('onClick', "readPowerUp(\""+popUpString+"\", this, "+powerSeed+")");
+        button.setAttribute('title', powerUpTooltip(popUpString, powerSeed))
         powerUpDiv.appendChild(button);
-        powerUpMessage(popUpString, parentDivID.id, null);	
+        powerUpMessage(popUpString, parentDivID.id, powerSeed);	
 	}
 }
 
@@ -44,6 +45,10 @@ function powerUpNumber(parentDivID, number){
 		popUpString = "subtractor";
 	} else if ( 0.25 <= popUp < 0.5){
 		popUpString = "shock";
+	} else if ( 0.5 <= popUp < 0.75){
+		popUpString = "blackHole";
+	} else if ( 0.75 <= popUp < 1){
+		popUpString = "shield";
 	} else {
 		return;
 	}
