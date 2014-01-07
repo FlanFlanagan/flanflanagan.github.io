@@ -39,13 +39,13 @@ function blackHole(object, number){
 		if (player2Def > 0){
 			player2Def -= 1;
 		} else {
-			player2Sink += Math.floor(number);
+			player2Sink += Math.floor(number/2);
 		}
 	} else {
 		if (player1Def > 0){
 			player1Def -= 1;
 		} else {
-			player1Sink += Math.floor(number);
+			player1Sink += Math.floor(number/2);
 		}
 	}
 	object.remove();
@@ -174,10 +174,10 @@ function shock(object, percent){
 			if(test1.children.item(i).className != 'shotdone'){
 				workingObj = test1.children.item(i);
 				console.log(percent);
-				string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
-				string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
-				string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
-				string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
+				string10 = Math.max(Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))), 0).toString();
+				string30 = Math.max(Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))), 0).toString();
+				string50 = Math.max(Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))), 0).toString();
+				string100 = Math.max(Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))), 0).toString();
 				$('option', test1.children.item(i)).remove();
 				test1.children.item(i).add(new Option("-", "-"));
 				test1.children.item(i).add(new Option("0", "0"));

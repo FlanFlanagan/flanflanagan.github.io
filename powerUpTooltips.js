@@ -18,6 +18,9 @@ function powerUpTooltip(string, number){
 		case ("blackHole"):
 			string2 = blackHoleTT(number);
 			break;
+		case ("shield"):	
+			string2 = shieldTT(number);
+			break;
 	}
 	return string2;
 }
@@ -49,5 +52,10 @@ function shockTT(number){
 
 function blackHoleTT(number){
 	string = "Your opponent must score at least "+Math.floor(number)+" points before their shots count toward their score.";
+	return string;
+}
+
+function shieldTT(number){
+	string = "You may block "+Math.floor(number/10)+" attacks from your opponent.";
 	return string;
 }

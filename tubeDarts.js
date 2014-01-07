@@ -106,6 +106,7 @@ function colorChange1(selectObj){
 		}
 	}
 	// totals //
+	totalTally(selectObj);
 	powerUpTest(selectObj);
 	comeBackTest();
 	// final test //
@@ -139,7 +140,6 @@ function colorChange1(selectObj){
 		selectObj.remove();
 		return;
 	}
-	totalTally(selectObj);
 	//Catch chain reset
 	if(selectObj.className != "catch"){
 		catchChainTotal = 0;

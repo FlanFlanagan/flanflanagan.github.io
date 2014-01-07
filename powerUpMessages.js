@@ -23,11 +23,12 @@ function powerUpMessage(string, playerID, number){
 		case ("blackHole"):
 			blackHoleMessage(player, number);
 			break;
+		case ("shield"):
+			shieldMessage(player, number);
 	}
 }
 
 function doubleBarrelMessage(player){
-
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00B366; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
     popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/doubleBarrel.jpg" width="90" height="90"></div>';
@@ -82,7 +83,17 @@ function blackHoleMessage(player, number){
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
     popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/blackHole.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> has earned the BLACK HOLE power up! </br></b>';
-    popupHTML = popupHTML + '<i style="font-size: 20px;"> Your opponent must score at least '+Math.floor(number)+' points before their shots count toward their score. <i> </div>'
+    popupHTML = popupHTML + '<i style="font-size: 20px;"> Your opponent must score at least '+Math.floor(number/2)+' points before their shots count toward their score. <i> </div>'
+    popupHTML = popupHTML + '</div>';
+    testFacyBox(popupHTML);	
+}
+
+function shieldMessage(player, number){
+    var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00B366; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+    popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/shield.jpg" width="90" height="90"></div>';
+    popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> has earned a '+ Math.floor(number/10)+' point SHIELD power up! </br></b>';
+    popupHTML = popupHTML + '<i style="font-size: 20px;"> You may block '+Math.floor(number/10)+' attacks from your opponent. <i> </div>'
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);	
 }
