@@ -27,9 +27,9 @@ function readPowerUp(string, object, number){
 function shield(object, number){
 	parentDivID = object.parentNode.parentNode.parentNode.id;
 	if (parentDivID == "player1"){
-		player1Def = Math.floor(number / 10);
+		player1Def += Math.floor(number / 10);
 	} else {
-		player2Def = Math.floor(number / 10);
+		player2Def += Math.floor(number / 10);
 	}
 	object.remove();
 }
@@ -39,13 +39,13 @@ function blackHole(object, number){
 		if (player2Def > 0){
 			player2Def -= 1;
 		} else {
-			player2Sink += number;
+			player2Sink += Math.floor(number);
 		}
 	} else {
 		if (player1Def > 0){
 			player1Def -= 1;
 		} else {
-			player1Sink += number;
+			player1Sink += Math.floor(number);
 		}
 	}
 	object.remove();
@@ -73,10 +73,10 @@ function subtractor(object, number){
 		if(test1.children.item(i).type == 'select-one'){
 			if(test1.children.item(i).className != 'shotdone'){
 				workingObj = test1.children.item(i);
-				string10 = Math.max((parseFloat(workingObj.item(2).value)) - number, 0).toString();
-				string30 = Math.max((parseFloat(workingObj.item(3).value)) - number, 0).toString();
-				string50 = Math.max((parseFloat(workingObj.item(4).value)) - number, 0).toString();
-				string100 = Math.max((parseFloat(workingObj.item(5).value)) - number, 0).toString();
+				string10 = Math.max((parseFloat(workingObj.item(2).value)) - Math.floor(number), 0).toString();
+				string30 = Math.max((parseFloat(workingObj.item(3).value)) - Math.floor(number), 0).toString();
+				string50 = Math.max((parseFloat(workingObj.item(4).value)) - Math.floor(number), 0).toString();
+				string100 = Math.max((parseFloat(workingObj.item(5).value)) - Math.floor(number), 0).toString();
 				$('option', workingObj).remove();
 				workingObj.add(new Option("-", "-"));
 				workingObj.add(new Option("0", "0"));
@@ -151,7 +151,7 @@ function tripleBarrel(object){
 }
 
 function shock(object, percent){
-	percent = percent / 10
+	percent = percent / 100
 	test = object.parentNode.parentNode.parentNode;
 	if (test.id == "player1") {
 		if (player2Def > 0){
@@ -170,12 +170,14 @@ function shock(object, percent){
 	}
 	test1 = test.children.namedItem(test.id+'set'+set);
 	for (var i = 0; i < test1.children.length; i++){
-		if(test1.children.item(i).type == 'select-one' && test1.children.item(i).className == "catch"){
+		if(test1.children.item(i).type == 'select-one'){
 			if(test1.children.item(i).className != 'shotdone'){
-				string10 = (parseFloat(workingObj.item(2).value) * (1 - (percent * 2))).toString();
-				string30 = (parseFloat(workingObj.item(3).value) * (1 - (percent * 2))).toString();
-				string50 = (parseFloat(workingObj.item(4).value) * (1 - (percent * 2))).toString();
-				string100 = (parseFloat(workingObj.item(5).value)* (1 - (percent * 2))).toString();
+				workingObj = test1.children.item(i);
+				console.log(percent);
+				string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
+				string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
+				string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
+				string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
 				$('option', test1.children.item(i)).remove();
 				test1.children.item(i).add(new Option("-", "-"));
 				test1.children.item(i).add(new Option("0", "0"));

@@ -16,7 +16,7 @@ function powerUpTooltip(string, number){
 			string2 = shockTT(number);
 			break;
 		case ("blackHole"):
-			string2 = blackHoleTT();
+			string2 = blackHoleTT(number);
 			break;
 	}
 	return string2;
@@ -38,16 +38,16 @@ function gloveTT(){
 }
 
 function subtractorTT(number){
-	string = "Your opponent\'s next shot is worth "+number+" less points.";
+	string = "Your opponent\'s next shot is worth "+Math.floor(number)+" less points.";
 	return string;
 }
 
 function shockTT(number){
-	string = "Your opponent\'s next shot is worth "+number*2+"% less points.";
+	string = "Your opponent\'s next shot is worth "+Math.floor(number)+"% less points.";
 	return string;
 }
 
-function blackHoleTT(){
-	string = "Your opponent must score at least 50 points before their shots count toward their score.";
+function blackHoleTT(number){
+	string = "Your opponent must score at least "+Math.floor(number)+" points before their shots count toward their score.";
 	return string;
 }

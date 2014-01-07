@@ -11,6 +11,10 @@ function newSet(){
 		scoreTracker1[i] = 0
 		scoreTracker2[i] = 0
 	}
+	p1Diff = 0;
+	p2Diff = 0;
+	player1Sink = 0;
+	player2Sink = 0;
 	$('#player1').append('<hr size="2" width="100%" color="black"> Set '+set+' <hr size="1" width="100%" color="black"> <form id = "player1set'+set+'">'+ 
 					'Round 1 &nbsp;&nbsp;&nbsp;&nbsp; <select id = "set'+set+'round1player1" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>' +
 					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>' +
@@ -192,6 +196,7 @@ function colorChange1(selectObj){
 		}
 		window.displayNumber = 2;
 	}
+	selectObj.oldValue = selectObj.value;
 	// Running the box // 
 	runFacyBox();					
 }
@@ -412,8 +417,10 @@ function gameWinnerTest(){
 		popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell;">';
 		if(player1Wins > player2Wins){
 	    	popupHTML = popupHTML + $('#player1Name')[0].value +' takes the game!!';
-		}else{
+		}else if(player2Wins > player1Wins){
 			popupHTML = popupHTML + $('#player2Name')[0].value +' takes the game!!';
+		} else {
+			popupHTML += 'It\'s a tie?'
 		}
 		popupHTML = popupHTML + '</div>';
 		$.facybox(popupHTML);

@@ -54,7 +54,7 @@ function totalTally(selectObj){
 
 function totalDelUpdate(selectObj){
 	parentDivID = selectObj.parentNode.parentNode.id;
-	if (selectObj.oldValue != "-"){
+	if (selectObj.oldValue != '-'){
 		if (parentDivID == 'player1'){
 			totalVal = parseFloat($(totalSpan1).text());
 			totalVal = totalVal - parseFloat(selectObj.oldValue)

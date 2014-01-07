@@ -4,10 +4,11 @@ function powerUpTest(object){
 	popUp = Math.random();
 	var popUpSetPoint;
 	if (parentDivID.id == "player1"){
-		popUpSetPoint = 0.05 * (1 + Math.exp(-0.007*p1Diff))
+		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p1Diff)), 0.8))
 	} else {
-		popUpSetPoint = 0.05 * (1 + Math.exp(-0.007*p2Diff))
+		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p2Diff)), 0.8))
 	}
+	console.log(popUpSetPoint);
 	if (popUp < popUpSetPoint){
 		popUpType = Math.random();
 		if(popUpType < 0.05){
@@ -27,7 +28,7 @@ function powerUpTest(object){
 		}else {
 			return;
 		}
-		powerSeed = (Math.random()*50)+50
+		powerSeed = (Math.random()*40)+20
 		var button = document.createElement('button');
         var img1 = document.createElement('img');
         img1.setAttribute('src', "images/"+popUpString+".jpg");
@@ -36,6 +37,7 @@ function powerUpTest(object){
         button.setAttribute('title', powerUpTooltip(popUpString, powerSeed))
         powerUpDiv.appendChild(button);
         powerUpMessage(popUpString, parentDivID.id, powerSeed);	
+        Math.p
 	}
 }
 
