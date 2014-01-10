@@ -50,7 +50,8 @@ function heatSeeker(object){
 					workingObj.add(new Option(string30, string30));
 					workingObj.add(new Option(string50, string50));
 					workingObj.add(new Option(string100, string100));
-					secondCheck += 1;					
+					secondCheck += 1;	
+					break;				
 			}
 		}	
 	}
@@ -85,8 +86,16 @@ function blackHole(object, number){
     }
     if (parentDivID.id == 'player1'){
     	player2Sink += number;
+		if (player2Sink > 0){
+			document.getElementById('player2').style.borderColor = "#000000";
+			document.getElementById('player2').style.boxShadow = "inset 0px 0px "+player2Sink*20+"px #000000";
+		}
     } else {
     	player1Sink += number;
+		if (player1Sink > 0){
+			document.getElementById('player1').style.borderColor = "#000000";
+			document.getElementById('player1').style.boxShadow = "inset 0px 0px "+player1Sink*20+"px #000000";
+		}
     }
 	object.remove();
 }
