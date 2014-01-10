@@ -312,7 +312,7 @@ function alexGreat(player){
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
 }
-function deathDestory(player){
+function deathDestroy(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00B366; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
     popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/oppy.jpg" width="90" height="90"></div>';

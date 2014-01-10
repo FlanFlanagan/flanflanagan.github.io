@@ -6,14 +6,14 @@ function powerUpTest(object){
 	if (parentDivID.id == "player1"){
 		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p1Diff)), 0.8))
 		if (p1Diff <= 0){
-			pUpValue = Math.max(Math.abs(30*(1 + 5*Math.sin((1+p1Diff)/135))), 30);
+			pUpValue = Math.floor(Math.max(Math.abs(30*(1 + 5*Math.sin((1+p1Diff)/135))), 30));
 		} else {
 			pUpValue = 30;
 		}
 	} else {
 		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p2Diff)), 0.8))
 		if (p2Diff <= 0){
-			pUpValue = Math.max(Math.abs(30*(1 + 5*Math.sin((1+p2Diff)/135))), 30);
+			pUpValue = Math.floor(Math.max(Math.abs(30*(1 + 5*Math.sin((1+p2Diff)/135))), 30));
 		} else {
 			pUpValue = 30;
 		}
@@ -27,15 +27,17 @@ function powerUpTest(object){
 		else if( 0.15 > popUpType >= 0.05){
 			popUpString = 'doubleBarrel';
 		}
-		else if(0.5 > popUpType >= 0.15){
+		else if(0.45 > popUpType >= 0.15){
 			popUpString = 'shock';
 		}
-		else if(0.85 > popUpType >= 0.5){
+		else if(0.75 > popUpType >= 0.45){
 			popUpString = 'glove';
 		} 
-		else if (1.0 > popUpType >= 0.85){
+		else if (0.9 > popUpType >= 0.75){
 			popUpString = 'blackHole';
-		}else {
+		}else if (1.0 > popUpType >= 0.9){
+			popUpString = 'heatSeeker';
+		} else {
 			return;
 		}
 		var button = document.createElement('button');

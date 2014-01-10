@@ -35,7 +35,7 @@ function catchChainSelect(selectObj, multiplier){
 	selectObj.previousSibling.add(new Option(string30, string30));
 	selectObj.previousSibling.add(new Option(string50, string50));
 	selectObj.previousSibling.add(new Option(string100, string100));
-	selectObj.previousSibling.add(new Option("Del", "delete"));
+	selectObj.previousSibling.add(new Option("Del", "Del"));
 }
 
 function dbChainSelect(selectObj, value){

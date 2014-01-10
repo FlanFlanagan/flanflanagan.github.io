@@ -21,6 +21,9 @@ function powerUpTooltip(string, number){
 		case ("shield"):	
 			string2 = shieldTT(number);
 			break;
+		case ("heatSeeker"):
+			string2 = heatSeekerTT;
+			break;
 	}
 	return string2;
 }
@@ -46,16 +49,21 @@ function subtractorTT(number){
 }
 
 function shockTT(number){
-	string = "Your opponent\'s next shot is worth "+Math.floor(number)+"% less points.";
+	string = "Your opponent\'s next shot is worth "+Math.min(Math.floor(number), 100)+"% less points.";
 	return string;
 }
 
 function blackHoleTT(number){
-	string = "Your opponent must score at least "+Math.floor(number)+" points before their shots count toward their score.";
+	string = "Your opponent must score at least "+Math.floor(number/2)+" points before their shots count toward their score.";
 	return string;
 }
 
 function shieldTT(number){
 	string = "You may block "+Math.floor(number/10)+" attacks from your opponent.";
+	return string;
+}
+
+function heatSeekerTT(number){
+	string = "Your next shot is worth at least 10 points, and hits for double.";
 	return string;
 }

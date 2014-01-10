@@ -90,57 +90,20 @@ function newSet(){
 
 function colorChange1(selectObj){
 	facyBoxMessage.splice(0, facyBoxMessage.length)
-	// Catch tracking //
-	catchPointTracker(selectObj);	
 	// Color change //
 	idx = selectObj.selectedIndex;
-	//
-	if(selectObj.options[idx].value == string100){
-		messages100();
-		// Intimidation //
-		if($(total1Parse)[0][0] == selectObj){
-			tacticalStrike($('#player1Name')[0].value);
-		}
-		if($(total2Parse)[0][0] == selectObj){
-			tacticalStrike($('#player2Name')[0].value);
-		}
-	}
-	// totals //
-	totalTally(selectObj);
-	powerUpTest(selectObj);
-	comeBackTest();
-	// final test //
-	var testTotal = true
-	for(j = 0; j < $('#player1 form')[set+OTset].length; j++){
-		if(!$('#player1 form')[set+OTset][j].onclick){
-			if($('#player1 form')[set+OTset][j].className != "shotdone"){
-				if($('#player1 form')[set+OTset][j].className != "shotdone"){
-					testTotal = false;
-				}
-			}
-		}
-	}
-	for(j = 0; j < $('#player2 form')[set+OTset].length; j++){
-		if(!$('#player2 form')[set+OTset][j].onclick){
-			if($('#player2 form')[set+OTset][j] != selectObj){
-				if($('#player2 form')[set+OTset][j].className != "shotdone"){
-					testTotal = false;
-				}
-			}
-		}
-	}
-	// Removing a catch //
-	if(selectObj.options[idx].value == "delete"){
+	//Catch chain reset
+	if(selectObj.options[idx].value == "Del"){
 		if(catchChainName === selectObj.parentNode.parentNode.id){
-			if(catchChainTotal > 2){
+			if(catchChainTotal > 0){
 				catchChainTotal -= 1;
+				catchChainTotal = Math.max(catchChainTotal, 0);
 			}
 		}
 		totalDelUpdate(selectObj);
 		selectObj.remove();
 		return;
 	}
-	//Catch chain reset
 	if(selectObj.className != "catch"){
 		catchChainTotal = 0;
 		string10 = selectObj.options[2].value.toString();
@@ -174,6 +137,44 @@ function colorChange1(selectObj){
 			}
 		}
 	}
+	// Catch tracking //
+	catchPointTracker(selectObj);	
+	//
+	if(selectObj.options[idx].value == string100){
+		messages100();
+		// Intimidation //
+		if($(total1Parse)[0][0] == selectObj){
+			tacticalStrike($('#player1Name')[0].value);
+		}
+		if($(total2Parse)[0][0] == selectObj){
+			tacticalStrike($('#player2Name')[0].value);
+		}
+	}
+	// totals //
+	selectObj.className = "shotdone";
+	totalTally(selectObj);
+	powerUpTest(selectObj);
+	comeBackTest();
+	// final test //
+	var testTotal = true
+	for(j = 0; j < $('#player1 form')[set+OTset].length; j++){
+		if(!$('#player1 form')[set+OTset][j].onclick){
+			if($('#player1 form')[set+OTset][j].className != "shotdone"){
+				if($('#player1 form')[set+OTset][j].className != "shotdone"){
+					testTotal = false;
+				}
+			}
+		}
+	}
+	for(j = 0; j < $('#player2 form')[set+OTset].length; j++){
+		if(!$('#player2 form')[set+OTset][j].onclick){
+			if($('#player2 form')[set+OTset][j] != selectObj){
+				if($('#player2 form')[set+OTset][j].className != "shotdone"){
+					testTotal = false;
+				}
+			}
+		}
+	}
 	// Pop-ups //
 	messageManagement(selectObj);
 	// pushing the messages
@@ -186,7 +187,6 @@ function colorChange1(selectObj){
 		catchChainTracker(selectObj.nextSibling)
 		tbChainSelect(selectObj.nextSibling, selectObj.value);
 	}
-	selectObj.className = "shotdone";
 	if(testTotal == true){
 		messages();
 		if($('#player1 form')[set+OTset].id != "otset"+OTset+"p1"){
@@ -427,4 +427,32 @@ function gameWinnerTest(){
 		setTimeout("removeFacyBox()", 4000);		
 	}
 	endGameNumber = 1;
+}
+
+function defenseCheck(object, number){
+	var defCheck = true;
+	if (object.id == "player1") {
+		if (player2Def <= number){
+			numberVal = number - player2Def;
+			player2Def = 0;
+			document.getElementById('player2').style.borderColor = "#000000";
+			document.getElementById('player2').style.boxShadow = "inset 0px 0px 10px #000000";
+			defCheck = false;
+		} else {
+			player2Def -= number;
+			document.getElementById('player2').style.boxShadow = "inset 0px 0px "+player2Def*2+"px #ccffe6";
+		}
+	} else {
+		if (player1Def <= number){
+			numberVal = number - player1Def;
+			player1Def = 0;
+			document.getElementById('player1').style.borderColor = "#000000";
+			document.getElementById('player1').style.boxShadow = "inset 0px 0px 10px #000000";
+			defCheck = false;
+		} else {
+			player1Def -= number;
+			document.getElementById('player1').style.boxShadow = "inset 0px 0px "+player1Def*2+"px #ccffe6";
+		}
+	}
+	return [defCheck, numberVal];
 }

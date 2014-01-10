@@ -1,7 +1,7 @@
 // Total Functions //
 function totalTally(selectObj){
 	parentDivID = selectObj.parentNode.parentNode.id;
-	if (selectObj.oldValue == '-' || selectObj.oldValue == 'TB' || selectObj.oldValue == 'DB'){
+	if (selectObj.oldValue == '-' || selectObj.oldValue == 'TB' || selectObj.oldValue == 'DB' || selectObj.oldValue == 'HS'){
 		if (parentDivID == 'player1'){
 			totalVal = parseFloat($(totalSpan1).text());
 			if (parseFloat(selectObj.value) >= player1Sink){
