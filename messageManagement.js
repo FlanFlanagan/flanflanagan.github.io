@@ -55,15 +55,15 @@ function messagePopUps(selectObj){
 		for(var i = 0; i < scoreTracker1.length; i++){
 			if(i == 0){
 				if(scoreTracker1[i] == 3){
-					powerUpNumber("player1", 10);
+					powerUpNumber("player1", 30);
 					splash($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 5){
-					powerUpNumber("player1", 30);
+					powerUpNumber("player1", 50);
 					highTide($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 7){
-					powerUpNumber("player1", 50);
+					powerUpNumber("player1", 100);
 					typhoonStrike($('#player1Name')[0].value)
 				}						
 			}
@@ -77,11 +77,11 @@ function messagePopUps(selectObj){
 					}	
 				}
 				if(scoreTracker1[i] == 5){
-					powerUpNumber("player1", 20);
+					powerUpNumber("player1", 50);
 					onFire($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 7){
-					powerUpNumber("player1", 30);
+					powerUpNumber("player1", 80);
 					theRedDeath($('#player1Name')[0].value)
 				}								
 			}
@@ -90,11 +90,11 @@ function messagePopUps(selectObj){
 					tidalSurge($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 5){
-					powerUpNumber("player1", 10);
+					powerUpNumber("player1", 30);
 					angryWeather($('#player1Name')[0].value)
 				}
 				if(scoreTracker1[i] == 7){
-					powerUpNumber("player1", 20);
+					powerUpNumber("player1", 50);
 					tornadoLightning($('#player1Name')[0].value)
 				}								
 			}	

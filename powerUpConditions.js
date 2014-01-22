@@ -54,13 +54,13 @@ function powerUpTest(object){
 
 function powerUpNumber(parentDivID, number){
 	popUp = Math.random();
-	if (popUp <0.25){
+	if (popUp < 0.25){
 		popUpString = "subtractor";
 	} else if ( 0.25 <= popUp < 0.5){
 		popUpString = "shock";
 	} else if ( 0.5 <= popUp < 0.75){
 		popUpString = "blackHole";
-	} else if ( 0.75 <= popUp < 1){
+	} else if ( 0.75 <= popUp <= 1){
 		popUpString = "shield";
 	} else {
 		return;

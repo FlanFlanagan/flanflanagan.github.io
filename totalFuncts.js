@@ -50,6 +50,21 @@ function totalTally(selectObj){
 	}
 	p1Diff = parseFloat($(totalSpan1).text()) - parseFloat($(totalSpan2).text());
 	p2Diff = parseFloat($(totalSpan2).text()) - parseFloat($(totalSpan1).text());
+	/*if (selectObj.parentNode.parentNode.id == "player1"){
+		if (player1Sink > 0){
+			document.getElementById('player1').style.borderColor = "#000000";
+			document.getElementById('player1').style.boxShadow = "inset 0px 0px "+player1Sink*20+"px #000000";
+		} else if (player1Sink == 0){
+			document.getElementById('player1').style.boxShadow = "inset 0px 0px 10px #000000";
+		}
+	} else {
+		if (player2Sink > 0){
+			document.getElementById('player2').style.borderColor = "#000000";
+			document.getElementById('player2').style.boxShadow = "inset 0px 0px "+player2Sink*20+"px #000000";
+		} else if (player1Sink == 0){
+			document.getElementById('player2').style.boxShadow = "inset 0px 0px 10px #000000";
+		}		
+	}*/
 }
 
 function totalDelUpdate(selectObj){

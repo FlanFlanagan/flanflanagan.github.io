@@ -155,17 +155,7 @@ function colorChange1(selectObj){
 	totalTally(selectObj);
 	powerUpTest(selectObj);
 	comeBackTest();
-	if (selectObj.parentNode.parentNode.id == "player1"){
-		if (player1Sink > 0){
-			document.getElementById('player1').style.borderColor = "#000000";
-			document.getElementById('player1').style.boxShadow = "inset 0px 0px "+player2Sink*20+"px #000000";
-		}
-	} else {
-		if (player2Sink > 0){
-			document.getElementById('player2').style.borderColor = "#000000";
-			document.getElementById('player2').style.boxShadow = "inset 0px 0px "+player2Sink*20+"px #000000";
-		}		
-	}
+
 	// final test //
 	var testTotal = true
 	for(j = 0; j < $('#player1 form')[set+OTset].length; j++){
