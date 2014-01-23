@@ -2,7 +2,7 @@
 
 var Players = {
 	"Robert": {
-		"Name": "Robert", "highScore": 130, "color": "#00FF99", "gender": "male"
+		"Name": "Robert", "highScore": 423, "color": "#00FF99", "gender": "male"
 	},
 	"Birdy": {
 		"Name": "Birdy", "highScore": 0, "color":"#FF66FF", "gender": "female"
@@ -11,7 +11,7 @@ var Players = {
 		"Name": "Derek", "highScore": 0, "color":"#990000", "gender": "male"
 	},
 	"Will" : {
-		"Name": "Will", "highScore": 160, "color":"#003399", "gender": "male"
+		"Name": "Will", "highScore": 348.5, "color":"#003399", "gender": "male"
 	},
 	"Alex" : {
 		"Name": "Alex", "highScore": 0, "color":"#aaaaaa", "gender": "male"

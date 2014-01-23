@@ -28,30 +28,23 @@ function readPowerUp(string, object, number){
 }
 function heatSeeker(object){
 	test = object.parentNode.parentNode.parentNode;
-	var secondCheck = 0;
 	test1 = test.children.namedItem(test.id+'set'+set);
 	for (var i = 0; i < test1.children.length; i++){
 		if(test1.children.item(i).type == 'select-one'){
 			if(test1.children.item(i).className != 'shotdone'){
-				/*if ( secondCheck == 1){
-					workingObj = test1.children.item(i);
-					$('option', workingObj).remove();
-					workingObj.add(new Option("0", "0"));
-				}else {*/
-					workingObj = test1.children.item(i);
-					string10 = Math.max((parseFloat(workingObj.item(2).value))*2, 0).toString();
-					string30 = Math.max((parseFloat(workingObj.item(3).value))*2, 0).toString();
-					string50 = Math.max((parseFloat(workingObj.item(4).value))*2, 0).toString();
-					string100 = Math.max((parseFloat(workingObj.item(5).value))*2, 0).toString();
-					$('option', workingObj).remove();
-					workingObj.add(new Option("HS", "HS"));
-					workingObj.add(new Option("10", "10"));
-					workingObj.add(new Option(string10, string10));
-					workingObj.add(new Option(string30, string30));
-					workingObj.add(new Option(string50, string50));
-					workingObj.add(new Option(string100, string100));
-					secondCheck += 1;	
-					break;				
+				workingObj = test1.children.item(i);
+				string10 = Math.max((parseFloat(workingObj.item(2).value))*2, 0).toString();
+				string30 = Math.max((parseFloat(workingObj.item(3).value))*2, 0).toString();
+				string50 = Math.max((parseFloat(workingObj.item(4).value))*2, 0).toString();
+				string100 = Math.max((parseFloat(workingObj.item(5).value))*2, 0).toString();
+				$('option', workingObj).remove();
+				workingObj.add(new Option("HS", "HS"));
+				workingObj.add(new Option("10", "10"));
+				workingObj.add(new Option(string10, string10));
+				workingObj.add(new Option(string30, string30));
+				workingObj.add(new Option(string50, string50));
+				workingObj.add(new Option(string100, string100));
+				break;				
 			}
 		}	
 	}
@@ -86,21 +79,14 @@ function blackHole(object, number){
     }
     if (parentDivID.id == 'player1'){
     	player2Sink += number;
-		/*if (player2Sink > 0){
-			document.getElementById('player2').style.borderColor = "#000000";
-			document.getElementById('player2').style.boxShadow = "inset 0px 0px "+player2Sink*20+"px #000000";
-		}
-    } else {*/
+    } else {
     	player1Sink += number;
-		/*if (player1Sink > 0){
-			document.getElementById('player1').style.borderColor = "#000000";
-			document.getElementById('player1').style.boxShadow = "inset 0px 0px "+player1Sink*20+"px #000000";
-		}*/
     }
 	object.remove();
 }
 
 function subtractor(object, number){
+	catchTest = false;
 	test = object.parentNode.parentNode.parentNode;
 	defArray = defenseCheck(test, number)
     if (defArray[0] == true){
@@ -118,21 +104,17 @@ function subtractor(object, number){
 	for (var i = 0; i < test1.children.length; i++){
 		if(test1.children.item(i).type == 'select-one'){
 			if(test1.children.item(i).className != 'shotdone'){
-				workingObj = test1.children.item(i);
-				string10 = Math.max((parseFloat(workingObj.item(2).value)) - Math.floor(numberVal), 0).toString();
-				string30 = Math.max((parseFloat(workingObj.item(3).value)) - Math.floor(numberVal), 0).toString();
-				string50 = Math.max((parseFloat(workingObj.item(4).value)) - Math.floor(numberVal), 0).toString();
-				string100 = Math.max((parseFloat(workingObj.item(5).value)) - Math.floor(numberVal), 0).toString();
-				for(var ii = 1; ii < workingObj.options.length; ii++){
-					workingObj.options[ii].remove();
-					ii -= 1;
+				if(catchChainTotal > 0){
+					if(test1.children.item(i).className == 'catch'){
+						workingObj = test1.children.item(i);					
+						subtractorShift(workingObj, numberVal);	
+						break;						
+					}
+				} else {
+					workingObj = test1.children.item(i);					
+					subtractorShift(workingObj, numberVal);	
+					break;					
 				}
-				workingObj.add(new Option("0", "0"));
-				workingObj.add(new Option(string10, string10));
-				workingObj.add(new Option(string30, string30));
-				workingObj.add(new Option(string50, string50));
-				workingObj.add(new Option(string100, string100));
-				break;
 			}
 		}	
 	}
@@ -217,23 +199,53 @@ function shock(object, number){
 	for (var i = 0; i < test1.children.length; i++){
 		if(test1.children.item(i).type == 'select-one'){
 			if(test1.children.item(i).className != 'shotdone'){
-				workingObj = test1.children.item(i);
-				string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
-				string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
-				string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
-				string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
-				for(var ii = 1; ii < workingObj.options.length; ii++){
-					workingObj.options[ii].remove()
-					ii -= 1;
+				if(catchChainTotal > 0){
+					if(test1.children.item(i).className == 'catch'){
+						workingObj = test1.children.item(i);					
+						shockShifter(workingObj, percent);
+						break;					
+					}
+				} else {
+					workingObj = test1.children.item(i);					
+					shockShifter(workingObj, percent);
+					break;				
 				}
-				workingObj.add(new Option("0", "0"));
-				workingObj.add(new Option(string10, string10));
-				workingObj.add(new Option(string30, string30));
-				workingObj.add(new Option(string50, string50));
-				workingObj.add(new Option(string100, string100));
-				break;
 			}
 		}	
 	}
 	object.remove();
+}
+
+function shockShifter(workingObj, percent){
+	workingObj = test1.children.item(i);					
+	string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
+	string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
+	string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
+	string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
+	for(var ii = 1; ii < workingObj.options.length; ii++){
+		workingObj.options[ii].remove()
+		ii -= 1;
+	}
+	workingObj.add(new Option("0", "0"));
+	workingObj.add(new Option(string10, string10));
+	workingObj.add(new Option(string30, string30));
+	workingObj.add(new Option(string50, string50));
+	workingObj.add(new Option(string100, string100));
+}
+
+function subtractorShifter(workingObj, numberVal){
+	workingObj = test1.children.item(i);					
+	string10 = Math.max((parseFloat(workingObj.item(2).value)) - Math.floor(numberVal), 0).toString();
+	string30 = Math.max((parseFloat(workingObj.item(3).value)) - Math.floor(numberVal), 0).toString();
+	string50 = Math.max((parseFloat(workingObj.item(4).value)) - Math.floor(numberVal), 0).toString();
+	string100 = Math.max((parseFloat(workingObj.item(5).value)) - Math.floor(numberVal), 0).toString();
+	for(var ii = 1; ii < workingObj.options.length; ii++){
+		workingObj.options[ii].remove()
+		ii -= 1;
+	}
+	workingObj.add(new Option("0", "0"));
+	workingObj.add(new Option(string10, string10));
+	workingObj.add(new Option(string30, string30));
+	workingObj.add(new Option(string50, string50));
+	workingObj.add(new Option(string100, string100));
 }
