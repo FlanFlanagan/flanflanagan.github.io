@@ -107,12 +107,12 @@ function subtractor(object, number){
 				if(catchChainTotal > 0){
 					if(test1.children.item(i).className == 'catch'){
 						workingObj = test1.children.item(i);					
-						subtractorShift(workingObj, numberVal);	
+						subtractorShifter(workingObj, numberVal);	
 						break;						
 					}
 				} else {
 					workingObj = test1.children.item(i);					
-					subtractorShift(workingObj, numberVal);	
+					subtractorShifter(workingObj, numberVal);	
 					break;					
 				}
 			}
@@ -216,8 +216,7 @@ function shock(object, number){
 	object.remove();
 }
 
-function shockShifter(workingObj, percent){
-	workingObj = test1.children.item(i);					
+function shockShifter(workingObj, percent){				
 	string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
 	string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
 	string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
@@ -233,8 +232,7 @@ function shockShifter(workingObj, percent){
 	workingObj.add(new Option(string100, string100));
 }
 
-function subtractorShifter(workingObj, numberVal){
-	workingObj = test1.children.item(i);					
+function subtractorShifter(workingObj, numberVal){				
 	string10 = Math.max((parseFloat(workingObj.item(2).value)) - Math.floor(numberVal), 0).toString();
 	string30 = Math.max((parseFloat(workingObj.item(3).value)) - Math.floor(numberVal), 0).toString();
 	string50 = Math.max((parseFloat(workingObj.item(4).value)) - Math.floor(numberVal), 0).toString();
