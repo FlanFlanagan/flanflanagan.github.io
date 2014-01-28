@@ -22,7 +22,7 @@ function powerUpTooltip(string, number){
 			string2 = shieldTT(number);
 			break;
 		case ("heatSeeker"):
-			string2 = heatSeekerTT;
+			string2 = heatSeekerTT(number);
 			break;
 	}
 	return string2;

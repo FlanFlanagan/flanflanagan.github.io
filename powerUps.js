@@ -98,6 +98,7 @@ function shield(object, number){
 
 function blackHole(object, number){
 	parentDivID = object.parentNode.parentNode.parentNode;
+
 	defArray = defenseCheck(parentDivID, number/2);
     if (defArray[0] == true){
     	object.remove();
@@ -134,12 +135,12 @@ function subtractor(object, number){
 			if(test1.children.item(i).className != 'shotdone'){
 				if(catchChainTotal > 0){
 					if(test1.children.item(i).className == 'catch'){
-						workingObj = test1.children.item(i);					
+						workingObj = test1.children.item(i);
 						subtractorShifter(workingObj, numberVal);	
 						break;						
 					}
 				} else {
-					workingObj = test1.children.item(i);					
+					workingObj = test1.children.item(i);
 					subtractorShifter(workingObj, numberVal);	
 					break;					
 				}
@@ -152,7 +153,7 @@ function subtractor(object, number){
 function glove(object){
 	parentDivID = object.parentNode.parentNode.parentNode;
 	formDiv = parentDivID.children.namedItem(parentDivID.id+'set'+set);
-	trackerNumber = 0
+	trackerNumber = 0;
 	for (var i = 0; i < formDiv.children.length; i++){
 		if(formDiv.children.item(i).type == 'submit'){
 			if(formDiv.children.item(i).getAttribute('round') != 'over'){
@@ -250,7 +251,6 @@ function shockShifter(workingObj, percent){
 	string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
 	string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
 	for(var ii = 1; ii < workingObj.options.length; ii++){
-		workingObj.options[ii].remove();
 		ii -= 1;
 	}
 	workingObj.add(new Option("0", "0"));
