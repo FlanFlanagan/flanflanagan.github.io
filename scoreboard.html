@@ -47,6 +47,10 @@
 				<img id ="blackHole" src = "images/blackHole.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 				<img id ="shield" src = "images/shield.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">			
 				-->	
+				<img id ="lightWep" src = "images/shield.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
+			</div>
+			<div>
+				<button name = "dataSavetest" onclick=""> TESTING </button>
 			</div>
 		</div>
 		<div id = "scoreCard">
@@ -185,7 +189,17 @@
 		</script>
 		<!-- Drag and Drop -->
 		<script>
-		
+		function sendForrm(){
+			$.ajax({
+				type: "POST",
+				url: "PAGE2.php",
+				data: jQuery("statistics").serialize(),
+				cache: false,
+				success: function(data){
+					console.log(data);
+				}
+			});
+		}
 		function allowDrop(ev){
 			ev.preventDefault();
 		}

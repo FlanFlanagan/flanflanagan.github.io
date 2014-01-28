@@ -9,8 +9,8 @@ function messages100(){
 }
 // Cobalts //
 function cobaltCommando(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #0066CC; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #0066CC; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
 	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/cobaltCommando.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> Cobalt Commando </br></b> <i style="font-size: 20px;"> Score 3 Bullseyes in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
@@ -50,9 +50,9 @@ function tacticalStrike(player){
 }
 // Oranges //
 function solarBeam(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #FF6600; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
-	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/solarBeam.jpg" width="90" height="90"></div>'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #FF6600; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/solarBeam.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> Typhoon </br></b> <i style="font-size: 20px;"> Score 3 50 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -60,7 +60,7 @@ function solarBeam(player){
 function solarFlare(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #FF6600; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/solarflare.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/solarflare.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> Posiden </br></b> <i style="font-size: 20px;"> Score 5 50 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -68,7 +68,7 @@ function solarFlare(player){
 function superNova(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #FF6600; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/supernova.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/supernova.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Release the KRAKEN!! </br></b> <i style="font-size: 20px;"> Score 7 50 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -76,9 +76,9 @@ function superNova(player){
 
 // Pinks //
 function pinkie(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #FF33CC; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
-	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/pinkie.jpg" width="90" height="90"></div>'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #FF33CC; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/pinkie.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> You\'re a pretty pink pony! </br></b> <i style="font-size: 20px;"> Score 3 Bullseyes point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -86,7 +86,7 @@ function pinkie(player){
 function pinky(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #FF33CC; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/pinky.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/pinky.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> Pink Pachyderms! </br></b> <i style="font-size: 20px;"> Score 5 Bullseyes point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -94,17 +94,17 @@ function pinky(player){
 
 // Reds //
 function rojosBros(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #CC0000; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
-	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/hoesBeforeBro.jpg" width="90" height="90"></div>'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #CC0000; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/hoesBeforeBro.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Rojos before Bros </br></b> <i style="font-size: 20px;"> Score 3 30 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);	
 }
 function rojosHohos(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #CC0000; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
-	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/rojosBefore.jpg" width="90" height="90"></div>'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #CC0000; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/rojosBefore.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Rojos before Hoes </br></b> <i style="font-size: 20px;"> Score 3 30 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -112,7 +112,7 @@ function rojosHohos(player){
 function onFire(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #CC0000; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/flameOn.jpg" width="90" height="90"></div>' 
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/flameOn.jpg" width="90" height="90"></div>' ;
     popupHTML = popupHTML + '<div class = "achieveText">'+player+' is On Fire! </br></b> <i style="font-size: 20px;"> Score 5 30 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -120,16 +120,16 @@ function onFire(player){
 function theRedDeath(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #CC0000; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/redDeath.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/redDeath.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Red Death </br></b> <i style="font-size: 20px;"> Score 7 30 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
 }
 // Greens //
 function ggGrass(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00aa33; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
-	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/greenGrass.jpg" width="90" height="90"></div>'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00aa33; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/greenGrass.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Green Green Grass </br></b> <i style="font-size: 20px;"> Score 3 10 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -137,7 +137,7 @@ function ggGrass(player){
 function greenAcres(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00aa33; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/greenAcres.JPG" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/greenAcres.JPG" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Green Acres </br></b> <i style="font-size: 20px;"> Score 5 10 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -145,7 +145,7 @@ function greenAcres(player){
 function natureWrath(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #00aa33; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/naturesWrath.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/naturesWrath.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Nature\'s Wrath </br></b> <i style="font-size: 20px;"> Score 7 10 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -153,9 +153,9 @@ function natureWrath(player){
 
 // Light Blue //
 function tidalSurge(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #069C88; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
-	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/tidalSurge.jpg" width="90" height="90"></div>'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #069C88; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/tidalSurge.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> Tidal Surge </br></b> <i style="font-size: 20px;"> Score 3 50 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -163,7 +163,7 @@ function tidalSurge(player){
 function angryWeather(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #069C88; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/angryWeather.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/angryWeather.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> Bad Weather </br></b> <i style="font-size: 20px;"> Score 5 50 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -171,7 +171,7 @@ function angryWeather(player){
 function tornadoLightning(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #069C88; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/tornadoLightning.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/tornadoLightning.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Nature\'s Fury </br></b> <i style="font-size: 20px;"> Score 7 50 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -180,9 +180,9 @@ function tornadoLightning(player){
 
 // Dark Blue //
 function splash(player){
-	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #122f45; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;'
-	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">'
-	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/splash.jpg" width="90" height="90"></div>'
+	var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #122f45; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
+	popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
+	popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/splash.jpg" width="90" height="90"></div>';
 	popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> Splash! </br></b> <i style="font-size: 20px;"> Score 3 10 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -190,7 +190,7 @@ function splash(player){
 function highTide(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #122f45; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/highTide.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/highTide.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br> High Tide </br></b> <i style="font-size: 20px;"> Score 5 10 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -198,7 +198,7 @@ function highTide(player){
 function typhoonStrike(player){
     var popupHTML = '<div align="center" class ="facyboxAch" style="background-color: #122f45; width: 600px; min-height: 90px; font-size: 40px; text-color: #AAAAAA;';
     popupHTML = popupHTML + 'border-radius: 3px; border: 3px solid #AAAAAA; font-family: Rockwell; vertical-align: middle;">';
-    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/typhoonStrike.jpg" width="90" height="90"></div>'
+    popupHTML = popupHTML + '<div class = "achieveImage"><img src = "images/typhoonStrike.jpg" width="90" height="90"></div>';
     popupHTML = popupHTML + '<div class = "achieveText"> <b style="font-size: 40px;"> '+player+'<br>Typhoon Strike! </br></b> <i style="font-size: 20px;"> Score 7 10 point shots in a row. <i> </div>';
     popupHTML = popupHTML + '</div>';
     testFacyBox(popupHTML);
@@ -400,9 +400,9 @@ function testFacyBox(string){
 	facyBoxMessage.push(string);
 }
 function runFacyBox(){
-	var testPassI = ""
+	var testPassI = "";
 	for(i = 0; i < facyBoxMessage.length; i++){
-		testPassI = testPassI + facyBoxMessage[i]
+		testPassI = testPassI + facyBoxMessage[i];
 		if(i < facyBoxMessage.length-1){
 			testPassI = testPassI + '<hr>';
 		}
@@ -410,7 +410,7 @@ function runFacyBox(){
 	if(facyBoxMessage.length > 0 ){
 		$.facybox(testPassI);
 	}
-	facyBoxMessage.splice(0, facyBoxMessage.length)
+	facyBoxMessage.splice(0, facyBoxMessage.length);
 }
 // Catch messages ///
 function Hobo(player){

@@ -8,14 +8,15 @@ function newSet(){
 	scoreTrack1.push([0,0,0,0]);
 	scoreTrack2.push([0,0,0,0]);	
 	for (var i = 0; i < 4; i++){
-		scoreTracker1[i] = 0
-		scoreTracker2[i] = 0
+		scoreTracker1[i] = 0;
+		scoreTracker2[i] = 0;
 	}
 	p1Diff = 0;
 	p2Diff = 0;
 	player1Sink = 0;
 	player2Sink = 0;
-	$('#player1').append('<hr size="2" width="100%" color="black"> Set '+set+' <hr size="1" width="100%" color="black"> <form id = "player1set'+set+'">'+ 
+	$('#player1').append('<hr size="2" width="100%" color="black"> Set '+set+' <button class = "minButton'+set+'" status="show" onclick="divMin(this, '+set+')"> - </button>' +
+					'<hr size="1" width="100%" color="black"> <form id = "player1set'+set+'">'+ 
 					'Round 1 &nbsp;&nbsp;&nbsp;&nbsp; <select id = "set'+set+'round1player1" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>' +
 					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>' +
 					'Round 2 &nbsp;&nbsp;&nbsp;&nbsp; <select id = "set'+set+'round2player1" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>' +
@@ -29,8 +30,9 @@ function newSet(){
 					'Round 6 &nbsp;&nbsp;&nbsp;&nbsp; <select id = "set'+set+'round6player1" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>'+
 					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>'+
 					'Round 7 &nbsp;&nbsp;&nbsp;&nbsp; <select id = "set'+set+'round7player1" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>'+
-					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>')
-	$('#player2').append('<hr size="2" width="100%" color="black"> Set '+set+' <hr size="1" width="100%" color="black"> <form id = "player2set'+set+'">' + 
+					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>');
+	$('#player2').append('<hr size="2" width="100%" color="black"> Set '+set+' <button class = "minButton'+set+'" status="show" onclick="divMin(this, '+set+')"> - </button>' +
+					'<hr size="1" width="100%" color="black"> <form id = "player2set'+set+'">' + 
 					'Round 1 &nbsp;&nbsp;&nbsp;&nbsp;<select id = "set'+set+'round1player2" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>' +
 					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>' +
 					'Round 2 &nbsp;&nbsp;&nbsp;&nbsp;<select id = "set'+set+'round2player2" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>' +
@@ -44,7 +46,7 @@ function newSet(){
 					'Round 6 &nbsp;&nbsp;&nbsp;&nbsp;<select id = "set'+set+'round6player2" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>'+
 					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>'+
 					'Round 7 &nbsp;&nbsp;&nbsp;&nbsp;<select id = "set'+set+'round7player2" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>'+
-					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>')
+					'<button id="catch1s1r1" class = "catchbutton'+set+'" onClick = "newCatch()" > Catch! </button><br>');
 	$('#player1').append('<div id = "player1Total"><span class="total_1'+set+'"> 0 </span></div>');
 	$('#player2').append('<div id = "player2Total"><span class="total_2'+set+'"> 0 </span></div>');
 	document.getElementById('player1').style.display = 'none';
@@ -384,11 +386,11 @@ function addOT(){
 	window.displayNumber = 0;
 	OTround = OTround + 1;
 	OTRoundCount = OTRoundCount + 1;
-	var roundset = '.addOTRound' + parseFloat(OTset)
+	var roundset = '.addOTRound' + parseFloat(OTset);
 	$(roundset).before('Set &nbsp;&nbsp;&nbsp;&nbsp;<select class = "otset'+OTround+'round1player1" onChange = "colorChange1(this)"></select>' +
 		'<button id="catch1s1r1" class = "OTbutton'+OTround+'" onClick = "newCatch()" > Catch! </button><br>');
 	$("form").submit(function() {return false;});
-	var playerset = ".otset" + parseFloat(OTround) + "round1player1"
+	var playerset = ".otset" + parseFloat(OTround) + "round1player1";
 	$('<option value = "-" id = "dash1"> - </option>').appendTo($(playerset));
 	$('<option value = "0" id = "zero"> 0 </option>').appendTo($(playerset));
 	$('<option value = "10" id = "ten"> 10 </option>').appendTo($(playerset));
@@ -421,7 +423,7 @@ function gameWinnerTest(){
 		}else if(player2Wins > player1Wins){
 			popupHTML = popupHTML + $('#player2Name')[0].value +' takes the game!!';
 		} else {
-			popupHTML += 'It\'s a tie?'
+			popupHTML += 'It\'s a tie?';
 		}
 		popupHTML = popupHTML + '</div>';
 		$.facybox(popupHTML);
@@ -456,4 +458,25 @@ function defenseCheck(object, number){
 		}
 	}
 	return [defCheck, numberVal];
+}
+
+function divMin(object, set){
+	player1var = '#player1set'+set;
+	player2var = '#player2set'+set;
+	divClass = '.minButton'+set;
+	if (object.getAttribute("status") == "hide"){
+		$(divClass)[0].setAttribute("status", "show");
+		$(divClass)[1].setAttribute("status", "show");
+		$(divClass)[0].innerHTML = "-";
+		$(divClass)[1].innerHTML = "-";
+		$(player1var).show();
+		$(player2var).show();			
+	} else {
+		$(divClass)[0].setAttribute("status", "hide");
+		$(divClass)[1].setAttribute("status", "hide");
+		$(divClass)[0].innerHTML = "+";
+		$(divClass)[1].innerHTML = "+";
+		$(player1var).hide();
+		$(player2var).hide();	
+	}
 }

@@ -2,7 +2,7 @@
 
 var Players = {
 	"Robert": {
-		"Name": "Robert", "highScore": 423, "color": "#00FF99", "gender": "male"
+		"Name": "Robert", "highScore": 423, "color": "#B22222", "gender": "male"
 	},
 	"Birdy": {
 		"Name": "Birdy", "highScore": 0, "color":"#FF66FF", "gender": "female"
@@ -31,4 +31,4 @@ var Players = {
 	"Guest - Female":{
 		"Name": "Guest - Female", "highScore": "-", "color":"#aaaaaa", "gender": "female"
 	}
-}
+};

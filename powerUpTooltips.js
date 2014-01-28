@@ -59,7 +59,7 @@ function blackHoleTT(number){
 }
 
 function shieldTT(number){
-	string = "You may block "+Math.floor(number/10)+" attacks from your opponent.";
+	string = "You may block "+Math.floor(number)+" attacks from your opponent.";
 	return string;
 }
 

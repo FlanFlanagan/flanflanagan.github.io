@@ -4,14 +4,14 @@ function powerUpTest(object){
 	popUp = Math.random();
 	var popUpSetPoint;
 	if (parentDivID.id == "player1"){
-		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p1Diff)), 0.8))
+		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p1Diff)), 0.8));
 		if (p1Diff <= 0){
 			pUpValue = Math.floor(Math.max(Math.abs(30*(1 + 5*Math.sin((1+p1Diff)/135))), 30));
 		} else {
 			pUpValue = 30;
 		}
 	} else {
-		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p2Diff)), 0.8))
+		popUpSetPoint = 0.05 * (1 + Math.pow((Math.exp(-0.025*p2Diff)), 0.8));
 		if (p2Diff <= 0){
 			pUpValue = Math.floor(Math.max(Math.abs(30*(1 + 5*Math.sin((1+p2Diff)/135))), 30));
 		} else {
@@ -45,7 +45,7 @@ function powerUpTest(object){
         img1.setAttribute('src', "images/"+popUpString+".jpg");
         button.appendChild(img1);
         button.setAttribute('onClick', "readPowerUp(\""+popUpString+"\", this, "+pUpValue+")");
-        button.setAttribute('title', powerUpTooltip(popUpString, pUpValue))
+        button.setAttribute('title', powerUpTooltip(popUpString, pUpValue));
         powerUpDiv.appendChild(button);
         powerUpMessage(popUpString, parentDivID.id, pUpValue);	
         Math.p
@@ -70,7 +70,7 @@ function powerUpNumber(parentDivID, number){
     img1.setAttribute('src', "images/"+popUpString+".jpg");
     button.appendChild(img1);
     button.setAttribute('onClick', "readPowerUp(\""+popUpString+"\", this,"+number+")");
-    button.setAttribute('title', powerUpTooltip(popUpString, number))
+    button.setAttribute('title', powerUpTooltip(popUpString, number));
     powerUpDiv.appendChild(button);
     powerUpMessage(popUpString, parentDivID, number);	
 }

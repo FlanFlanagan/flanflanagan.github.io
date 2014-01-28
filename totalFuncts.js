@@ -26,7 +26,7 @@ function totalTally(selectObj){
 	} else {
 		if (parentDivID == 'player1'){
 			totalVal = parseFloat($(totalSpan1).text());
-			totalVal = totalVal - parseFloat(selectObj.oldValue)
+			totalVal = totalVal - parseFloat(selectObj.oldValue);
 			if (parseFloat(selectObj.value) >= player1Sink){
 				totalVal = totalVal + parseFloat(selectObj.value) - player1Sink;
 				player1Sink = 0;
@@ -37,7 +37,7 @@ function totalTally(selectObj){
 			$(totalSpan1).append(totalVal);
 		} else {
 			totalVal = parseFloat($(totalSpan2).text());
-			totalVal = totalVal - parseFloat(selectObj.oldValue)
+			totalVal = totalVal - parseFloat(selectObj.oldValue);
 			if (parseFloat(selectObj.value) >= player2Sink){
 				totalVal = totalVal + parseFloat(selectObj.value) - player2Sink;
 				player2Sink = 0;
@@ -72,12 +72,12 @@ function totalDelUpdate(selectObj){
 	if (selectObj.oldValue != '-'){
 		if (parentDivID == 'player1'){
 			totalVal = parseFloat($(totalSpan1).text());
-			totalVal = totalVal - parseFloat(selectObj.oldValue)
+			totalVal = totalVal - parseFloat(selectObj.oldValue);
 			$(totalSpan1).empty();
 			$(totalSpan1).append(totalVal);
 		} else {
 			totalVal = parseFloat($(totalSpan2).text());
-			totalVal = totalVal - parseFloat(selectObj.oldValue)
+			totalVal = totalVal - parseFloat(selectObj.oldValue);
 			$(totalSpan2).empty();
 			$(totalSpan2).append(totalVal);
 		}

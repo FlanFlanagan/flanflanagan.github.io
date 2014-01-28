@@ -22,9 +22,9 @@
 				$('#seasonTable table').empty();
 				$('#seasonTable table').append('<tr class = "testingTable"> <td> Player </td>');
 				for(var player in Players){
-					var gameString = ""
-					var emptySpan = ""
-					var optionSpan = '<option value = "-" id = "dash1"> - </option>' + '<option value = "win" id = "win"> Win </option>' + '<option value = "loss" id = "loss"> Loss </option>'	
+					var gameString = "";
+					var emptySpan = "";
+					var optionSpan = '<option value = "-" id = "dash1"> - </option>' + '<option value = "win" id = "win"> Win </option>' + '<option value = "loss" id = "loss"> Loss </option>'	;
 					if(Players[player].Name == "Guest - Male" || Players[player].Name == "Guest - Female"){
 						continue;
 					}

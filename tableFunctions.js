@@ -22,15 +22,15 @@ function newStatTable(){
 	bulleys2 += scoreTrack2[set][3];
 	acc_1 = parseFloat(bulleys1) + parseFloat(acc10_1) + parseFloat(acc30_1) + parseFloat(acc50_1);
 	acc_2 = parseFloat(bulleys2) + parseFloat(acc10_2) + parseFloat(acc30_2) + parseFloat(acc50_2);
-	player1 = $('#player1Name')[0].value
-	player2 = $('#player2Name')[0].value
+	player1 = $('#player1Name')[0].value;
+	player2 = $('#player2Name')[0].value;
 	catch1 = total_1-7;
 	catch2 = total_2-7;
 	/// Catching Statistics Achievements ///
 	catchPointManager(catch1, catch2);
 	/// Storing Deadliness ///
-	var deadly1 = ((acc10_1*10+acc30_1*30+acc50_1*50+bulleys1*100)/(total_1)).toFixed(2)
-	var deadly2 = ((acc10_2*10+acc30_2*30+acc50_2*50+bulleys2*100)/(total_2)).toFixed(2)
+	var deadly1 = ((acc10_1*10+acc30_1*30+acc50_1*50+bulleys1*100)/(total_1)).toFixed(2);
+	var deadly2 = ((acc10_2*10+acc30_2*30+acc50_2*50+bulleys2*100)/(total_2)).toFixed(2);
 	/// Adding the statistics table ///
 	$('#statistics').append('&#13;' +
 		'<table border = "1" id = "set'+(set)+'Table">'+

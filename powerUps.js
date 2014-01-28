@@ -24,8 +24,37 @@ function readPowerUp(string, object, number){
 		case ("heatSeeker"):
 			heatSeeker(object);
 			break;
+		case ("lightWep"):
+			lightWeaponMastery(object);
+			break;
 	}
 }
+
+function lightWeaponMastery(object){
+	parentDiv = object.parentNode.parentNode.parentNode;
+	parentDivSet = parentDiv.children.namedItem(parentDiv.id+'set'+set);
+	for (var i = 0; i < parentDivSet.children.length; i++){
+		if(parentDivSet.children.item(i).type == 'select-one'){
+			if(parentDivSet.children.item(i).className != 'shotdone'){
+				workingObj = parentDivSet.children.item(i);
+				if (parentDiv.id == "player1"){
+					string10 = Math.max((parseFloat(workingObj.item(2).value))*scoreTrack1[set][0], 0).toString();
+				} else {
+					string10 = Math.max((parseFloat(workingObj.item(2).value))*scoreTrack2[set][0], 0).toString();
+				}
+				workingObj.options[2].value = string10;
+				workingObj.options[2].innerHTML = string10;
+				break;				
+			}
+		}	
+	}
+	object.remove();
+}
+
+function mediumWeaponMastery(){
+	
+}
+
 function heatSeeker(object){
 	test = object.parentNode.parentNode.parentNode;
 	test1 = test.children.namedItem(test.id+'set'+set);
@@ -69,8 +98,7 @@ function shield(object, number){
 
 function blackHole(object, number){
 	parentDivID = object.parentNode.parentNode.parentNode;
-	defArray = defenseCheck(parentDivID, number/2)
-	console.log(defArray[1]);
+	defArray = defenseCheck(parentDivID, number/2);
     if (defArray[0] == true){
     	object.remove();
     	return;
@@ -88,12 +116,12 @@ function blackHole(object, number){
 function subtractor(object, number){
 	catchTest = false;
 	test = object.parentNode.parentNode.parentNode;
-	defArray = defenseCheck(test, number)
+	defArray = defenseCheck(test, number);
     if (defArray[0] == true){
     	object.remove();
     	return;
     } else {
-    	numberVal = defArray[1]
+    	numberVal = defArray[1];
     }
     if (test.id == "player1"){
     	test = document.getElementById('player2');
@@ -107,12 +135,12 @@ function subtractor(object, number){
 				if(catchChainTotal > 0){
 					if(test1.children.item(i).className == 'catch'){
 						workingObj = test1.children.item(i);					
-						subtractorShift(workingObj, numberVal);	
+						subtractorShifter(workingObj, numberVal);	
 						break;						
 					}
 				} else {
 					workingObj = test1.children.item(i);					
-					subtractorShift(workingObj, numberVal);	
+					subtractorShifter(workingObj, numberVal);	
 					break;					
 				}
 			}
@@ -133,7 +161,7 @@ function glove(object){
 			}
 		}
 	}
-	catchChainTracker(formDiv.children.item(trackerNumber))
+	catchChainTracker(formDiv.children.item(trackerNumber));
 	catchChainSelect(formDiv.children.item(trackerNumber),catchChainMultipliers[catchChainTotal]);
 	object.remove();
 }
@@ -182,7 +210,7 @@ function tripleBarrel(object){
 
 function shock(object, number){
 	test = object.parentNode.parentNode.parentNode;
-	defArray = defenseCheck(test, number)
+	defArray = defenseCheck(test, number);
     if (defArray[0] == true){
     	object.remove();
     	return;
@@ -216,14 +244,13 @@ function shock(object, number){
 	object.remove();
 }
 
-function shockShifter(workingObj, percent){
-	workingObj = test1.children.item(i);					
+function shockShifter(workingObj, percent){					
 	string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
 	string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
 	string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
 	string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
 	for(var ii = 1; ii < workingObj.options.length; ii++){
-		workingObj.options[ii].remove()
+		workingObj.options[ii].remove();
 		ii -= 1;
 	}
 	workingObj.add(new Option("0", "0"));
@@ -233,14 +260,13 @@ function shockShifter(workingObj, percent){
 	workingObj.add(new Option(string100, string100));
 }
 
-function subtractorShifter(workingObj, numberVal){
-	workingObj = test1.children.item(i);					
+function subtractorShifter(workingObj, numberVal){				
 	string10 = Math.max((parseFloat(workingObj.item(2).value)) - Math.floor(numberVal), 0).toString();
 	string30 = Math.max((parseFloat(workingObj.item(3).value)) - Math.floor(numberVal), 0).toString();
 	string50 = Math.max((parseFloat(workingObj.item(4).value)) - Math.floor(numberVal), 0).toString();
 	string100 = Math.max((parseFloat(workingObj.item(5).value)) - Math.floor(numberVal), 0).toString();
 	for(var ii = 1; ii < workingObj.options.length; ii++){
-		workingObj.options[ii].remove()
+		workingObj.options[ii].remove();
 		ii -= 1;
 	}
 	workingObj.add(new Option("0", "0"));
