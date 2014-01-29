@@ -37,7 +37,6 @@
 			<button name = "overTime" onClick = "addOverTime()">Overtime</button>
 			<button name = "calcStats" onClick = "calcStats()">Calculate Statistics</button>
 			<button name = "endGame" onClick = "gameWinnerTest()">End Game</button>
-			<!-- <button name = "catchChainButton" onclick="catchChainRule(this)"> Turn Catch Chain Off </button> -->
 			<div id="powerUps">
 				<!--<img id ="thief" src = "images/thief.png" width="40" height="40" draggable="true" ondragstart="drag(event)"> 
 				<img id ="tripleBarrel" src = "images/tripleBarrel.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
@@ -47,7 +46,6 @@
 				<img id ="blackHole" src = "images/blackHole.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 				<img id ="shield" src = "images/shield.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">			
 				-->	
-				<img id ="lightWep" src = "images/shield.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 			</div>
 			<div>
 				<button name = "dataSavetest" onclick=""> TESTING </button>
@@ -216,6 +214,7 @@
             img1.setAttribute('src', ev.dataTransfer.getData("Img"));
             button.appendChild(img1);
             button.setAttribute('onClick', "readPowerUp(\""+data+"\", this, 30)");
+            button.className = "powerUp";
             ev.target.appendChild(button);
         }
 		</script>

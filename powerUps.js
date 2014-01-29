@@ -30,7 +30,7 @@ function readPowerUp(string, object, number){
 	}
 }
 
-function lightWeaponMastery(object){
+function tenPointMastery(object){
 	parentDiv = object.parentNode.parentNode.parentNode;
 	parentDivSet = parentDiv.children.namedItem(parentDiv.id+'set'+set);
 	for (var i = 0; i < parentDivSet.children.length; i++){
@@ -38,9 +38,9 @@ function lightWeaponMastery(object){
 			if(parentDivSet.children.item(i).className != 'shotdone'){
 				workingObj = parentDivSet.children.item(i);
 				if (parentDiv.id == "player1"){
-					string10 = Math.max((parseFloat(workingObj.item(2).value))*scoreTrack1[set][0], 0).toString();
+					string10 = Math.max((parseFloat(workingObj.item(2).value))*scoreTrack1[set][0], 10).toString();
 				} else {
-					string10 = Math.max((parseFloat(workingObj.item(2).value))*scoreTrack2[set][0], 0).toString();
+					string10 = Math.max((parseFloat(workingObj.item(2).value))*scoreTrack2[set][0], 10).toString();
 				}
 				workingObj.options[2].value = string10;
 				workingObj.options[2].innerHTML = string10;
@@ -51,8 +51,46 @@ function lightWeaponMastery(object){
 	object.remove();
 }
 
-function mediumWeaponMastery(){
-	
+function thirtyPointMastery(object){
+	parentDiv = object.parentNode.parentNode.parentNode;
+	parentDivSet = parentDiv.children.namedItem(parentDiv.id+'set'+set);
+	for (var i = 0; i < parentDivSet.children.length; i++){
+		if(parentDivSet.children.item(i).type == 'select-one'){
+			if(parentDivSet.children.item(i).className != 'shotdone'){
+				workingObj = parentDivSet.children.item(i);
+				if (parentDiv.id == "player1"){
+					string30 = Math.max((parseFloat(workingObj.item(3).value))*scoreTrack1[set][1]*0.6, 30).toString();
+				} else {
+					string30 = Math.max((parseFloat(workingObj.item(3).value))*scoreTrack2[set][1]*0.6, 30).toString();
+				}
+				workingObj.options[3].value = string10;
+				workingObj.options[3].innerHTML = string10;
+				break;				
+			}
+		}	
+	}
+	object.remove();
+}
+
+function fiftyPointMastery(object){
+	parentDiv = object.parentNode.parentNode.parentNode;
+	parentDivSet = parentDiv.children.namedItem(parentDiv.id+'set'+set);
+	for (var i = 0; i < parentDivSet.children.length; i++){
+		if(parentDivSet.children.item(i).type == 'select-one'){
+			if(parentDivSet.children.item(i).className != 'shotdone'){
+				workingObj = parentDivSet.children.item(i);
+				if (parentDiv.id == "player1"){
+					string50 = Math.max((parseFloat(workingObj.item(4).value))*scoreTrack1[set][2]*0.25, 30).toString();
+				} else {
+					string50 = Math.max((parseFloat(workingObj.item(4).value))*scoreTrack2[set][2]*0.25, 30).toString();
+				}
+				workingObj.options[4].value = string10;
+				workingObj.options[4].innerHTML = string10;
+				break;				
+			}
+		}	
+	}
+	object.remove();
 }
 
 function heatSeeker(object){

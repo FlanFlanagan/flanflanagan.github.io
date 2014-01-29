@@ -56,29 +56,29 @@ body {
 	font-size: 15px;
 	text-align: center;
    	line-height: 100%;
-	min-height: 90px;
+	min-height: 100px;
 }
 #player2Pups{
 	font-size: 15px;
 	text-align: center;
    	line-height: 100%;
-	min-height: 90px;
+	min-height: 100px;
 }
 #player1Pups button{
-	height: 40px;
-	width: 50px;
+	height: 60px;
+	width: 60px;
 }
 #player1Pups img{
-	height: 30px;
-	width:30px;
+	height: 50px;
+	width:50px;
 }
 #player2Pups button{
-	height: 40px;
-	width: 50px;
+	height: 60px;
+	width: 60px;
 }
 #player2Pups img{
-	height: 30px;
-	width:30px;
+	height: 50px;
+	width:50px;
 }
 #player1{
 	font-family: Rockwell;
