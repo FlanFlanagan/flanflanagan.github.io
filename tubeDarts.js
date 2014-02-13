@@ -11,10 +11,13 @@ function newSet(){
 		scoreTracker1[i] = 0;
 		scoreTracker2[i] = 0;
 	}
-	p1Diff = 0;
-	p2Diff = 0;
-	player1Sink = 0;
-	player2Sink = 0;
+	p1Diff = 0; p2Diff = 0; player1Sink = 0; player2Sink = 0; player1Def = 0; player2Def = 0;
+	
+	document.getElementById('player1').style.borderColor = "#000000";
+	document.getElementById('player1').style.boxShadow = "inset 0px 0px 10px #000000";
+	document.getElementById('player2').style.borderColor = "#000000";
+	document.getElementById('player2').style.boxShadow = "inset 0px 0px 10px #000000";
+	
 	$('#player1').append('<hr size="2" width="100%" color="black"> Set '+set+' <button class = "minButton'+set+'" status="show" onclick="divMin(this, '+set+')"> - </button>' +
 					'<hr size="1" width="100%" color="black"> <form id = "player1set'+set+'">'+ 
 					'Round 1 &nbsp;&nbsp;&nbsp;&nbsp; <select id = "set'+set+'round1player1" onFocus="this.oldValue = this.value" class ="roundInputp1" onChange = "colorChange1(this)"></select>' +
