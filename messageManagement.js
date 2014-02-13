@@ -75,7 +75,7 @@ function messagePopUps(selectObj){
 					onFire($('#player1Name')[0].value);
 				}
 				if(scoreTracker1[i] == 7){
-					powerUpNumber("player1", 40);
+					powerUpNumber("player1", 60);
 					theRedDeath($('#player1Name')[0].value);
 				}								
 			}
@@ -138,7 +138,7 @@ function messagePopUps(selectObj){
 					onFire($('#player2Name')[0].value);
 				}
 				if(scoreTracker2[i] == 7){
-					powerUpNumber("player2", 40);
+					powerUpNumber("player2", 60);
 					theRedDeath($('#player2Name')[0].value);
 				}								
 			}

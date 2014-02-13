@@ -171,7 +171,7 @@ function subtractor(object, number){
 	for (var i = 0; i < test1.children.length; i++){
 		if(test1.children.item(i).type == 'select-one'){
 			if(test1.children.item(i).className != 'shotdone'){
-				if(catchChainTotal > 0){
+				if(catchChainTotal > 1){
 					if(test1.children.item(i).className == 'catch'){
 						workingObj = test1.children.item(i);
 						subtractorShifter(workingObj, numberVal);	
@@ -266,7 +266,7 @@ function shock(object, number){
 	for (var i = 0; i < test1.children.length; i++){
 		if(test1.children.item(i).type == 'select-one'){
 			if(test1.children.item(i).className != 'shotdone'){
-				if(catchChainTotal > 0){
+				if(catchChainTotal > 1){
 					if(test1.children.item(i).className == 'catch'){
 						workingObj = test1.children.item(i);					
 						shockShifter(workingObj, percent);
