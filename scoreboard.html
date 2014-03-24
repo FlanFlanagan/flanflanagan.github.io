@@ -49,7 +49,7 @@
 				<img id ="shock" src = "images/shock.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 			</div>
 			<div>
-				<button name = "dataSavetest" onclick=""> TESTING </button>
+				<button name = "dataSavetest" onclick="endSet()"> End Set-- </button>
 			</div>
 		</div>
 		<div id = "scoreCard">
@@ -217,6 +217,18 @@
             button.setAttribute('onClick', "readPowerUp(\""+data+"\", this, 30)");
             button.className = "powerUp";
             ev.target.appendChild(button);
+        }
+        
+        function endSet(){
+        	if(testTotal == true){
+				messages();
+				if($('#player1 form')[set+OTset].id != "otset"+OTset+"p1"){
+					if(set >= 1){
+					newStatTable();		
+					}
+				}
+			window.displayNumber = 2;
+			}
         }
 		</script>
 		<!-- Winner Pop up -->

@@ -283,12 +283,14 @@ function shock(object, number){
 	object.remove();
 }
 
-function shockShifter(workingObj, percent){					
+function shockShifter(workingObj, percent){		
+	console.log("TEST");			
 	string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
 	string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
 	string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
 	string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
 	for(var ii = 1; ii < workingObj.options.length; ii++){
+		workingObj.options[ii].remove();o
 		ii -= 1;
 	}
 	workingObj.add(new Option("0", "0"));
