@@ -49,7 +49,7 @@
 				<img id ="shock" src = "images/shock.jpg" width="40" height="40" draggable="true" ondragstart="drag(event)">
 			</div>
 			<div>
-				<button name = "dataSavetest" onclick="endSet()"> End Set-- </button>
+				<button name = "dataSavetest" onclick="endSet()"> End Set </button>
 			</div>
 		</div>
 		<div id = "scoreCard">
@@ -220,11 +220,26 @@
         }
         
         function endSet(){
+    		var testTotal = true
+			for(j = 0; j < $('#player1 form')[set+OTset].length; j++){
+				if(!$('#player1 form')[set+OTset][j].onclick){
+					if($('#player1 form')[set+OTset][j].className != "shotdone"){
+						testTotal = false;
+					}
+				}
+			}
+			for(j = 0; j < $('#player2 form')[set+OTset].length; j++){
+				if(!$('#player2 form')[set+OTset][j].onclick){
+					if($('#player2 form')[set+OTset][j].className != "shotdone"){
+						testTotal = false;
+					}
+				}
+			}
         	if(testTotal == true){
 				messages();
 				if($('#player1 form')[set+OTset].id != "otset"+OTset+"p1"){
 					if(set >= 1){
-					newStatTable();		
+					newStatTable();
 					}
 				}
 			window.displayNumber = 2;

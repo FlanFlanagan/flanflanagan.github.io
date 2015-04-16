@@ -30,6 +30,13 @@ function readPowerUp(string, object, number){
 	}
 }
 
+function lightWeaponMastery(object){
+	parentDiv = object.parentNode.parentNode.parentNode;
+	parentDivSet = parentDiv.children.namedItem(parentDiv.id+'set'+set);
+		
+}
+
+
 function tenPointMastery(object){
 	parentDiv = object.parentNode.parentNode.parentNode;
 	parentDivSet = parentDiv.children.namedItem(parentDiv.id+'set'+set);
@@ -63,8 +70,8 @@ function thirtyPointMastery(object){
 				} else {
 					string30 = Math.max((parseFloat(workingObj.item(3).value))*scoreTrack2[set][1]*0.6, 30).toString();
 				}
-				workingObj.options[3].value = string10;
-				workingObj.options[3].innerHTML = string10;
+				workingObj.options[3].value = string30;
+				workingObj.options[3].innerHTML = string30;
 				break;				
 			}
 		}	
@@ -84,8 +91,8 @@ function fiftyPointMastery(object){
 				} else {
 					string50 = Math.max((parseFloat(workingObj.item(4).value))*scoreTrack2[set][2]*0.25, 30).toString();
 				}
-				workingObj.options[4].value = string10;
-				workingObj.options[4].innerHTML = string10;
+				workingObj.options[4].value = string50;
+				workingObj.options[4].innerHTML = string50;
 				break;				
 			}
 		}	
@@ -283,14 +290,13 @@ function shock(object, number){
 	object.remove();
 }
 
-function shockShifter(workingObj, percent){		
-	console.log("TEST");			
+function shockShifter(workingObj, percent){					
 	string10 = Math.floor(parseFloat(workingObj.item(2).value) * (1 - (percent))).toString();
 	string30 = Math.floor(parseFloat(workingObj.item(3).value) * (1 - (percent))).toString();
 	string50 = Math.floor(parseFloat(workingObj.item(4).value) * (1 - (percent))).toString();
 	string100 = Math.floor(parseFloat(workingObj.item(5).value) * (1 - (percent))).toString();
 	for(var ii = 1; ii < workingObj.options.length; ii++){
-		workingObj.options[ii].remove();o
+		workingObj.options[ii].remove();
 		ii -= 1;
 	}
 	workingObj.add(new Option("0", "0"));
