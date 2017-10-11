@@ -1,0 +1,99 @@
+
+body {
+	background: #00B366;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#topLevel {
+	color: #FFFFFF;
+	font-size: 25px;
+	background: #00bfff;
+	height: 10%;
+	border: 4px solid black;
+	text-align: center;
+	text-shadow: black 0.1em 0.1em 0.1em;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
+   	font-family: Rockwell;
+}
+
+#sideBar{
+	margin-top: 0.5%;
+	float: left;
+	color: #00B366;
+	background: #00B366;
+	width: 10%;
+	height: 50%;
+}
+
+#vizFrame{
+	margin-top: 0.5%;
+	height:55em;
+	width:110em;
+	background: #00B366;
+	float: left;
+	overflow: auto;
+}
+
+.total{
+	font-size: 20px;
+}
+
+input {
+	background-color: #AAAAAA;
+	color: #000000;
+	height: 20px;
+	font-family: "Felix Titling";
+	font-size: 20px;
+	font-weight: bold;
+}
+
+select {
+	background-color: #AAAAAA;
+	-moz-box-shadow:    inset 0 0 10px #515151;
+    -webkit-box-shadow: inset 0 0 10px #515151;
+   	box-shadow:         inset 0 0 10px #515151;
+   	font-weight: bold;
+   	font-size: 20px;
+}
+
+option {
+	-moz-box-shadow:    inset 0 0 10px #515151;
+    -webkit-box-shadow: inset 0 0 10px #515151;
+   	box-shadow:         inset 0 0 10px #515151;
+   	font-weight: bold;
+  	font-size: 20px;
+}
+
+button{
+	text-align: center;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+	background-color: #00bfff;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+#sideBar button {
+	text-align: center;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+	background-color: #00bfff;
+	width: 250px;
+	height: 20px;
+	font-size: 10px;
+   	border-radius: 10px;	
+}
+
+form button {
+	width: auto;
+	height: auto;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
