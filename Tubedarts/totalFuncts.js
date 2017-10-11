@@ -137,6 +137,7 @@ function comeBackTest(){
 		}
 	}
 }
+
 function comeBackMessage1(){
 	if(player1CB75 == true){
 		comeBack75($('#player1Name')[0].value);
@@ -148,6 +149,7 @@ function comeBackMessage1(){
 		comeBack300($('#player1Name')[0].value);
 	}
 }
+
 function comeBackMessage2(){
 	if(player2CB75 == true){
 		comeBack75($('#player2Name')[0].value);

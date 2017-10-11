@@ -193,7 +193,7 @@ function colorChange1(selectObj){
 		catchChainTracker(selectObj.nextSibling)
 		tbChainSelect(selectObj.nextSibling, selectObj.value);
 	}
-	if(testTotal == true){
+	/*if(testTotal == true){
 		messages();
 		if($('#player1 form')[set+OTset].id != "otset"+OTset+"p1"){
 			if(set >= 1){
@@ -201,7 +201,7 @@ function colorChange1(selectObj){
 			}
 		}
 		window.displayNumber = 2;
-	}
+	}*/
 	selectObj.oldValue = selectObj.value;
 	// Running the box // 
 	runFacyBox();					
@@ -412,9 +412,6 @@ function addOT(){
   		this.previousSibling.add(Option(string100, string100));
   		this.previousSibling.add(Option("delete", "delete"));
 	});
-}
-
-function newCatch(){	
 }
 
 function gameWinnerTest(){
