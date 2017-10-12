@@ -76,16 +76,16 @@ function newSet(){
 	}
 	$("form").submit(function(){
 		return false;
-	})
+	});
 	$("select").submit(function() {
 		$(this).addClass('shotcomplete');
 	});
 	var catchset = '.catchbutton' + parseFloat(set);
 	$(catchset).click(function(){
 		catchChainTracker(this);
-		catchChainSelect(this, catchChainMultipliers[catchChainTotal])
+		catchChainSelect(this, catchChainMultipliers[catchChainTotal]);
 	});
-	$(catchset).attr('style', 'color:yellow')
+	$(catchset).attr('style', 'color:yellow');
 	OTround = 0;
 	total1Parse = '#player1set' + parseFloat(set);
 	total2Parse = '#player2set' + parseFloat(set);
@@ -94,7 +94,7 @@ function newSet(){
 }
 
 function colorChange1(selectObj){
-	facyBoxMessage.splice(0, facyBoxMessage.length)
+	facyBoxMessage.splice(0, facyBoxMessage.length);
 	// Color change //
 	idx = selectObj.selectedIndex;
 	//Catch chain reset
@@ -120,7 +120,7 @@ function colorChange1(selectObj){
 			selectObj.previousSibling.previousSibling.previousSibling.setAttribute('style', 'color:grey');
 			divID = selectObj.parentNode.parentNode.id;
 			if (divID == 'player1'){
-				formID = document.getElementById('player2').children.namedItem('player2set'+set)
+				formID = document.getElementById('player2').children.namedItem('player2set'+set);
 				for (var i = 0; i < formID.children.length; i++){
 					if (formID.children.item(i).type == 'select-one'){
 						if(formID.children.item(i).id.substr(4,10) == selectObj.id.substr(4,10)){

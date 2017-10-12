@@ -3,10 +3,10 @@
 function worldMap(){
 	var map = document.createElement("img");
 	map.src = "Farlene/images/farlene.png";
-	document.getElementById("vizFrame").append(map);
+	$("#vizFrame").append(map);
 }
 
-/*$('.farlene')
+$('.farlene')
 // tile mouse actions
 .on('mouseover', function(){
 	$(this).children('.photo').css({'transform': 'scale('+ $(this).attr('data-scale') +')'});
@@ -26,4 +26,4 @@ function worldMap(){
     .append('<div class="txt"><div class="x">'+ $(this).attr('data-scale') +'x</div>ZOOM ON<br>HOVER</div>')
     // set up a background image for each tile based on data-image attribute
     .children('.photo').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
-});*/
+});
