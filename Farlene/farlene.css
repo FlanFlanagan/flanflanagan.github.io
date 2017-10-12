@@ -62,9 +62,18 @@ select {
 
 #farlene{
 	height: 60em;
-	width: 120em;
-	background-color: #AAAAAA;
+	width: 140em;
+	background-color: #00B366;
+	float: left;
 }
+
+#farlene_info{
+	height: 20em;
+	width: 20em;
+	background-color: #00B366;
+	float: left;
+}
+
 
 option {
 	-moz-box-shadow:    inset 0 0 10px #515151;
