@@ -20,15 +20,6 @@
 			<button name = "worldMap" onClick = "worldMap()">World Map</button>
 		</div>
 		<div id = "vizFrame">
-			<div id="farlene"></div>
+			<!--<div id="farlene"></div>-->
 		</div>
 	</body>
-	<script>
-		var map = L.map('farlene', {
-    		crs: L.CRS.Simple
-		});
-	
-		var bounds = [[0,0], [1000,1500]];
-		var image = L.imageOverlay('Farlene/images/farlene.png', bounds).addTo(map);
-		map.fitBounds(bounds);
-	</script>

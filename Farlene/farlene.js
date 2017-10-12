@@ -1,29 +1,28 @@
-// Farlene Functions //
+// Farlene Functions and variables//
+var mapBool = false;
 
 function worldMap(){
-	var map = document.createElement("img");
-	map.src = "Farlene/images/farlene.png";
-	$("#vizFrame").append(map);
+	if(mapBool == true){
+		node = document.getElementById('farlene');
+		document.getElementById('vizFrame').removeChild(node);
+		mapBool = false;
+		map = null;
+		return;
+	}
+	if(mapBool == false){
+		var div = document.createElement("div");
+		div.id = 'farlene';
+		$("#vizFrame").append(div);
+		
+		var map = L.map('farlene', {
+			crs: L.CRS.Simple
+		});
+	
+		var bounds = [[0,0], [1000,1500]];
+		var image = L.imageOverlay('Farlene/images/farlene.png', bounds).addTo(map);
+		map.fitBounds(bounds);
+		mapBool = true;	
+		return;	
+	}
 }
 
-$('.farlene')
-// tile mouse actions
-.on('mouseover', function(){
-	$(this).children('.photo').css({'transform': 'scale('+ $(this).attr('data-scale') +')'});
-})
-.on('mouseout', function(){
-	$(this).children('.photo').css({'transform': 'scale(1)'});
-})
-.on('mousemove', function(e){
-	$(this).children('.photo').css({'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +'%'});
-})
-// tiles set up
-.each(function(){
-  $(this)
-    // add a photo container
-    .append('<div class="photo"></div>')
-    // some text just to show zoom level on current item in this example
-    .append('<div class="txt"><div class="x">'+ $(this).attr('data-scale') +'x</div>ZOOM ON<br>HOVER</div>')
-    // set up a background image for each tile based on data-image attribute
-    .children('.photo').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
-});
