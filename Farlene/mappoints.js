@@ -38,57 +38,74 @@ function addPoints(map){
 	for(var key in cities){
 		var city = cities[key];
 		y = parseFloat(city.y); x = parseFloat(city.x);
-		var circle = L.marker([y,x], {
+		var marker = L.marker([y,x], {
 	   		bubblingMouseEvents: false
 		});
-		circle.city = city;
-		circle.on('click', function(e){
-			backButton(e.target.city);
+		marker.city = city;
+		marker.on('click', function(e){
+			backButton('city', e.target.city);
 		});
-		circle.addTo(map);
+		marker.addTo(map);
+	}
+	for(var key in temples){
+		var temple = temples[key];
+		y = parseFloat(temple.y); x = parseFloat(temple.x);
+		var marker = L.marker([y,x], {
+	   		bubblingMouseEvents: false
+		});
+		marker.temple = temple;
+		marker.on('click', function(e){
+			backButton('temple', e.target.temple);
+		});
+		marker.addTo(map);
 	}
 	return map;
 }
 
-function openInfo(city){
+function openInfo(type, obj){
 	$('#farleneInfo').empty();
-	$('#farleneInfo').append('Population: ' + city.pop);
+	if(type == 'city'){
+		$('#farleneInfo').append('Population: ' + obj.pop);
+	}
 	p = document.createElement('p');
-	p.append(city.info);
+	p.append(obj.info);
 	$('#farleneInfo').append(p);
-	$('#farleneInfo').append(genBackButt(city));
+	$('#farleneInfo').append(genBackButt(type, obj));
 }
 
-function openStores(city){
+function openStores(type, obj){
 	$('#farleneInfo').empty();
-	$('#farleneInfo').append(genBackButt(city));
+	$('#farleneInfo').append(genBackButt(type, obj));
 }
 
-function openNotes(city){
+function openNotes(type, obj){
 	$('#farleneInfo').empty();
-	for(var i = 0; i < city.notes.length; i++){
+	for(var i = 0; i < obj.notes.length; i++){
 		p = document.createElement('p');
-		p.append(city.notes[i]);
+		p.append(obj.notes[i]);
 		$('#farleneInfo').append(p);	
 	}
-	$('#farleneInfo').append(genBackButt(city));
+	$('#farleneInfo').append(genBackButt(type, obj));
 }
 
-function backButton(city){
+function backButton(type, obj){
 	$('#farleneInfo').empty();
 	info = genButton('Information');
 	info.onclick = function(){
-		openInfo(city);
+		openInfo(type, obj);
 	};
-	stores = genButton('Stores');
-	stores.onclick = function(){
-		openStores(city);
-	};
+	if(type == 'city'){
+		stores = genButton('Stores');
+		stores.onclick = function(){
+			openStores(type, obj);
+		};
+	}
 	notes = genButton('Notes');
 	notes.onclick = function(){
-		openNotes(city);
+		openNotes(type, obj);
 	};
-	var eleArray = [info, stores, notes];
+	var eleArray = [info, notes];
+	if(type == 'city'){eleArray = [info, stores, notes];}
 	$('#farleneInfo').append(eleArray);
 }
 
@@ -98,11 +115,14 @@ function genButton(name){
 	return button;
 }
 
-function genBackButt(city){
+function genBackButt(type, obj){
 	back = genButton("Back");
 	back.onclick = function(){
-		backButton(city);
+		if(type == 'city'){
+			backButton('city', obj);
+		} else if(type == 'temple'){
+			backButton('temple', obj);
+		}
 	};	
 	return back;
 }
-

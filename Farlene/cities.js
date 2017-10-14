@@ -12,7 +12,7 @@ var cities = {
 		"x": 929.1,
 		"pop": "Middle-sized",
 		"info": 'Winstmarch City is a city that survives on its tourism. The major commodity is the, exceedingly rare and very difficult to hunt, Dresdres Cacoo. The feathers of the Dresdres Cacoo shimmer through' +
-		'the colors of the visible spectrum while it is alive. A dead cacoo still maintains a beautiful sheen on it\'s plumage, however the colour pattern is locked into the color pattern it was displaying upon it\'s death.' ,
+		'the colors of the visible spectrum while it is alive. A dead cacoo still maintains a beautiful sheen on its plumage, however the colour pattern is locked into the color pattern it was displaying upon its death.' ,
 		"stores": [],
 		"notes": [], 
 	},
@@ -40,20 +40,22 @@ var cities = {
 		"stores": [],
 		"notes": ["Stopplebanger was discovered here, along with Dessicator", "Bilberry turned on the group here and killed Mark. He also gravely wounded Barston"], 
 	},
-	"Rockfish": {
-		"y": 536,
-		"x": 904,
-		"pop": "Very small-sized",
-		"info": "A small mining town. The majority of the population works in the black salt mines. Black salt is the primary export of the city.",
+	"Dawns Light": {
+		"y": 358,
+		"x": 787,
+		"pop": "Very Large",
+		"info": "A very large town. This is also the wealthiest town in Pastellia. The council and the king meet here to discuss political matters. " +
+				"The highest concentration of skilled craftsmen and artistics live here. It also rivals Yuhlin as one of the largest shipping ports in Farlene." +
+				"What little standing military Pastellia has is based out of this city.",
 		"stores": [],
-		"notes": ["Stopplebanger was discovered here, along with Dessicator", "Bilberry turned on the group and killed Mark and gravely wounded Barston"], 
+		"notes": ["Capital of Pastellia",], 
 	},
 };
 
 
 
 /*
-"Forstall": {
+"City Name": {
 	"y": ,
 	"x": ,
 	"pop": "",
