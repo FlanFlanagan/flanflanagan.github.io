@@ -38,7 +38,7 @@ var cities = {
 		"pop": "Very small-sized",
 		"info": "A small mining town. The majority of the population works in the black salt mines. Black salt is the primary export of the city.",
 		"stores": [],
-		"notes": ["Stopplebanger was discovered here, along with Dessicator", "Bilberry turned on the group here and killed Mark. He also gravely wounded Barston"], 
+		"notes": ["Stopplebanger was discovered here, along with Desiccator", "Bilberry turned on the group here and killed Mark. He also gravely wounded Barston"], 
 	},
 	"Dawns Light": {
 		"y": 358,
