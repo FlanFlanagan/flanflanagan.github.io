@@ -25,7 +25,7 @@ function worldMap(){
 	map.on('click', function(e){
 	    popup
 	        .setLatLng(e.latlng)
-	        .setContent("You clicked the map at " + e.latlng.toString())
+	        .setContent("Coordinates: " + e.latlng.toString().replace("LatLng", ""))
 	        .openOn(map);
 	});
 	var bounds = [[0,0], [1000,1500]];
