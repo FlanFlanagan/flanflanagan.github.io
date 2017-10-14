@@ -65,13 +65,26 @@ select {
 	width: 140em;
 	background-color: #00B366;
 	float: left;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
 }
 
-#farlene_info{
-	height: 20em;
+#farleneInfo{
+	height: 35em;
 	width: 20em;
-	background-color: #00B366;
+	border: 2px solid black;
 	float: left;
+	margin-left: 1em;
+	background: #00B366;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
+   	font-family: Rockwell;
+   	font-size: 1.0em;
+   	padding: 5px 5px 5px 5px
 }
 
 
