@@ -38,6 +38,14 @@ var cities = {
 		"pop": "Very small-sized",
 		"info": "A small mining town. The majority of the population works in the black salt mines. Black salt is the primary export of the city.",
 		"stores": [],
+		"notes": ["Stopplebanger was discovered here, along with Dessicator", "Bilberry turned on the group here and killed Mark. He also gravely wounded Barston"], 
+	},
+	"Rockfish": {
+		"y": 536,
+		"x": 904,
+		"pop": "Very small-sized",
+		"info": "A small mining town. The majority of the population works in the black salt mines. Black salt is the primary export of the city.",
+		"stores": [],
 		"notes": ["Stopplebanger was discovered here, along with Dessicator", "Bilberry turned on the group and killed Mark and gravely wounded Barston"], 
 	},
 };
