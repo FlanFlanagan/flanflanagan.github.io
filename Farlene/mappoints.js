@@ -1,13 +1,15 @@
 //Sets up the map points//
 
 var popup = L.popup();
+var loc1;
+var loc2;
 
 function onMarkOver() {
 	$('#farleneInfo').empty();
     $('#farleneInfo').append("info");
 }
 
-function worldMap(){
+function worldMap(style){
 	$('#vizFrame').empty();
 	map = null;
 	var mapDiv = document.createElement("div");
@@ -23,13 +25,19 @@ function worldMap(){
 	});
 	map = addPoints(map);
 	map.on('click', function(e){
-	    popup
+		loc2 = loc1;
+		loc1 = e.latlng;
+		if(loc2){
+			d = distance_calc(loc1, loc2).toFixed(2);			
+		}
+		popup
 	        .setLatLng(e.latlng)
-	        .setContent("Coordinates: " + e.latlng.toString().replace("LatLng", ""))
+	        .setContent("Coordinates: " + loc1.toString().replace("LatLng", "") + 
+	        '</br>Days travel at normal pace: ' + d)
 	        .openOn(map);
 	});
 	var bounds = [[0,0], [1000,1500]];
-	var image = L.imageOverlay('Farlene/images/farlene.png', bounds).addTo(map);
+	var image = L.imageOverlay('Farlene/images/'+style+'.png', bounds).addTo(map);
 	map.fitBounds(bounds);
 	return;	
 }
@@ -125,4 +133,11 @@ function genBackButt(type, obj){
 		}
 	};	
 	return back;
+}
+function distance_calc(loc1, loc2){
+	x = loc1.lng - loc2.lng;
+	y = loc1.lat - loc2.lat;
+	d = Math.sqrt(x*x + y*y);
+	d = d / 14;
+	return d;
 }
