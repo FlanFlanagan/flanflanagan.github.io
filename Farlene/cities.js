@@ -10,9 +10,9 @@ var cities = {
 	"Winstmarch City": {
 		"y": 441.2,
 		"x": 929.1,
-		"pop": "Middle-sized",
-		"info": 'Winstmarch City is a city that survives on its tourism. The major commodity is the, exceedingly rare and very difficult to hunt, Dresdres Cacoo. The feathers of the Dresdres Cacoo shimmer through' +
-		'the colors of the visible spectrum while it is alive. A dead cacoo still maintains a beautiful sheen on its plumage, however the colour pattern is locked into the color pattern it was displaying upon its death.' ,
+		"pop": "Medium",
+		"info": "Winstmarch City is a city that survives on its tourism. The major commodity is the, exceedingly rare and very difficult to hunt, Dresdres Cacoo. The feathers of the Dresdres Cacoo shimmer through" +
+		"the colors of the visible spectrum while it is alive. A dead cacoo still maintains a beautiful sheen on its plumage, however the colour pattern is locked into the color pattern it was displaying upon its death." ,
 		"stores": [],
 		"notes": [], 
 	},
@@ -27,7 +27,7 @@ var cities = {
 	"Yuhlin City": {
 		"y": 342,
 		"x": 963,
-		"pop": "Medium-sized",
+		"pop": "Medium",
 		"info": "Captial of Farmlia. \nLarge shipping port. Most of the lumber and other trade goods from the eastern portion of Farlene flow through here.",
 		"stores": [],
 		"notes": [], 
@@ -35,7 +35,7 @@ var cities = {
 	"Rockfish": {
 		"y": 536,
 		"x": 904,
-		"pop": "Very small-sized",
+		"pop": "Very small",
 		"info": "A small mining town. The majority of the population works in the black salt mines. Black salt is the primary export of the city.",
 		"stores": [],
 		"notes": ["Stopplebanger was discovered here, along with Desiccator", "Bilberry turned on the group here and killed Mark. He also gravely wounded Barston"], 

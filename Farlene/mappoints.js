@@ -42,8 +42,9 @@ function addPoints(map){
 	   		bubblingMouseEvents: false
 		});
 		marker.city = city;
+		marker.name = key;
 		marker.on('click', function(e){
-			backButton('city', e.target.city);
+			backButton('city', e.target.name, e.target.city);
 		});
 		marker.addTo(map);
 	}
@@ -54,15 +55,16 @@ function addPoints(map){
 	   		bubblingMouseEvents: false
 		});
 		marker.temple = temple;
+		marker.name = key;
 		marker.on('click', function(e){
-			backButton('temple', e.target.temple);
+			backButton('temple', e.target.name, e.target.temple);
 		});
 		marker.addTo(map);
 	}
 	return map;
 }
 
-function openInfo(type, obj){
+function openInfo(type, name, obj){
 	$('#farleneInfo').empty();
 	if(type == 'city'){
 		$('#farleneInfo').append('Population: ' + obj.pop);
@@ -70,39 +72,40 @@ function openInfo(type, obj){
 	p = document.createElement('p');
 	p.append(obj.info);
 	$('#farleneInfo').append(p);
-	$('#farleneInfo').append(genBackButt(type, obj));
+	$('#farleneInfo').append(genBackButt(type, name, obj));
 }
 
-function openStores(type, obj){
+function openStores(type, name, obj){
 	$('#farleneInfo').empty();
-	$('#farleneInfo').append(genBackButt(type, obj));
+	$('#farleneInfo').append(genBackButt(type, name, obj));
 }
 
-function openNotes(type, obj){
+function openNotes(type, name, obj){
 	$('#farleneInfo').empty();
 	for(var i = 0; i < obj.notes.length; i++){
 		p = document.createElement('p');
 		p.append(obj.notes[i]);
 		$('#farleneInfo').append(p);	
 	}
-	$('#farleneInfo').append(genBackButt(type, obj));
+	$('#farleneInfo').append(genBackButt(type, name, obj));
 }
 
-function backButton(type, obj){
+function backButton(type, name, obj){
 	$('#farleneInfo').empty();
+	$('#farleneInfo').append(addName(name));
 	info = genButton('Information');
 	info.onclick = function(){
-		openInfo(type, obj);
+		openInfo(type, name, obj);
 	};
 	if(type == 'city'){
 		stores = genButton('Stores');
 		stores.onclick = function(){
-			openStores(type, obj);
+			openStores(type, name, obj);
 		};
 	}
 	notes = genButton('Notes');
 	notes.onclick = function(){
-		openNotes(type, obj);
+		openNotes(type, name, obj);
 	};
 	var eleArray = [info, notes];
 	if(type == 'city'){eleArray = [info, stores, notes];}
@@ -115,14 +118,20 @@ function genButton(name){
 	return button;
 }
 
-function genBackButt(type, obj){
+function genBackButt(type, name, obj){
 	back = genButton("Back");
 	back.onclick = function(){
 		if(type == 'city'){
-			backButton('city', obj);
+			backButton('city', name, obj);
 		} else if(type == 'temple'){
-			backButton('temple', obj);
+			backButton('temple', name, obj);
 		}
 	};	
 	return back;
+}
+
+function addName(name){
+	p = document.createElement('h3');
+	p.append(name);
+	return p;
 }

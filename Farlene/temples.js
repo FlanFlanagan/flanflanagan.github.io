@@ -15,7 +15,7 @@ var temples = {
 		'near the back of the tunnel system. The room is decorated as per Harmony\'s wishes. Musical elements and festivities are painted into the rooms moral.',
 		"notes": [], 
 	},
-	"Temple Name": {
+	"Furance": {
 		"y": 448,
 		"x": 921,
 		"info": "This temple is dedicated to the axe Furance. It is a small temple, the largest room is the spirit room. The paintings on the wall depict a series of advanced and powerful flow movements while using" + 
