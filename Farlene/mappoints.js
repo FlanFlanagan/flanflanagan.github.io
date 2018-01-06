@@ -61,7 +61,8 @@ function addPoints(map){
 		var temple = temples[key];
 		y = parseFloat(temple.y); x = parseFloat(temple.x);
 		var marker = L.marker([y,x], {
-	   		bubblingMouseEvents: false
+	   		bubblingMouseEvents: false,
+	   		icon: templeIcon
 		});
 		marker.temple = temple;
 		marker.name = key;
