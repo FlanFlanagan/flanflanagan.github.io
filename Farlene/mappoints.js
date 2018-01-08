@@ -53,7 +53,7 @@ function addPoints(map){
 		marker.city = city;
 		marker.name = key;
 		marker.on('click', function(e){
-			backButton('city', e.target.name, e.target.city);
+			genInfo('city', e.target.name, e.target.city);
 		});
 		marker.addTo(map);
 	}
@@ -67,7 +67,7 @@ function addPoints(map){
 		marker.temple = temple;
 		marker.name = key;
 		marker.on('click', function(e){
-			backButton('temple', e.target.name, e.target.temple);
+			genInfo('temple', e.target.name, e.target.temple);
 		});
 		marker.addTo(map);
 	}
@@ -77,7 +77,9 @@ function addPoints(map){
 function openInfo(type, name, obj){
 	$('#farleneInfo').empty();
 	if(type == 'city'){
-		$('#farleneInfo').append('Population: ' + obj.pop);
+		p = document.createElement('p');
+		p.append('Population: ' + obj.pop);
+		$('#farleneInfo').append(p);
 	}
 	p = document.createElement('p');
 	p.append(obj.info);
@@ -100,26 +102,29 @@ function openNotes(type, name, obj){
 	$('#farleneInfo').append(genBackButt(type, name, obj));
 }
 
-function backButton(type, name, obj){
+function genInfo(type, name, obj){
 	$('#farleneInfo').empty();
 	$('#farleneInfo').append(addName(name));
 	info = genButton('Information');
 	info.onclick = function(){
 		openInfo(type, name, obj);
 	};
-	if(type == 'city'){
-		stores = genButton('Stores');
-		stores.onclick = function(){
-			openStores(type, name, obj);
-		};
-	}
 	notes = genButton('Notes');
 	notes.onclick = function(){
 		openNotes(type, name, obj);
 	};
 	var eleArray = [info, notes];
-	if(type == 'city'){eleArray = [info, stores, notes];}
-	$('#farleneInfo').append(eleArray);
+	if(type == 'city'){
+		stores = genButton('Stores');
+		stores.onclick = function(){
+			openStores(type, name, obj);
+		};
+		eleArray.push(stores);
+	}
+	var buttonDiv = document.createElement('div');
+	buttonDiv.id = 'buttonDiv';
+	$('#farleneInfo').append(buttonDiv);
+	$('#buttonDiv').append(eleArray);
 }
 
 function genButton(name){
@@ -132,9 +137,9 @@ function genBackButt(type, name, obj){
 	back = genButton("Back");
 	back.onclick = function(){
 		if(type == 'city'){
-			backButton('city', name, obj);
+			genInfo('city', name, obj);
 		} else if(type == 'temple'){
-			backButton('temple', name, obj);
+			genInfo('temple', name, obj);
 		}
 	};	
 	return back;

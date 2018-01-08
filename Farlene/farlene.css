@@ -29,10 +29,10 @@ body {
 	height: 50%;
 }
 
-#vizFrame{
+#vizFrame {
 	margin-top: 0.5%;
-	height:55em;
-	width:110em;
+	height: 45em;
+	width:90%;
 	background: #00B366;
 	float: left;
 	overflow: auto;
@@ -60,9 +60,9 @@ select {
    	font-size: 20px;
 }
 
-#farlene{
-	height: 60em;
-	width: 140em;
+#farlene {
+	height: inherit;
+	width: 75%;
 	background-color: #00B366;
 	float: left;
 	border: 2px solid black;
@@ -70,14 +70,15 @@ select {
     -webkit-box-shadow: inset 0 0 10px #000000;
    	box-shadow:         inset 0 0 10px #000000;
    	border-radius: 10px;
+	box-sizing: border-box;
 }
 
-#farleneInfo{
-	height: 35.4em;
-	width: 20em;
+#farleneInfo {
+	height: inherit;
+	width: 18%;
 	border: 2px solid black;
 	float: left;
-	margin-left: 1em;
+	margin-left: 0.5%;
 	background: #00B366;
    	-moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
@@ -85,9 +86,20 @@ select {
    	border-radius: 10px;
    	font-family: Rockwell;
    	font-size: 1.0em;
-   	padding: 5px 5px 5px 5px
+   	box-sizing: border-box;
 }
 
+#farleneInfo p {
+	margin: 2%;
+}
+
+#farleneInfo div {
+	margin: 2%;
+}
+
+#farleneInfo h3 {
+	margin: 2%;
+}
 
 option {
 	-moz-box-shadow:    inset 0 0 10px #515151;
@@ -97,7 +109,7 @@ option {
   	font-size: 20px;
 }
 
-button{
+button {
 	text-align: center;
    	-moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;

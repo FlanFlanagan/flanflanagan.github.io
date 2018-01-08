@@ -11,15 +11,15 @@ var temples = {
 	"Harmony": {
 		"y": 543,
 		"x": 979.1,
-		"info": 'This temple is located in a tunnel system seemingly built into a short cliff side. The tunnel seems to be a combination of a gnoll encampment and the Nithlum temple. The spirit room in this temple is located '+
-		'near the back of the tunnel system. The room is decorated as per Harmony\'s wishes. Musical elements and festivities are painted into the rooms moral.',
+		"info": 'This temple is located in a tunnel system built into a short cliff side. The temple entrance appears to have been taken over by a gnoll encampment. The spirit room in this temple is located '+
+		'near the back of the tunnel system. The room is decorated with musical elements and festivities painted into murals on the walls.',
 		"notes": [], 
 	},
 	"Furance": {
 		"y": 448,
 		"x": 921,
 		"info": "This temple is dedicated to the axe Furance. It is a small temple, the largest room is the spirit room. The paintings on the wall depict a series of advanced and powerful flow movements while using" + 
-		' an axe in combat. Each painting is borded by a dark green flame',
+		' an axe in combat. Each painting is bordered by a dark green flame',
 		"notes": [], 
 	}
 };
