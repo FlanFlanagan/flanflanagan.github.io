@@ -71,6 +71,20 @@ function addPoints(map){
 		});
 		marker.addTo(map);
 	}
+	for(var key in interests){
+		var interest = interests[key];
+		y = parseFloat(interest.y); x = parseFloat(interest.x);
+		var marker = L.marker([y,x], {
+	   		bubblingMouseEvents: false,
+	   		icon: interestIcon
+		});
+		marker.interest = interest;
+		marker.name = key;
+		marker.on('click', function(e){
+			genInfo('interest', e.target.name, e.target.interest);
+		});
+		marker.addTo(map);
+	}
 	return map;
 }
 
@@ -113,7 +127,10 @@ function genInfo(type, name, obj){
 	notes.onclick = function(){
 		openNotes(type, name, obj);
 	};
-	var eleArray = [info, notes];
+	var eleArray = [info];
+	if( type != 'interest'){
+		eleArray.push(notes);
+	}
 	if(type == 'city'){
 		stores = genButton('Stores');
 		stores.onclick = function(){
@@ -140,6 +157,8 @@ function genBackButt(type, name, obj){
 			genInfo('city', name, obj);
 		} else if(type == 'temple'){
 			genInfo('temple', name, obj);
+		} else if(type == 'interest'){
+			genInfo('interest', name, obj);
 		}
 	};	
 	return back;
