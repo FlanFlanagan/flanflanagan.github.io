@@ -24,7 +24,7 @@ function worldMap(style){
 	var map = L.map('farlene', {
 		crs: L.CRS.Simple
 	});
-	map = addPoints(map);
+	map = addPoints(map, style);
 	map.on('click', function(e){
 		loc2 = loc1;
 		loc1 = e.latlng;
@@ -43,38 +43,11 @@ function worldMap(style){
 	return;	
 }
 
-function hamletMap(style){
-	$('#vizFrame').empty();
-	map = null;
-	var mapDiv = document.createElement("div");
-	mapDiv.id = 'hamlet';
-	$("#vizFrame").append(mapDiv);
-	
-	var infoDiv = document.createElement("div");
-	infoDiv.id = 'hamletInfo';
-	$("#vizFrame").append(infoDiv);
-	
-	var map = L.map('farlene', {
-		crs: L.CRS.Simple
-	});
-	map.on('click', function(e){
-		loc2 = loc1;
-		loc1 = e.latlng;
-		if(loc2){
-			d = distance_calc(loc1, loc2).toFixed(2);			
-		}
-		popup
-	        .setLatLng(e.latlng)
-	        .setContent("Coordinates: " + loc1.toString().replace("LatLng", "") + 
-	        '</br>Days travel at normal pace: ' + d)
-	        .openOn(map);
-	});
-	var bounds = [[0,0], [1000,1500]];
-	var image = L.imageOverlay('Farlene/images/'+style+'.png', bounds).addTo(map);
-	map.fitBounds(bounds);
-	return;	
-}
+
 function addPoints(map){
+	if(style != 'farlene'){
+		return
+	}
 	for(var key in cities){
 		var city = cities[key];
 		y = parseFloat(city.y); x = parseFloat(city.x);
