@@ -24,7 +24,7 @@ function worldMap(style){
 	var map = L.map('farlene', {
 		crs: L.CRS.Simple
 	});
-	map = addPoints(map);
+	map = addPoints(map, style);
 	map.on('click', function(e){
 		loc2 = loc1;
 		loc1 = e.latlng;
@@ -44,7 +44,10 @@ function worldMap(style){
 }
 
 
-function addPoints(map){
+function addPoints(map, style){
+	if(style != 'farlene'){
+		return
+	}
 	for(var key in cities){
 		var city = cities[key];
 		y = parseFloat(city.y); x = parseFloat(city.x);
