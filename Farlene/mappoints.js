@@ -47,13 +47,16 @@ function hamletMap(style){
 	$('#vizFrame').empty();
 	map = null;
 	var mapDiv = document.createElement("div");
-	mapDiv.id = 'farlene';
+	mapDiv.id = 'hamlet';
 	$("#vizFrame").append(mapDiv);
 	
 	var infoDiv = document.createElement("div");
-	infoDiv.id = 'farleneInfo';
+	infoDiv.id = 'hamletInfo';
 	$("#vizFrame").append(infoDiv);
 	
+	var map = L.map('farlene', {
+		crs: L.CRS.Simple
+	});
 	var bounds = [[0,0], [1000,1500]];
 	var image = L.imageOverlay('Farlene/images/'+style+'.png', bounds).addTo(map);
 	map.fitBounds(bounds);
