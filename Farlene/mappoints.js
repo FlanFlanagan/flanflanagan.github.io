@@ -45,9 +45,9 @@ function worldMap(style){
 
 
 function addPoints(map, style){
-	if(style != 'farlene'){
-		return map
-	}
+	cities = data[style]['cities']
+	temples = data[style]['temples']
+	interests = data[style]['interests']
 	for(var key in cities){
 		var city = cities[key];
 		y = parseFloat(city.y); x = parseFloat(city.x);
