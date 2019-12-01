@@ -88,32 +88,37 @@ var data = {
         }
     },
     'hamlet':{
-        'temples' : {
-            "Desiccator": {
-                "y": 552.3,
-                "x": 895.1,
-                "info": 'This temple houses the desiccator. The desiccator is a plain rusty dagger. Its physical properties are like that of the other Nithlum weapons; light, strong, and deadly.' +
-                'The temple also houses the stopplebanger.',
-                "notes": ['While Mark was retriveing the weapon, the spirit room began to fill with water. The problem was solved by filling the bag of holding with as much water as it could possible hold',
-                        'This temple also had several traps inside of it that appeared to have been previously triggered, though it is not known by what.',
-                        'The stopplebanger escape or was released before Ziggy and Co. arrived.'], 
-            },
-        },
         'cities': {
-            "Montess City": {
-                "y": 502.3,
-                "x": 979.1,
-                "pop": "Large",
-                "info": 'Montess City is the capital of Montess. It is the largest city in the Fiefdom. It also serves as the largest producer of fine lumber. The best craftsmen in the fiefdom can be found in this city.',
-                "stores": [],
+            "Hamlet": {
+                "y": 317.648,
+                "x": 1426.906,
+                "pop": "Small",
+                "info": 'A small village with limited stores. Staging ground for explorers going into the unknown lands.',
+                "stores": ['Journey\'s end', 'Trading Post', 'Alchemy Shop'],
                 "notes": [], 
             },
         },
         'interests': {
-            "Dresdres Cacoo Nest": {
-                "y": 415.3,
-                "x": 920.1,
-                "info": 'Ziggy found a Dresdres Cacoo nest in this location. A cacoo sat on the nest the whole time so he did not get a chance to see if she was nesting eggs.',
+            "Empty Cave": {
+                "y": 223.65,
+                "x": 1297.91,
+                "info": 'An empty cave',
+            },
+            "Yellow Bee Hive": {
+                "y": 502.65,
+                "x": 1264.41,
+                "info": 'The yellow butt bee hive. Exact location known by Loraleth',
+            },
+            "Unknown Temple": {
+                "y": 413.65,
+                "x": 1055.41,
+                "info": 'A temple of unknown origin found by Reginald, Thaddeus, Zip and Bayli. Exact location unknown.',
+            },
+            "Purple Flower Glade": {
+                "y": 382.15,
+                "x": 1158.41,
+                "info": 'A glade of purple flowers used to make stamina potions. Exact location unknown. Discovered by Zip,' +
+                " Bayli, Thaddeus, and Reginald.",
             }
             
         }
