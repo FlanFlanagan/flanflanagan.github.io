@@ -24,7 +24,7 @@ function worldMap(style){
 	var map = L.map('farlene', {
 		crs: L.CRS.Simple
 	});
-	map = addPoints(map, style);
+	map = addPoints(map);
 	map.on('click', function(e){
 		loc2 = loc1;
 		loc1 = e.latlng;
