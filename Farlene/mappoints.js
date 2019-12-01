@@ -127,7 +127,6 @@ function genInfo(type, name, obj){
 	notes.onclick = function(){
 		openNotes(type, name, obj);
 	};
-	var eleArray = [info];
 	if( type != 'interest'){
 		eleArray.push(notes);
 	}
