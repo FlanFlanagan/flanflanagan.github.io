@@ -43,6 +43,22 @@ function worldMap(style){
 	return;	
 }
 
+function HamletMap(style){
+	$('#vizFrame').empty();
+	map = null;
+	var mapDiv = document.createElement("div");
+	mapDiv.id = 'farlene';
+	$("#vizFrame").append(mapDiv);
+	
+	var infoDiv = document.createElement("div");
+	infoDiv.id = 'farleneInfo';
+	$("#vizFrame").append(infoDiv);
+	
+	var bounds = [[0,0], [1000,1500]];
+	var image = L.imageOverlay('Farlene/images/'+style+'.png', bounds).addTo(map);
+	map.fitBounds(bounds);
+	return;	
+}
 function addPoints(map){
 	for(var key in cities){
 		var city = cities[key];
