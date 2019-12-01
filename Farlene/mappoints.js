@@ -43,7 +43,7 @@ function worldMap(style){
 	return;	
 }
 
-function HamletMap(style){
+function hamletMap(style){
 	$('#vizFrame').empty();
 	map = null;
 	var mapDiv = document.createElement("div");
