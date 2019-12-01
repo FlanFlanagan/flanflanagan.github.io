@@ -123,10 +123,6 @@ function openNotes(type, name, obj){
 function genInfo(type, name, obj){
 	$('#farleneInfo').empty();
 	$('#farleneInfo').append(addName(name));
-	info = genButton('Information');
-	info.onclick = function(){
-		openInfo(type, name, obj);
-	};
 	notes = genButton('Notes');
 	notes.onclick = function(){
 		openNotes(type, name, obj);
@@ -146,6 +142,7 @@ function genInfo(type, name, obj){
 	buttonDiv.id = 'buttonDiv';
 	$('#farleneInfo').append(buttonDiv);
 	$('#buttonDiv').append(eleArray);
+	openInfo(type, name, obj)
 }
 
 function genButton(name){
