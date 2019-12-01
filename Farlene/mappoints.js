@@ -142,7 +142,8 @@ function genInfo(type, name, obj){
 	buttonDiv.id = 'buttonDiv';
 	$('#farleneInfo').append(buttonDiv);
 	$('#buttonDiv').append(eleArray);
-	openInfo(type, name, obj)
+	p = document.createElement('p');
+	p.append(obj.info);
 }
 
 function genButton(name){
