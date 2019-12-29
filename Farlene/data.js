@@ -122,5 +122,14 @@ var data = {
             }
             
         }
+    },
+    'jobs': {
+        "Perch Guard Kill Order – Flesh Sucking Killer – EXTREME DANGER" : {
+            'font': 'Courier New',
+            'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
+                   ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
+                   ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
+                   ' damage weapons that come in contact with it. Each killed Sucker will reward 400 gold.'
+        }
     }
 }

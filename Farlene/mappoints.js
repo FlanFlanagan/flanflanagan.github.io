@@ -43,6 +43,21 @@ function worldMap(style){
 	return;	
 }
 
+function jobs(){
+	$('#vizFrame').empty();
+	var jobsDiv = document.createElement("div");
+	jobsDiv.id = 'jobs';
+	jobList = data['jobs'];
+	for(var key in jobsList){
+		p = document.createElement('p');
+		p.style('font-family:'+jobsList[key]['font']);
+		p.append(jobsList[key]['job']);
+		jobsDiv.append(p);
+	}
+	$("#vizFrame").append(jobsDiv);
+
+	return;	
+}
 
 function addPoints(map, style){
 	cities = data[style]['cities']
