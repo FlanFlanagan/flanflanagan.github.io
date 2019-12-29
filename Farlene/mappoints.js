@@ -123,12 +123,13 @@ function openNotes(type, name, obj){
 function genInfo(type, name, obj){
 	$('#farleneInfo').empty();
 	$('#farleneInfo').append(addName(name));
+	$('#farleneInfo').append(obj.info);
 	notes = genButton('Notes');
 	notes.onclick = function(){
 		openNotes(type, name, obj);
 	};
 	if( type != 'interest'){
-		eleArray.push(notes);
+		eleArray.push(info);
 	}
 	if(type == 'city'){
 		stores = genButton('Stores');
@@ -140,8 +141,6 @@ function genInfo(type, name, obj){
 	var buttonDiv = document.createElement('div');
 	buttonDiv.id = 'buttonDiv';
 	$('#farleneInfo').append(buttonDiv);
-	p = document.createElement('p');
-	p.append(obj.info);
 }
 
 function genButton(name){

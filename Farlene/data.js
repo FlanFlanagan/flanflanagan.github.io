@@ -112,7 +112,7 @@ var data = {
             "Unknown Temple": {
                 "y": 413.65,
                 "x": 1055.41,
-                "info": 'A temple of unknown origin found by Reginald, Thaddeus, Zip and Bayli. Exact location unknown.',
+                "info": 'A temple of unknown origin found by Reginald, Thaddeus, Zip and Bayli. Exact location unknown. Teleportation available',
             },
             "Purple Flower Glade": {
                 "y": 382.15,
