@@ -47,7 +47,7 @@ function jobs(){
 	$('#vizFrame').empty();
 	var jobsDiv = document.createElement("div");
 	jobsDiv.id = 'jobs';
-	jobList = data['jobs'];
+	jobsList = data['jobs'];
 	for(var key in jobsList){
 		p = document.createElement('p');
 		p.style('font-family:'+jobsList[key]['font']);
