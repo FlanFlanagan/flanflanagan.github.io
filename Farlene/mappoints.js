@@ -51,7 +51,7 @@ function jobs(){
 	for(var key in jobsList){
 		p = document.createElement('p');
 		p.style.fontFamily = jobsList[key]['font'];
-		p.style.padding = "10px, 30px, 10px, 30px";
+		p.style.padding = "5%, 20%, 10%, 20%";
 		p.append(jobsList[key]['job']);
 		jobsDiv.append(p);
 	}
