@@ -50,7 +50,7 @@ function jobs(){
 	jobsList = data['jobs'];
 	for(var key in jobsList){
 		p = document.createElement('p');
-		p.style.fontFamily('font-family:'+jobsList[key]['font']);
+		p.style.fontFamily = jobsList[key]['font'];
 		p.append(jobsList[key]['job']);
 		jobsDiv.append(p);
 	}
