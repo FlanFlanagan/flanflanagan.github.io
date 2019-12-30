@@ -51,6 +51,7 @@ function jobs(){
 	for(var key in jobsList){
 		p = document.createElement('p');
 		p.style.fontFamily = jobsList[key]['font'];
+		p.style.width = 30%
 		p.append(jobsList[key]['job']);
 		jobsDiv.append(p);
 	}
