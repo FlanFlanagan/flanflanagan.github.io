@@ -48,16 +48,22 @@ function jobs(){
 	var jobsDiv = document.createElement("div");
 	jobsDiv.id = 'jobs';
 	jobsList = data['jobs'];
+	console.log(jobsList)
 	for(var key in jobsList){
+		var div1 = document.createElement("div");
+		div1.className = 'job ' + jobsList[key]['employer']
 		p = document.createElement('p');
-		p.style.fontFamily = jobsList[key]['font'];
-		p.style.padding = "5% 20% 10% 20%";
-		p.style.backgroundColor = jobsList[key]['color']
-		p.append(jobsList[key]['job']);
-		jobsDiv.append(p);
+		p1 = document.createElement('p');
+		p.append(key)
+		p.className = 'jobTitle';
+		p1.className = 'jobDesc';
+		p.style.marginBottom = "0em";
+		p1.append(jobsList[key]['job']);
+		div1.append(p, p1);
+		jobsDiv.append(div1)
+		
 	}
 	$("#vizFrame").append(jobsDiv);
-
 	return;	
 }
 

@@ -125,20 +125,38 @@ var data = {
     },
     'jobs': {
         "Perch Guard Kill Order – Flesh Sucking Killer – EXTREME DANGER" : {
-            'font': 'Gabriola',
-            'color': "B63215",
+            'employer': 'perchGuard',
             'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
                    ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
                    ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
                    ' damage weapons that come in contact with it. Each killed Sucker will reward 400 gold.'
         },
-        "Perch Guard Kill Order – Flesh Sucking Killer – EXTREME DANGER" : {
-            'font': 'Gabriola',
-            'color': "B63215",
-            'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
-                   ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
-                   ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
-                   ' damage weapons that come in contact with it. Each killed Sucker will reward 400 gold.'
-        }
+        "Perch Guard Patrol Request – Dangers Unknown" : {
+            'employer': 'perchGuard',
+            'job': "The Perch Guard is concerned about the safety of a ruined temple on the far side of The Flower Jungle. Adventurers interested in supporting the efforts of the Perch Guard in the area should contact Garry Hamford at the Perch Guard barracks in Hamlet. 40 gold per week, per adventurer. Of chief concern are the native lizard folk who have shown some interest in the temple. "
+        },
+        "Alchemist Society – Reagent Run" :{
+            'employer': 'alchemistSociety',
+            'job': "The alchemist society is looking for brewing supplies. Of primary interest are the red flowers discovered in The Flower Jungle. The society will pay 10g per flower. For other herb rewards please see Tessa Smoak at the Alchemist Supply Store."
+        },
+        "Smithing Guild – Exploration" :{
+            'employer': 'smithingGuild',
+            'job': "The smithing guild is looking for individuals to explore the crag like area beyond The Flower Forest. These areas tend to host ore or gem veins. A smithing guild prospector will join the explorers to identify any valuables. 20 gold per day, per adventurer."
+        },
+        "Avium School of History and Magic – Extreme Danger" :{
+            'employer': 'ASoHM',
+            'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 700g total reward.  "
+        },
+        "More Honey" :{
+            'employer': 'misc',
+            'job': "Douglus Downey Dalahart is looking for more honey. His Outlands Flavoriffic BeeBeeQue Sauce is a huge hit and he needs more honey to keep up with demand. 200g per flask of honey! This truly is flavor country!"
+        },
     }
 }
+
+/*
+"title" :{
+    'employer': '',
+    'job': ""
+},
+*/
