@@ -43,30 +43,6 @@ function worldMap(style){
 	return;	
 }
 
-function jobs(){
-	$('#vizFrame').empty();
-	var jobsDiv = document.createElement("div");
-	jobsDiv.id = 'jobs';
-	jobsList = data['jobs'];
-	console.log(jobsList)
-	for(var key in jobsList){
-		var div1 = document.createElement("div");
-		div1.className = 'job ' + jobsList[key]['employer']
-		p = document.createElement('p');
-		p1 = document.createElement('p');
-		p.append(key)
-		p.className = 'jobTitle';
-		p1.className = 'jobDesc';
-		p.style.marginBottom = "0em";
-		p1.append(jobsList[key]['job']);
-		div1.append(p, p1);
-		jobsDiv.append(div1)
-		
-	}
-	$("#vizFrame").append(jobsDiv);
-	return;	
-}
-
 function addPoints(map, style){
 	cities = data[style]['cities']
 	temples = data[style]['temples']
