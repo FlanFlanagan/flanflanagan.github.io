@@ -102,25 +102,35 @@ var data = {
             "Empty Cave": {
                 "y": 223.65,
                 "x": 1297.91,
-                "info": 'An empty cave',
+                "info": 'An empty cave.',
             },
             "Yellow Bee Hive": {
                 "y": 502.65,
                 "x": 1264.41,
-                "info": 'The yellow butt bee hive. Exact location known by Loraleth',
+                "info": 'The yellow butt bee hive. Exact location known by Loraleth.',
             },
             "Unknown Temple": {
                 "y": 413.65,
                 "x": 1055.41,
-                "info": 'A temple of unknown origin found by Reginald, Thaddeus, Zip and Bayli. Exact location unknown. Teleportation available',
+                "info": 'A temple of unknown origin found by Reginald, Thaddeus, Zip and Bayli. Exact location unknown. Teleportation available.',
             },
             "Purple Flower Glade": {
                 "y": 382.15,
                 "x": 1158.41,
                 "info": 'A glade of purple flowers used to make stamina potions. Exact location unknown. Discovered by Zip,' +
                 " Bayli, Thaddeus, and Reginald.",
-            }
-            
+            },
+            "Red Bee Hive": {
+                "y": 328.22,
+                "x": 1192.5,
+                "info": "This hive was found during a trip to activate the teleportation circle at the Unknown temple. The bees in this hive are " +
+                "extremely aggressive and followed the group for several hours. Exact location unknown."
+            },
+            "Ruined Lizardman Camp": {
+                "y": 328.22,
+                "x": 1192.5,
+                "info": "A burned down lizardman camp. The camp was eliminated by Reginald, Loraleth, and Tyrik. Exact location unknown."
+            },
         }
     },
     'jobs': {
