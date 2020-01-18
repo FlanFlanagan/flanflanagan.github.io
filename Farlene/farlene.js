@@ -12,7 +12,8 @@ function weapons(){
 function jobs(){
 	$('#vizFrame').empty();
 	var jobsDiv = document.createElement("div");
-	jobsDiv.id = 'jobs';
+	/*jobsDiv.id = 'jobs';*/
+	jobsDiv.className = 'board board--type-bulletin bulletin'
 	jobsList = data['jobs'];
 	for(var key in jobsList){
 		var div1 = document.createElement("div");
@@ -35,7 +36,7 @@ function jobs(){
 function shops(){
 	$('#vizFrame').empty();
 	var itemsDiv = document.createElement("div");
-	itemsDiv.id = 'items';
+	itemsDiv.className = 'items';
 	for(var key in items){
 		itemsDiv.append(weaponItem(items, key))
 	}

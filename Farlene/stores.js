@@ -1,16 +1,16 @@
 var items = {
-    "Fancy Weapon": {
+    "Red Feather Bow": {
         "type": "weapon",
         "Weapon Type": "Longbow +1",
         "Classification": "Uncommon Item",
         "Attunement": "Yes",
-        "Description": "A prized hunting weapon among mistral raptors,this bow is imbued with magic to help the wielder see their prey " +
+        "Description": "A prized hunting weapon among mistral raptors,this \n bow is imbued with magic to help the wielder see their prey " + 
         "from afar. The bow has 3 charges. When you fire an arrow from this bow, you can speak the command word and use a charge to " +
         "see through the arrow as a bonus action. You can see from the point your arrow lands as if you were there for 1 minute. " +
         "If the arrow strikes a creature, you see what they see for the same duration. The bow regains 1d3 charges each day at dawn.",
         "Cost": "5000g"
     },
-    "Other item": {
+    "Nest Charm": {
         "type": "item",
         "Classification": "Wonderous Item",
         "Attunement" : "Yes",

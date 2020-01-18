@@ -169,6 +169,13 @@ form button {
 	background-color: coral;
 	text-align: left;
 	padding: 0em 1em 0em 1em;
+	width: 400px;
+}
+
+.items {
+	color: #FFFFFF;
+	flex-flow: wrap;
+	align-content: stretch;
 }
 
 .weapon {

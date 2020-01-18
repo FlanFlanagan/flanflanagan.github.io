@@ -1,0 +1,1139 @@
+/**
+ * DESCRIPTION:
+ *
+ * This is a responsive medieval style board made out of a single SVG file using the SVG
+ * Stack technique while providing fallback for browsers that do not support it. Its
+ * size can be absolute (i.e.: in pixels) or relative (i.e.: percentage) and expands or
+ * contracts in any axis independently. Check out the project for a more organized view
+ * as well as my blog for an in-depth explanation.
+ * 
+ * CodePen Project: https://codepen.io/andresangelini/project/editor/Aarxxz
+ *
+ * Blog post: https://medium.com/@angelini.andres/https-medium-com-angelini-andres-making-a-responsive-medieval-board-with-svg-stacks-chapter-i-f18490364e44
+ *
+ * The board comes in two types:
+ *
+ * 1) BULLETIN - A large board with big concave corners and a title plaque in the top
+ *    center. It hangs with a couple of chains and it's used to display the main content
+ *    of the page.
+ *
+ * 2) SIGN - A small board with small concave corners and holes in the top and bottom
+ *    parts meant to be used as a menu button. It may or may not have chains on the
+ *    bottom.                         
+ *
+ * FALLBACK:
+ * 
+ * 1) Insert multiple divs each one with a single background image pointing to its
+ *    respecive layer on the SVG stack.
+ *
+ * 2) Insert multiple divs each one with a single background image pointing to its
+ *    own individual SVG file containing the proper layer on the original SVG stack.
+ *
+ * 3) Display a message prompting the user to update his/her browser or device. 
+ *
+ * DEPENDENVIES:
+ *
+ * - Modernizr
+ * - Autoprefixer
+ *
+ * VENDOR PREFIXES:
+ *
+ * Vendor specific prefixes are provided by Autoprefixer. According to a post made by
+ * Chris Coyier on March 28, 2014 (see https://blog.codepen.io/2014/03
+ * /28/new-feature-autoprefixer/), it has been decided that Codepen would use the
+ * following filter and cannot be changed:
+ *
+ * > 1%, last 2 versions, Firefox ESR, Opera 12.1
+ *
+ * Remember to change it when working outside of Codepen if, for example, you want to
+ * have calc() function prefixed.
+ */
+
+// IMPORTS
+
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp');
+
+
+
+$valid-positions: "keyword", "global", "<length>", "<percentages>", "calc()",
+                    "edge offset";
+$valid-sizes: "keyword", "global", "auto", "<length>", "<percentages>",
+                "calc()";
+$valid-offsets: "<length>", "<percentages>", "calc()";
+$valid-ranges: "number", "not 0";
+
+// FUNCTIONS
+
+// Returns a message to be thrown when an @error occurs providing:
+// $function-name: the function where the error ocurred
+// $arg-name: the stringified name of the argument which caused the error
+// $arg: the actual argument value (without quotes).
+// $expected-args: a Sass list with the expected arguments or a string with
+// proper explanation of what's required
+@function invalid-arg($function-name, $arg-name, $arg, $expected-args) {
+  @return "#{$function-name}: #{$arg-name} is invalid, was #{inspect($arg)}, " +
+          "expected #{$expected-args}.";
+};
+
+// Checks all the arguments in a function and throws an error if found or returns true otherwise.
+// $function-name: string;
+// $args: ("arg": ("name": "arg",
+//                 "value": $arg,
+//                 "check": boolean,
+//                 "expected": list)
+//        )
+@function check-args($function-name, $args) {
+  @if (type-of($function-name) != "string") {
+    @error invalid-arg("check-args", "$function-name", $function-name,
+                       "string");
+  } @else if (type-of($args) != "map") {
+    @error invalid-arg("check-args", "$args", $args, "map");
+  }
+
+  @each $key, $val in $args {
+    @if (type-of($val) != "map") {
+      @error invalid-arg("check-args", "$args value", $val, "map");
+    } @else if (map-get($val, "check") == false) {
+      @error invalid-arg($function-name,
+                         "#{map-get($val, 'name')}",
+                         map-get($val, "value"),
+                         map-get($val, "expected"));
+    }
+  }
+
+  @return true;
+};
+
+// Checks if a value is actually a calc() function and returns a boolean.
+@function is-calc($value) {
+  @return str_slice("#{$value}", 0, 4) == "calc";
+}
+
+// Strips the "calc" part from a calc() function or returns the argument if it's
+// present.
+@function strip-calc($calc) {
+  @if (is-calc($calc)) {
+    @return unquote(str_slice("#{$calc}", 5, -1));
+  } @else {
+    @return $calc;
+  }
+}
+
+// Checks if a value is a number and returns a boolean.
+@function is-number($value) {
+  @return type-of($value) == "number";
+}
+
+// Checks if a value is a number with units and returns a boolean.
+@function has-units($value) {
+  @if (is-number($value)) {
+    @return not unitless($value);
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is a integer and returns a boolean.
+@function is-integer($value) {
+  @if (is-number($value) and not has-units($value)) {
+    @return $value % 1 == 0;
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is a psoitive number and returns a boolean.
+@function is-positive($value) {
+  @if (is-number($value)) {
+    @return $value > 0;
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is a percentage and returns a boolean.
+@function is-percentage($value) {
+  @if (is-number($value)) {
+    @return unit($value) == "%";
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is a <length> and returns a boolean.
+@function is-length($value) {
+  @if (is-number($value)) {
+    @return has-units($value) and unit($value) != "%" or $value == 0;
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is in a list and returns a boolean.
+@function is-in-list($value, $list) {
+  @if (index($list, $value)) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is a valid keyword for background-position and returns a boolean.
+@function is-position-keyword($value) {
+  @return is-in-list($value, left right top bottom center);
+}
+
+// Checks if a value is a valid global for background-position and returns a boolean.
+@function is-global($value) {
+  @return is-in-list($value, initial inherit unset);
+}
+
+// Checks if a value is a valid edge-offset for background-position and returns a boolean.
+@function is-edge-offset($value) {
+  @return length($value) == 2 and
+          is-position-keyword(nth($value, 1)) and
+          nth($value, 1) != "center" and
+          is-length(nth($value, 2));
+}
+
+// Checks if a value is a valid position for background-position and returns a boolean.
+@function is-position($position) {
+  @return is-position-keyword($position) or
+          is-percentage($position) or
+          is-length($position) or
+          is-edge-offset($position) or
+          is-global($position) or
+          is-calc($position);
+}
+
+// Convert a keyword into a <percentage> value or do nothing otherwise.
+@function keyword-to-percentage($keyword) {
+  $keywords: (
+    left: 0,
+    right: 100%,
+    top: 0,
+    bottom: 100%,
+    center: 50%
+  );
+  
+  @if (map-has-key($keywords, $keyword)) {
+    @return map-get($keywords, $keyword);
+  } @else {
+    @return $keyword;
+  }
+}
+
+// Convert keywords and edge-offsets into <length> or do nothing otherwise.
+@function quantify-position($position) {
+  $edge-offsets: null;
+  
+  @if (is-position-keyword($position)) {
+    @return keyword-to-percentage($position);
+  } @else if (is-edge-offset($position)) {
+    $edge-offsets: (
+      left: nth($position, 2),
+      right: calc(100% - #{nth($position, 2)}),
+      top: nth($position, 2),
+      bottom: calc(100% - #{nth($position, 2)}),
+    );
+    
+    @return map-get($edge-offsets, nth($position, 1));
+  }@else {
+    @return $position;
+  }
+}
+
+// Checks if a value is a string and returns a boolean.
+@function is-string($value) {
+  @return type-of($value) == "string";
+}
+
+// Checks if a value is a function and returns a boolean.
+@function is-function($function, $value) {
+  @if (is-string($function) and is-string($value)) {
+    @return str-slice($value, 0, str-index($value, "(")) ==
+            str-slice($function, 0, str-index($function, "(")) and
+            str-slice($value, -1) == ")";
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is a url() function and returns a boolean.
+@function is-url($value) {
+  @return is-function("url()", $value);
+}
+
+// Checks if a value is a <gradient> and returns a boolean.
+@function is-gradient($value) {
+  $functions: "linear-gradient()", "radial-gradient()",
+              "repeating-linear-gradient()", "repeating-radial-gradient()";
+  
+  @each $function in $functions {
+    @if (is-function($function, $value)) {
+      @return true;
+    }
+  }
+  
+  @return false;
+}
+
+// Checks if a value is a element() function and returns a boolean.
+@function is-element($value) {
+  @return is-function("element()", $value);
+}
+
+// Checks if a value is an <image> and returns a boolean.
+@function is-image($value) {
+  @return is-url($value) or
+          is-gradient($value) or
+          is-element($value);
+}
+
+// Checks if a value is an <image> keyword and returns a boolean.
+@function is-image-keyword($value) {
+  @if (is-string($value)) {
+    @return $value == "none";
+  } @else {
+    @return false;
+  }
+}
+
+// Checks if a value is a background-size keyword and returns a boolean.
+@function is-size-keyword($value) {
+  @return is-in-list($value, cover contain);
+}
+
+// Checks if a value are valid dimensions for background-size and returns a boolean.
+@function are-dimensions($value) {
+  @if (length($value) == 1) {
+    @return is-size-keyword(nth($value, 1)) or
+            is-percentage(nth($value, 1)) or
+            is-length(nth($value, 1)) or
+            is-global(nth($value, 1)) or
+            is-calc(nth($value, 1)) or
+            nth($value, 1) == auto;
+  } @else if (length($value) == 2) {
+    @return (is-percentage(nth($value, 1)) or
+            is-length(nth($value, 1)) or
+            is-calc(nth($value, 1)) or
+            nth($value, 1) == auto) and
+            (is-percentage(nth($value, 2)) or
+            is-length(nth($value, 2)) or
+            is-calc(nth($value, 2)) or
+            nth($value, 2) == auto);
+  } @else {
+    @return false;
+  }
+}
+
+// Returns multiple background-positions in a linear pattern where:
+// $line-x and $line-y are the coordinates of the line pattern's top left corner.
+// $tile-dx and $tile-dy are the horizontal and vertical distances between each background-image or "tile".
+// $a and $b belong to $a * $i + $b with $i being the iterator used to loop through a number of $lines.
+// $imgs is the number of background-images per line.
+@function _tiling-line-position($line-x: 0px, $line-y: 0px, $tile-dx: 0px, $tile-dy: 0px, $a: 1, $b: 0, $tiles: 1) {
+  $result: null;
+  
+  @for $i from 0 to $tiles {
+    $result: $result, calc((#{$tile-dx} * (#{$a} * #{$i} + #{$b})) + #{$line-x}) +
+                      " " +
+                      calc((#{$tile-dy} * (#{$a} * #{$i} + #{$b})) + #{$line-y});
+  }
+  
+  @return $result;
+}
+
+// Returns multiple background-positions for tiling background-images where:
+// $tiling-x and $tiling-y are the coordinates of the tiling's top left corner.
+// $tile-dx and $tile-dy are the horizontal and vertical distances between each background-image or "tile".
+// $line-dx and $line-dy are the horizontal and vertical distances between each line of background-images.
+// $a and $b belong to $a * $i + $b with $i being the iterator used to loop through a number of $lines.
+// $tiles-per-line is the number of background-images per line.
+// $lines is the number of lines per tiling.
+@function tiling-positions($tiling-x: 0px,
+                           $tiling-y: 0px,
+                           $tile-dx: 0px,
+                           $tile-dy: 0px,
+                           $line-dx: 0px,
+                           $line-dy: 0px,
+                           $a: 1,
+                           $b: 0,
+                           $tiles-per-line: 1,
+                           $lines: 1) {
+  $result: null;
+  $valid-positions: "keyword", "<percentage>", "<length>", "edge offset", "global", "calc()";
+  $valid-deltas: "<percentage>", "<length>";
+  $valid-amounts: "integer > 0";
+
+  $args: ("tiling-x": ("name": "$tiling-x",
+                "value": $tiling-x,
+                "check": is-position($tiling-x),
+                "expected": $valid-positions),
+          "tiling-y": ("name": "$tiling-y",
+                "value": $tiling-y,
+                "check": is-position($tiling-y),
+                "expected": $valid-positions),
+          "tile-dx": ("name": "$tile-dx",
+                      "value": $tile-dx,
+                      "check": is-delta($tile-dx),
+                      "expected": $valid-deltas),
+          "tile-dy": ("name": "$tile-dy",
+                      "value": $tile-dy,
+                      "check": is-delta($tile-dy),
+                      "expected": $valid-deltas),
+          "line-dx": ("name": "$line-dx",
+                      "value": $line-dx,
+                      "check": is-delta($line-dx),
+                      "expected": $valid-deltas),
+          "line-dy": ("name": "$line-dy",
+                      "value": $line-dy,
+                      "check": is-delta($line-dy),
+                      "expected": $valid-deltas),
+          "a": ("name": "$a",
+                      "value": $a,
+                      "check": is-number($a) and not has-units($a),
+                      "expected": "<number>"),
+          "b": ("name": "$b",
+                      "value": $b,
+                      "check": is-number($b) and not has-units($b),
+                      "expected": "<number>"),
+          "tiles-per-line": ("name": "$tiles-per-line",
+                             "value": $tiles-per-line,
+                             "check": is-integer($tiles-per-line) and
+                                      is-positive($tiles-per-line),
+                             "expected": $valid-amounts),
+          "lines": ("name": "$lines",
+                            "value": $lines,
+                            "check": is-integer($lines) and
+                                     is-positive($lines),
+                            "expected": $valid-amounts),
+          );
+  
+  @if (check-args("tiling-positions", $args)) {
+    @for $i from 0 to $lines {
+      $result: $result, _tiling-line-position($line-x: calc((#{$line-dx} * #{$i}) + #{strip-calc(quantify-position($tiling-x))}),
+                                              $line-y: calc((#{$line-dy} * #{$i}) + #{strip-calc(quantify-position($tiling-y))}),
+                                              $tile-dx: $tile-dx,
+                                              $tile-dy: $tile-dy,
+                                              $a: $a,
+                                              $b: $b,
+                                              $tiles: $tiles-per-line);
+      }
+  }
+  
+  @return $result;
+}
+
+// Returns the same background-image value multiple times.
+@function tiling-images($source, $amount: 1) {
+  $result: unquote("#{$source}");
+  $valid-sources: "none", "url()", "linear-gradient()", "element()";
+  $valid-amounts: "integer > 0";
+  
+  $args: ("source": ("name": "$source",
+                   "value": $source,
+                   "check": is-image($source) or is-image-keyword($source),
+                   "expected": $valid-sources),
+          "amount": ("name": "$amount",
+                     "value": $amount,
+                     "check": is-integer($amount) and is-positive($amount),
+                     "expected": $valid-amounts)
+         );
+
+  @if (check-args("tiling-images", $args)) {
+    @for $i from 1 to $amount {
+      $result: $result, unquote("#{$source}");
+    }
+  }
+
+  @return $result;
+}
+
+// Returns the same background-size value multiple times.
+@function tiling-sizes($dimensions: inherit, $amount: 1) {
+  $result: null;
+  $valid-dimensions: "<keyword> or <width> <height> where <width> and " +
+                     "<height> are: <keyword>, <percentage>, <length>, " +
+                     "auto, global";
+  $valid-amounts: "integer > 0";
+  
+  $function-name: "tiling-sizes";
+  
+  $args: ("dimensions": ("name": "$dimensions",
+                     "value": $dimensions,
+                     "check": are-dimensions($dimensions),
+                     "expected": $valid-dimensions),
+          "amount": ("name": "$amount",
+                    "value": $amount,
+                    "check": is-integer($amount) and is-positive($amount),
+                    "expected": $valid-amounts),
+          );
+  
+  @if (check-args("tiling-sizes", $args)) {
+    @for $i from 1 through $amount {
+      $result: $result, unquote("#{$dimensions}");
+    }
+  }
+  
+  @return $result;
+}
+
+// Helper functions for calculating measurements for both types of boards.
+@function calc-side-position-left($corner-width) {
+  @return calc(#{$corner-width} - #{$side-overlap});
+}
+@function calc-side-position-right($corner-width) {
+  @return calc(100% - (#{$corner-width} - #{$side-overlap}));
+}
+@function calc-side-position-bottom($corner-width) {
+  @return calc((100% - (#{$corner-width} - #{$side-overlap})) - #{$board-depth});
+}
+@function calc-horizontal-width($corner-width) {
+  @return calc(100% - #{strip-calc(calc-side-position-left($corner-width))} * 2);
+}
+@function calc-board-position-top($board-height, $pairs-of-chains) {
+  @return calc((100% - #{$board-height}) / #{$pairs-of-chains});
+}
+@function calc-vertical-height($corner-width, $board-height) {
+  @return calc(#{$board-height} - #{strip-calc(calc-side-position-left($corner-width))} * 2 - #{$board-depth});
+}
+@function calc-vertical-position-top($corner-width) {
+  @return calc(100% - #{strip-calc(calc-side-position-left($corner-width))} - #{$board-depth});
+}
+@function calc-chains-height($board-height, $chains-position-top, $pairs-of-chains) {
+  @return calc(#{strip-calc(calc-board-position-top($board-height, $pairs-of-chains))} + #{$chains-position-top} * 2);
+}
+@function calc-holes-width($corner-width) {
+  @return calc(#{strip-calc(calc-horizontal-width($corner-width))} * 0.8);
+}
+@function calc-holes-shadow-width($corner-width) {
+  @return calc(#{strip-calc(calc-holes-width($corner-width))} + #{$shadow-width} * 2);
+}
+@function calc-holes-position-left($corner-width) {
+  @return calc(((100% - (#{strip-calc(calc-horizontal-width($corner-width))} * 0.8)) / 2) + #{$sign-holes-width-fix});
+}
+@function calc-holes-position-right($corner-width) {
+  @return calc(100% - ((100% - (#{strip-calc(calc-horizontal-width($corner-width))} * 0.8)) / 2) - #{$sign-holes-width-fix});
+}
+@function calc-corner-left($corner-width) {
+  @return calc(#{strip-calc(calc-side-position-left($corner-width))} - #{$sign-holes-width-fix});
+}
+@function calc-corner-right($corner-width) {
+  @return calc(#{strip-calc(calc-side-position-right($corner-width))} + #{$sign-holes-width-fix});
+}
+
+// Returns a clip-path for the board planks according to the corner's size.
+@function planks-clip($corner-width) {
+  // Sign board has bottom holes while bulletin board hasn't.
+  $bottom-holes: calc-holes-position-right($corner-width) $side-curve-right + "," +                        /* B holes BR */
+                 calc-holes-position-right($corner-width) calc-side-position-bottom($corner-width) + "," + /* B holes TR */
+                 calc-holes-position-left($corner-width) calc-side-position-bottom($corner-width) + "," +  /* B holes TL */
+                 calc-holes-position-left($corner-width) $side-curve-right + ",";                          /* B holes BL */
+  
+  @return polygon(0 calc-side-position-right($corner-width),                                               /* BL corner 3 */
+                  $side-curve-left 50%,                                                                    /* L side center */
+                  0 calc(#{$corner-width} - 7px),                                                          /* TL corner 1 */
+                  calc-corner-left($corner-width) calc-corner-left($corner-width),                         /* TL corner 2 */
+                  calc-side-position-left($corner-width) 0,                                                /* TL corner 3 */
+                  calc-holes-position-left($corner-width) $side-curve-left,                                /* Top holes TL */
+                  calc-holes-position-left($corner-width) 30px,                                            /* Top holes BL */
+                  calc-holes-position-right($corner-width) 30px,                                           /* Top holes BR */
+                  calc-holes-position-right($corner-width) $side-curve-left,                               /* Top holes TR */
+                  calc-side-position-right($corner-width) 0,                                               /* TR corner 1 */
+                  calc-corner-right($corner-width) calc-corner-left($corner-width),                        /* TR corner 2 */
+                  100% calc-side-position-left($corner-width),                                             /* TR corner 3 */
+                  $side-curve-right 50%,                                                                   /* R side center */
+                  100% calc-side-position-right($corner-width),                                            /* BR orner 1 */
+                  calc-corner-right($corner-width) calc-corner-right($corner-width),                       /* BR corner 2 */
+                  calc-side-position-right($corner-width) $side-curve-right,                               /* BR corner 3 */
+                  if($corner-width == $sign-corner-width, $bottom-holes, null)                             /* B holes BL */
+                  calc-side-position-left($corner-width) $side-curve-right,                                /* BL corner 1 */
+                  calc-corner-left($corner-width) calc-corner-right($corner-width)                         /* BL corner 2 */
+                  );
+}
+
+// MIXINS
+
+@mixin full-page-msg($msg) {
+  content: $msg;
+  font-family: MedievalSharp;
+  font-size: 2em;
+  margin-top: -0.5em;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  color: black;
+  width: 100%;
+}
+
+// A mixin for centering absolute positioned elements.
+@mixin center-horizontally($width) {
+  margin-left: calc(#{$width} / (-2));
+  margin-left: calc(#{strip-calc($width)} / (-2));    // For browsers that don't support nested calc() functions.
+  left: 50%;
+  width: #{$width};
+}
+
+@mixin chains($path, $holes-width, $chains-height, $chains-position-top) {
+  @include center-horizontally($holes-width);
+  background-image: url($path);
+  height: $chains-height;
+  top: #{-$chains-position-top};
+}
+
+@mixin chains-multiple-backgrounds($chains-width,
+                                   $chains-height,
+                                   $profile-links-y,
+                                   $profile-link-dy,
+                                   $front-links-y,
+                                   $front-link-dy) {
+  @include center-horizontally($chains-width);
+  background-image: tiling-images(url($path-to-chain-link), 20);
+  background-position: tiling-positions($tiling-x: 0px,
+                                        $tiling-y: $profile-links-y,
+                                        $tile-dx: 0px,
+                                        $tile-dy: $profile-link-dy,
+                                        $tiles-per-line: 10),
+                       tiling-positions($tiling-x: 100%,
+                                        $tiling-y: $front-links-y,
+                                        $tile-dx: 0px,
+                                        $tile-dy: $front-link-dy,
+                                        $a: 2,
+                                        $b: -1,
+                                        $tiles-per-line: 10);
+  background-size: 200% $chains-link-height;
+  background-repeat: no-repeat;
+  height: $chains-height;
+}
+
+@mixin plaque($path) {
+  @include center-horizontally($bulletin-plaque-width);
+  background-image: url($path);
+  bottom: 0;
+  height: $bulletin-board-height;
+}
+
+@mixin corners($path, $board-height, $board-position-top) {
+  background-image: url($path);
+  bottom: $board-position-top;
+  height: $board-height;
+  width: 100%;
+}
+
+@mixin horizontal-sides($path, $horizontal-width, $board-height, $board-position-top) {
+  @include center-horizontally($horizontal-width);
+  background-image: url($path);
+  bottom: $board-position-top;
+  height: $board-height;
+}
+
+@mixin vertical-sides($path, $vertical-height, $board-height, $side-position-left, $pairs-of-chains) {
+  background-image: url($path);
+  height: $vertical-height;
+  top: calc((100% - #{$board-height}) / #{$pairs-of-chains} + #{strip-calc(#{$side-position-left})});
+  width: 100%;
+}
+
+@mixin holes($path, $holes-width, $board-height, $board-position-top) {
+  @include center-horizontally($holes-width);
+  background-image: url($path);
+  bottom: $board-position-top;
+  height: $board-height;
+}
+
+@mixin planks($path, $board-height, $board-position-top) {
+  background-image: url($path);
+  bottom: $board-position-top;
+  height: $board-height;
+  width: 100%;
+}
+
+@mixin planks-multiple-backgrounds($corner-width, $board-height) {
+  background-clip: padding-box;
+  background-color: $color-planks-diffuse;
+  background-image: tiling-images(url($path-to-shades), 80),
+                    tiling-images(url($path-to-grooves), 100);
+  background-position: tiling-positions($tiling-x: 12%,
+                                        $tiling-y: 0px,
+                                        $tile-dx: 14%,
+                                        $tile-dy: 0px,
+                                        $line-dy: $shade-height,
+                                        $tiles-per-line: 4, $lines: 10),
+                       tiling-positions($tiling-x: 88%,
+                                        $tiling-y: 0px,
+                                        $tile-dx: -14%,
+                                        $tile-dy: 0px,
+                                        $line-dy: $shade-height,
+                                        $tiles-per-line: 4, $lines: 10),
+                       tiling-positions($tiling-x: 0px,
+                                        $tiling-y: 0px,
+                                        $tile-dx: $grooves-width,
+                                        $tile-dy: 0px,
+                                        $line-dy: $grooves-height,
+                                        $tiles-per-line: 10,
+                                        $lines: 10);
+  background-size: tiling-sizes(200% 765px, 80),
+                   tiling-sizes($grooves-width $grooves-height, 100);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  clip-path: planks-clip($corner-width);
+  height: $board-height;
+  width: 100%;
+}
+
+// VARIABLES
+
+// Functions valid values.
+$valid-positions: "keyword", "global", "<length>", "<percentages>", "calc()",
+                    "edge offset";
+$valid-sizes: "keyword", "global", "auto", "<length>", "<percentages>",
+                "calc()";
+$valid-offsets: "<length>", "<percentages>", "calc()";
+$valid-ranges: "number", "not 0";
+
+// Base colors.
+$color-cape-palliser                  : #a2703f;
+
+// Elements colors.
+$color-planks-diffuse                 : $color-cape-palliser;
+
+// Change these values to your liking. The length of the chains will adjust automatically.
+$bulletin-board-height                : 95%; // The height of the board alone in percentage relative to the bulletin's.
+$bulletin-plaque-width                : 35%; 
+$sign-board-height                    : 80%; // The height of the board alone in percentage relative to the sign's.
+
+// These values are common to both types of boards. DO NOT CHANGE unless you modified the SVG graphics.
+$board-depth                          : 6.5px;
+$shadow-width                         : 2.16px;
+$side-overlap                         : 9.4px;
+$side-curve-left                      : 5px;
+$side-curve-right                     : calc(100% - #{$side-curve-left});
+$grooves-height                       : 568px;
+$grooves-width                        : 568px;
+$shade-height                         : 760px;
+$chains-link-height                   : 45.94px;
+$chains-top-offset                    : 4.24px; // The distance from the SVG's top to the chains' top.
+$chains-bottom-offset                 : 22px; // The distance from the SVG's bottom to the chains' bottom.
+
+// Measurements for 'bulletin' type board. DO NOT CHANGE unless you modified the SVG graphics.
+$bulletin-corner-width                : 56px;
+$bulletin-side-position-left          : calc-side-position-left($bulletin-corner-width);
+$bulletin-side-position-right         : calc-side-position-right($bulletin-corner-width);
+$bulletin-side-position-bottom        : calc-side-position-bottom($bulletin-corner-width);
+$bulletin-horizontal-width            : calc-horizontal-width($bulletin-corner-width);
+$bulletin-vertical-height             : calc-vertical-height($bulletin-corner-width, $bulletin-board-height);
+$bulletin-vertical-position-top       : calc-vertical-position-top($bulletin-corner-width);
+$bulletin-chains-height               : calc-chains-height($bulletin-board-height, $chains-bottom-offset, 1);
+$bulletin-holes-width                 : calc-holes-width($bulletin-corner-width);
+$bulletin-holes-shadow-width          : calc-holes-shadow-width($bulletin-corner-width);
+
+// Measurements for 'sign' type board. DO NOT CHANGE unless you modified the SVG graphics.
+$sign-corner-width                    : 29.78px;
+$sign-side-position-left              : calc-side-position-left($sign-corner-width);
+$sign-side-position-right             : calc-side-position-right($sign-corner-width);
+$sign-side-position-bottom            : calc-side-position-bottom($sign-corner-width);
+$sign-horizontal-width                : calc-horizontal-width($sign-corner-width);
+$sign-board-position-top              : calc-board-position-top($sign-board-height, 2);
+$sign-vertical-height                 : calc-vertical-height($sign-corner-width, $sign-board-height);
+$sign-vertical-position-top           : calc(50% - 3px); // Remember: background position in perecentage works differently.
+$sign-chains-position-bottom          : calc(100% + #{$chains-bottom-offset});
+$sign-top-chains-height               : calc-chains-height($sign-board-height, $chains-bottom-offset, 2);
+$sign-bottom-chains-position-top      : calc(#{$chains-bottom-offset} / 2);
+$sign-bottom-chains-div-position-top  : calc(100% + 22px - #{strip-calc($sign-top-chains-height)});
+$sign-bottom-chains-height            : calc-chains-height($sign-board-height, #{strip-calc($sign-bottom-chains-position-top)}, 2);
+$sign-holes-width                     : calc-holes-width($sign-corner-width);
+$sign-holes-width-fix                 : 5px;
+$sign-holes-position-left             : calc-holes-position-left($sign-corner-width);
+$sign-holes-position-right            : calc-holes-position-right($sign-corner-width);
+$sign-holes-shadow-width              : calc-holes-shadow-width($sign-corner-width);
+
+// URL path to the folder where all the SVG files are located.
+$base-url                             : "https://gistcdn.githack.com/andresangelini/";
+
+// URL path to the main SVG file.
+$path-to-board                        : $base-url + "d57f93b605eec432fdea98b969aaac72/raw/f0ee9369b781dcf01eefc37575a99d8e5dbe7b35/board.svg";
+
+// Multiple SVGs are needed as a fallback for browsers that don't support SVG Fragment Identifiers.
+$path-to-top-chains                   : $base-url + "f3415703d9665bc6d2e0fcdefd90c252/raw/8a9d7f56730094d681762638c76db1df3ffdd538/topChains.svg";
+$path-to-bottom-chains                : $base-url + "96fc2fe2937f63997f972f203509bb28/raw/04eb599bf86ffce922d53071c8a10013743a3436/bottomChains.svg";
+$path-to-chain-link                   : $base-url + "5969d4f442bb18ec3b81db61ab4202fe/raw/6a51402d5877ccfec47937952937af0d39aa7ddc/chainLink.svg";
+$path-to-plaque                       : $base-url + "71186cfd071e53e4b229ef78ca60207f/raw/c33418e6d8c07c71914cc08bbc7e442d58a7f838/plaque.svg";
+$path-to-bulletin-corners             : $base-url + "ba8d6301a441f9477aff3a93fc93a730/raw/32c534c1f196783a4243d4edd7ec1c268a0b9eaf/bulletinCorners.svg";
+$path-to-bulletin-horizontal-sides    : $base-url + "6a8860e1d3de990f1ce5a7d27aa26a30/raw/2412b8174843f846425aad281f4ad7dab3146fd7/bulletinHorizontalSides.svg";
+$path-to-vertical-sides               : $base-url + "22f602b5edb5671703ead1224719c029/raw/97d9e61f03bf75e1e75a4ce7a68b3ccaf6302f5c/verticalSides.svg";
+$path-to-bulletin-holes               : $base-url + "0fd40f69566ddb6eed16ca9154a1cdbf/raw/5be1d70ebad0936f390a57c8fa04331361a70d76/bulletinHoles.svg";
+$path-to-horizontal-sides-depth       : $base-url + "faa4ae5d44ce839a00161699039e70e4/raw/2a48fb59bd15ff0d96dd1e996a5157619ccea832/horizontalSidesDepth.svg";
+$path-to-bulletin-corners-depth       : $base-url + "fc167511c668f4f22a843dd5ad032c4f/raw/9ca8e54fd838d1dcbb2ac84aee0dd0e5395b993b/bulletinCornersDepth.svg";
+$path-to-horizontal-sides-shadow      : $base-url + "81f11231029c5ca6fbf1d8dcfa723319/raw/e2dceca30c636d82df3110583a6df4f508166b88/horizontalSidesShadow.svg";
+$path-to-vertical-sides-shadow        : $base-url + "a9fc2dec3f4ce794ed0f4e35c5d723ac/raw/06960348119880580e6fb49b344c9f69793241bb/verticalSidesShadow.svg";
+$path-to-bulletin-corners-shadow      : $base-url + "39b00b169ef54b45aadf7a1b90df9e9f/raw/bd9afd6fbeea29b140f32a58e038fc2c20e15836/bulletinCornersShadow.svg";
+$path-to-bulletin-holes-shadow        : $base-url + "ea2cbe38787edd3feaa6c0b072f40b6c/raw/3dc3ba415a2d88b6bf86eb3ce830cbfcf3117b73/bulletinHolesShadow.svg";
+$path-to-bulletin-planks              : $base-url + "04efef31dfb360e613711a8c37aa96fb/raw/311911b99a4d0855a5f47f8aec5a93ed93be67e4/bulletinPlanks.svg";
+$path-to-sign-corners                 : $base-url + "00adf3ff339050dd484ef4133d581639/raw/9204a853448f0aef66be6aaaf09c40968d44e779/signCorners.svg";
+$path-to-sign-horizontal-sides        : $base-url + "3e76e8ae560573c809d7af9c32d79519/raw/cecd5219dd3c54a2b6bb47014e08b5e4caec306f/signHorizontalSides.svg";
+$path-to-sign-holes                   : $base-url + "62d7a5f742d96c5a8f4f6639f523b18e/raw/fc0c5666dfdf7daab0edf6ae2e5ea0bcf7a0da8c/signHoles.svg";
+$path-to-sign-corners-depth           : $base-url + "ebd77441753241e7fe7715e732928f4e/raw/978b2b4cf77ac864b9b908b686c17e5c3f63d5e0/signCornersDepth.svg";
+$path-to-sign-corners-shadow          : $base-url + "1914067a3580101541fe0c0db4b22128/raw/5a78a3dd2c18db6cd796157f2fcbbddbb9b5aeba/signCornersShadow.svg";
+$path-to-sign-holes-shadow            : $base-url + "a1dcb47272d9745ee2a57dd4b73d5678/raw/6e0f2aa4de5bbe89e3877c0976ec470e74259189/signHolesShadow.svg";
+$path-to-sign-planks                  : $base-url + "f0c776eef5d1a6edc29caa351c572075/raw/e20d6b5ff84f3428a45cd8a9cc8a3b0f11bde7f6/signPlanks.svg";
+$path-to-grooves                      : $base-url + "af502b3b5a38fab3f465f6ea7aaab3fb/raw/92b99800106f4818b7f750fd768c7ee0008d7b54/grooves.svg";
+$path-to-shades                       : $base-url + "b8c88924698d0c573c8332edd9077469/raw/48c4a78df192ce11cad5b2c6974f7f0c157af0e2/shades.svg";
+
+$browser-is-too-old: "Oops! It seems your browser or device isn't able to display this site properly. Please, update it.";
+
+
+
+// STYLING
+
+.board {
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  position: absolute;
+  
+  @media only screen and (max-width: 480px) {
+    margin-left: -50%;
+    width: 100%;
+  }
+  
+  &--type-bulletin {
+    /* Use SVG fragment identifiers to select specific parts of the image. */
+    background-image: url("#{$path-to-board}#l-top-chains"),
+                      url("#{$path-to-board}#l-plaque"),
+                      url("#{$path-to-board}#l-bulletin-corners"),
+                      url("#{$path-to-board}#l-bulletin-horizontal-sides"),
+                      url("#{$path-to-board}#l-vertical-sides"),
+                      url("#{$path-to-board}#l-bulletin-holes"),
+                      url("#{$path-to-board}#l-horizontal-sides-depth"),
+                      url("#{$path-to-board}#l-bulletin-corners-depth"),
+                      url("#{$path-to-board}#l-horizontal-sides-shadow"),
+                      url("#{$path-to-board}#l-vertical-sides-shadow"),
+                      url("#{$path-to-board}#l-bulletin-corners-shadow"),
+                      url("#{$path-to-board}#l-bulletin-holes-shadow"),
+                      url("#{$path-to-board}#l-bulletin-planks");
+
+    background-position: center #{-$chains-bottom-offset},                // #l-top-chains
+                         center bottom,                                   // #l-plaque
+                         center bottom,                                   // #l-bulletin-corners (diffuse and specular)
+                         center bottom,                                   // #l-bulletin-horizontal-sides (diffuse and specular)
+                         center $bulletin-vertical-position-top,          // #l-vertical-sides
+                         center bottom,                                   // #l-bulletin-holes
+                         center bottom,                                   // #l-horizontal-sides-depth
+                         center bottom,                                   // #l-bulletin-corners-depth
+                         center bottom,                                   // #l-horizontal-sides-shadow
+                         center $bulletin-vertical-position-top,          // #l-vertical-sides-shadow
+                         center bottom,                                   // #l-bulletin-corners-shadow
+                         center bottom,                                   // #l-bulletin-holes-shadow
+                         center bottom;                                   // #l-bulletin-planks
+
+    background-size: $bulletin-holes-width $bulletin-chains-height,       // #l-top-chains
+                     35% $bulletin-board-height,                          // #l-plaque
+                     100% $bulletin-board-height,                         // #l-bulletin-corners (diffuse and specular)
+                     $bulletin-horizontal-width $bulletin-board-height,   // #l-bulletin-horizontal-sides (diffuse and specular)
+                     100% $bulletin-vertical-height,                      // #l-vertical-sides
+                     $bulletin-holes-width $bulletin-board-height,        // #l-bulletin-holes
+                     $bulletin-horizontal-width $bulletin-board-height,   // #l-horizontal-sides-depth
+                     100% $bulletin-board-height,                         // #l-bulletin-corners-depth
+                     $bulletin-horizontal-width $bulletin-board-height,   // #l-horizontal-sides-shadow
+                     100% $bulletin-vertical-height,                      // #l-vertical-sides-shadow
+                     100% $bulletin-board-height,                         // #l-bulletin-corners-shadow
+                     $bulletin-holes-shadow-width $bulletin-board-height, // #l-bulletin-holes-shadow
+                     100% $bulletin-board-height;                         // #l-bulletin-planks
+    
+    /* IE < 11 don't scale SVGs properly when used as background images. Since IE < 11 don't support CSS pointer-events, use it to detect these versions. */
+    @at-root .no-csspointerevents & {
+      
+      & div {
+        position: absolute;
+      }
+
+      /* Instead of using a single div with multiple background images, use multiple divs each with their own background image pointing to its respective layer in the SVG stack. */
+      & div:nth-child(13) {@include plaque("#{$path-to-board}#l-plaque");}
+      & div:nth-child(12) {@include chains("#{$path-to-board}#l-top-chains", $bulletin-holes-width, $bulletin-chains-height, $chains-bottom-offset);}
+      & div:nth-child(11) {@include corners("#{$path-to-board}#l-bulletin-corners", $bulletin-board-height, 0);}
+      & div:nth-child(10) {@include horizontal-sides("#{$path-to-board}#l-bulletin-horizontal-sides", $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(9) {@include vertical-sides("#{$path-to-board}#l-vertical-sides", $bulletin-vertical-height, $bulletin-board-height, $bulletin-side-position-left, 1);}
+      & div:nth-child(8) {@include holes("#{$path-to-board}#l-bulletin-holes", $bulletin-holes-width, $bulletin-board-height, 0);}
+      & div:nth-child(7) {@include horizontal-sides("#{$path-to-board}#l-horizontal-sides-depth", $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(6) {@include corners("#{$path-to-board}#l-bulletin-corners-depth", $bulletin-board-height, 0);}
+      & div:nth-child(5) {@include horizontal-sides("#{$path-to-board}#l-horizontal-sides-shadow", $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(4) {@include vertical-sides("#{$path-to-board}#l-vertical-sides-shadow", $bulletin-vertical-height, $bulletin-board-height, $bulletin-side-position-left, 1);}
+      & div:nth-child(3) {@include corners("#{$path-to-board}#l-bulletin-corners-shadow", $bulletin-board-height, 0);}
+      & div:nth-child(2) {@include holes("#{$path-to-board}#l-bulletin-holes-shadow", $bulletin-holes-shadow-width, $bulletin-board-height, 0);}
+      & div:nth-child(1) {@include planks("#{$path-to-board}#l-bulletin-planks", $bulletin-board-height, 0);}
+    }
+  
+    /* *
+     *  1) Safari and Safari iOS don't support SVG Fragment Identifiers at all, so use JPEG 2000 image format to detect
+     *     both (down to 4.0 and 4.3 respectively) since they are the only ones that support this feature.
+     *  2) Chrome versions 36 to 49 only support SVG Fragment Identifiers when used inside <img> elements. Use the WebP image format to detect webkit
+     *     browsers and then the support for Passive event listener to detect Chrome 50 and older.
+     *  3) Safari 6, iOS Safari 6.1 and Chrome versions 25 to 19 suupport calc() with -webkit- prefix but older do not support it at all. Fixed with Autoprefixer.
+     */
+    @at-root .jpeg2000 &, // Change back to .jpeg2000 after testing.
+             .no-passiveeventlisteners.webp & {
+      background: none; // Remove after testing.
+      div {
+        /* Safari won't display background image if background size and position aren't explicity set. */
+        background-size: 100% 100%;
+        background-position: center top;
+        position: absolute;
+      }
+      
+      /* Instead of using a signle div with multiple background images pointing to a signle SVG file, use multiple divs, each with a single background
+         image pointing to an individual SVG file containing its respective layer of the original SVG stack. */
+      & div:nth-child(13) {@include plaque($path-to-plaque);}
+      & div:nth-child(12) {@include chains($path-to-top-chains, $bulletin-holes-width, $bulletin-chains-height, $chains-bottom-offset);}
+      & div:nth-child(11) {@include corners($path-to-bulletin-corners, $bulletin-board-height, 0);}
+      & div:nth-child(10) {@include horizontal-sides($path-to-bulletin-horizontal-sides, $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(9) {@include vertical-sides($path-to-vertical-sides, $bulletin-vertical-height, $bulletin-board-height, $bulletin-side-position-left, 1);}
+      & div:nth-child(8) {@include holes($path-to-bulletin-holes, $bulletin-holes-width, $bulletin-board-height, 0);}
+      & div:nth-child(7) {@include horizontal-sides($path-to-horizontal-sides-depth, $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(6) {@include corners($path-to-bulletin-corners-depth, $bulletin-board-height, 0);}
+      & div:nth-child(5) {@include horizontal-sides($path-to-horizontal-sides-shadow, $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(4) {@include vertical-sides($path-to-vertical-sides-shadow, $bulletin-vertical-height, $bulletin-board-height, $bulletin-side-position-left, 1);}
+      & div:nth-child(3) {@include corners($path-to-bulletin-corners-shadow, $bulletin-board-height, 0);}
+      & div:nth-child(2) {@include holes($path-to-bulletin-holes-shadow, $bulletin-holes-shadow-width, $bulletin-board-height, 0);}
+      & div:nth-child(1) {@include planks($path-to-bulletin-planks, $bulletin-board-height, 0);}
+    }
+    
+    /* In Safari 11 SVG pattern elements with alpha are displayed with a black background instead of transparency. */
+    @at-root .jpeg2000.peerconnection & { // Change back to .jpeg2000 after testing.
+      background-image: none; // Just make sure no background is displayed.
+      
+      div {
+        position: absolute;
+      }
+      
+      & div:nth-child(13) {@include plaque($path-to-plaque);}
+      & div:nth-child(12) {
+        @include chains-multiple-backgrounds($chains-width: $bulletin-holes-width,
+                                             $chains-height: $bulletin-chains-height,
+                                             $profile-links-y: calc(100% + #{$chains-top-offset} - #{$chains-bottom-offset}),
+                                             $profile-link-dy: -$chains-link-height,
+                                             $front-links-y: calc(100% - #{$chains-link-height} + #{$chains-top-offset} - #{$chains-bottom-offset}),
+                                             $front-link-dy: calc(-#{$chains-link-height} / 2));
+        box-sizing: border-box;
+      }
+      & div:nth-child(11) {@include corners($path-to-bulletin-corners, $bulletin-board-height, 0);}
+      & div:nth-child(10) {@include horizontal-sides($path-to-bulletin-horizontal-sides, $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(9) {@include vertical-sides($path-to-vertical-sides, $bulletin-vertical-height, $bulletin-board-height, $bulletin-side-position-left, 1);}
+      & div:nth-child(8) {@include holes($path-to-bulletin-holes, $bulletin-holes-width, $bulletin-board-height, 0);}
+      & div:nth-child(7) {@include horizontal-sides($path-to-horizontal-sides-depth, $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(6) {@include corners($path-to-bulletin-corners-depth, $bulletin-board-height, 0);}
+      & div:nth-child(5) {@include horizontal-sides($path-to-horizontal-sides-shadow, $bulletin-horizontal-width, $bulletin-board-height, 0);}
+      & div:nth-child(4) {@include vertical-sides($path-to-vertical-sides-shadow, $bulletin-vertical-height, $bulletin-board-height, $bulletin-side-position-left, 1);}
+      & div:nth-child(3) {@include corners($path-to-bulletin-corners-shadow, $bulletin-board-height, 0);}
+      & div:nth-child(2) {@include holes($path-to-bulletin-holes-shadow, $bulletin-holes-shadow-width, $bulletin-board-height, 0);}
+      & div:nth-child(1) {
+        @include planks-multiple-backgrounds($bulletin-corner-width, $bulletin-board-height);
+        bottom: 0;
+      }
+    }
+  }
+
+  &--type-sign {
+    /* Use SVG fragment identifiers to select specific parts of the image. */
+    background-image: url("#{$path-to-board}#l-top-chains"),
+                      url("#{$path-to-board}#l-bottom-chains"),
+                      url("#{$path-to-board}#l-sign-corners"),
+                      url("#{$path-to-board}#l-sign-horizontal-sides"),
+                      url("#{$path-to-board}#l-vertical-sides"),
+                      url("#{$path-to-board}#l-sign-holes"),
+                      url("#{$path-to-board}#l-horizontal-sides-depth"),
+                      url("#{$path-to-board}#l-sign-corners-depth"),
+                      url("#{$path-to-board}#l-horizontal-sides-shadow"),
+                      url("#{$path-to-board}#l-vertical-sides-shadow"),
+                      url("#{$path-to-board}#l-sign-corners-shadow"),
+                      url("#{$path-to-board}#l-sign-holes-shadow"),
+                      url("#{$path-to-board}#l-sign-planks");
+
+    background-position: center #{-$chains-bottom-offset},            // #l-top-chains
+                         center $sign-chains-position-bottom,         // #l-bottom-chains
+                         center center,                               // #l-sign-corners (diffuse and specular)
+                         center center,                               // #l-sign-horizontal-sides (diffuse and specular)
+                         center $sign-vertical-position-top,          // #l-vertical-sides
+                         center center,                               // #l-sign-holes
+                         center center,                               // #l-horizontal-sides-depth
+                         center center,                               // #l-sign-corners-depth
+                         center center,                               // #l-bulletin-horizontal-sides-shadow
+                         center $sign-vertical-position-top,          // #l-vertical-sides-shadow
+                         center center,                               // #l-sign-corners-shadow
+                         center center,                               // #l-sign-holes-shadow
+                         center center;                               // #l-sign-planks
+
+    background-size: $sign-holes-width $sign-top-chains-height,       // #l-top-chains
+      $sign-holes-width $sign-top-chains-height,                      // #l-bottom-chains
+      100% $sign-board-height,                                        // #l-sign-corners (diffuse and specular)
+      $sign-horizontal-width $sign-board-height,                      // #l-sign-horizontal-sides (diffuse and specular)
+      100% $sign-vertical-height,                                     // #l-vertical-sides
+      $sign-holes-width $sign-board-height,                           // #l-sign-holes
+      $sign-horizontal-width $sign-board-height,                      // #l-horizontal-sides-depth
+      100% $sign-board-height,                                        // #l-sign-corners-depth
+      $sign-horizontal-width $sign-board-height,                      // #l-bulletin-horizontal-sides-shadow
+      100% $sign-vertical-height,                                     // #l-vertical-sides-shadow
+      100% $sign-board-height,                                        // #l-sign-corners-shadow
+      $sign-holes-shadow-width $sign-board-height,                    // #l-sign-holes-shadow
+      100% $sign-board-height;                                        // #l-sign-planks
+    
+    /* IE < 11 don't scale SVGs properly when used as background images. Since IE < 11 don't support CSS pointer-events, use it to detect these versions. */
+    @at-root .no-csspointerevents & {
+      background-color: blue;
+      background-image: none;
+      overflow: hidden;
+      
+      & div {
+        position: absolute;
+      }
+      
+      /* Instead of using a single div with multiple background images, use multiple divs each with their own background image pointing to its respective layer in the SVG stack. */
+      & div:nth-child(13) {@include chains("#{$path-to-board}#l-top-chains", $sign-holes-width, #{calc-chains-height($sign-board-height, $chains-bottom-offset, 2)}, $chains-bottom-offset);}
+      & div:nth-child(12) {
+        @include chains("#{$path-to-board}#l-bottom-chains", $sign-holes-width, #{calc-chains-height($sign-board-height, $chains-bottom-offset, 2)}, $chains-bottom-offset);
+        top: $sign-bottom-chains-div-position-top; // Overwrite function's heihgt.
+      }
+      & div:nth-child(11) {@include corners("#{$path-to-board}#l-sign-corners", $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(10) {@include horizontal-sides("#{$path-to-board}#l-sign-horizontal-sides", $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(9) {@include vertical-sides("#{$path-to-board}#l-vertical-sides", $sign-vertical-height, $sign-board-height, $sign-side-position-left, 2);}
+      & div:nth-child(8) {@include holes("#{$path-to-board}#l-sign-holes", $sign-holes-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(7) {@include horizontal-sides("#{$path-to-board}#l-horizontal-sides-depth", $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(6) {@include corners("#{$path-to-board}#l-sign-corners-depth", $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(5) {@include horizontal-sides("#{$path-to-board}#l-horizontal-sides-shadow", $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(4) {@include vertical-sides("#{$path-to-board}#l-vertical-sides-shadow", $sign-vertical-height, $sign-board-height, $sign-side-position-left, 2);}
+      & div:nth-child(3) {@include corners("#{$path-to-board}#l-sign-corners-shadow", $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(2) {@include holes("#{$path-to-board}#l-sign-holes-shadow", $sign-holes-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(1) {@include planks("#{$path-to-board}#l-sign-planks", $sign-board-height, $sign-board-position-top);}
+    }
+
+    /* *
+     *  1) Safari and Safari iOS don't support SVG Fragment Identifiers at all, so use JPEG 2000 image format to detect
+     *     both (down to 4.0 and 4.3 respectively) since they are the only ones that support this feature.
+     *  2) Chrome versions 36 to 49 only support SVG Fragment Identifiers when used inside <img> elements. Use the WebP image format to detect webkit
+     *     browsers and then the support for Passive event listener to detect Chrome 50 and older.
+     *  3) Safari 6, iOS Safari 6.1 and Chrome versions 25 to 19 suupport calc() with -webkit- prefix but older do not support it at all. Fixed with Autoprefixer.
+     */
+    @at-root .jpeg2000 &, // Change back to .jpeg2000 after testing.
+             .no-passiveeventlisteners.webp & {
+      background-image: none;
+      overflow: hidden;
+      
+      div {
+        // Safari won't display background image if background size and position aren't explicity set.
+        background-size: 100% 100%;
+        background-position: center top;
+        position: absolute;
+      }
+      
+      /* Instead of using a signle div with multiple background images pointing to a signle SVG file, use multiple divs, each with a single background
+         image pointing to an individual SVG file containing its respective layer of the original SVG stack. */
+      & div:nth-child(13) { @include chains($path-to-top-chains, $sign-holes-width, $sign-top-chains-height, $chains-bottom-offset);}
+      & div:nth-child(12) {
+        @include chains($path-to-bottom-chains, $sign-holes-width, $sign-bottom-chains-height, $chains-bottom-offset);
+        top: $sign-bottom-chains-div-position-top; // Overwrite function's heihgt.
+      }
+      & div:nth-child(11) {@include corners($path-to-sign-corners, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(10) {@include horizontal-sides($path-to-sign-horizontal-sides, $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(9) {@include vertical-sides($path-to-vertical-sides, $sign-vertical-height, $sign-board-height, $sign-side-position-left, 2);}
+      & div:nth-child(8) {@include holes($path-to-sign-holes, $sign-holes-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(7) {@include horizontal-sides($path-to-horizontal-sides-depth, $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(6) {@include corners($path-to-sign-corners-depth, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(5) {@include horizontal-sides($path-to-horizontal-sides-shadow, $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(4) {@include vertical-sides($path-to-vertical-sides-shadow, $sign-vertical-height, $sign-board-height, $sign-side-position-left, 2);}
+      & div:nth-child(3) {@include corners($path-to-sign-corners-shadow, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(2) {@include holes($path-to-sign-holes-shadow, $sign-holes-shadow-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(1) {@include planks($path-to-sign-planks, $sign-board-height, $sign-board-position-top);}
+    }
+
+    /* In Safari 11 SVG pattern elements with alpha are displayed with a black background instead of transparency. */
+    @at-root .jpeg2000.peerconnection & { // Change back to .jpeg2000 after testing.
+      background-image: none; // Just make sure no background is displayed.
+      
+      div {
+        position: absolute;
+      }
+      
+      & div:nth-child(13) {
+        @include chains-multiple-backgrounds($chains-width: $sign-holes-width,
+                                             $chains-height: $sign-top-chains-height,
+                                             $profile-links-y: calc(100% + #{$chains-top-offset} - #{$chains-bottom-offset}),
+                                             $profile-link-dy: -$chains-link-height,
+                                             $front-links-y: calc(100% - #{$chains-link-height} + #{$chains-top-offset} - #{$chains-bottom-offset}),
+                                             $front-link-dy: calc(-#{$chains-link-height} / 2));
+      }
+      & div:nth-child(12) {
+        @include chains-multiple-backgrounds($chains-width: $sign-holes-width,
+                                             $chains-height: $sign-bottom-chains-height,
+                                             $profile-links-y: -$chains-top-offset,
+                                             $profile-link-dy: $chains-link-height,
+                                             $front-links-y: calc(#{$chains-link-height} - #{$chains-top-offset}),
+                                             $front-link-dy: calc(#{$chains-link-height} / 2));
+        bottom: 0;
+      }
+      & div:nth-child(11) {@include corners($path-to-sign-corners, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(10) {@include horizontal-sides($path-to-sign-horizontal-sides, $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(9) {@include vertical-sides($path-to-vertical-sides, $sign-vertical-height, $sign-board-height, $sign-side-position-left, 2);}
+      & div:nth-child(8) {@include holes($path-to-sign-holes, $sign-holes-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(7) {@include horizontal-sides($path-to-horizontal-sides-depth, $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(6) {@include corners($path-to-sign-corners-depth, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(5) {@include horizontal-sides($path-to-horizontal-sides-shadow, $sign-horizontal-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(4) {@include vertical-sides($path-to-vertical-sides-shadow, $sign-vertical-height, $sign-board-height, $sign-side-position-left, 2);}
+      & div:nth-child(3) {@include corners($path-to-sign-corners-shadow, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(2) {@include holes($path-to-sign-holes-shadow, $sign-holes-shadow-width, $sign-board-height, $sign-board-position-top);}
+      & div:nth-child(1) {
+        @include planks-multiple-backgrounds($sign-corner-width, calc((#{$sign-side-position-left} * 2) + #{$sign-vertical-height}));
+        top: calc(#{$sign-board-position-top});
+      }
+    }
+
+    /* Firefox 15 and older don't display SVG elements that use viewbox attribute. Use sandbox support to
+       decide whether to display or not the board. Note that as a compromise Firefox 16 which does display
+       the SVG properly but it will be skipped for convenience. */
+    @at-root .cssmozoutlineradius.no-sandbox {
+
+      ::after {
+        @include full-page-msg($browser-is-too-old);
+      }
+
+      .board {
+        display: none;
+      }
+    }
+  }
+
+  /* IE < 10 and very old version of FF, Chrome, Safari, Opera, etc., do not display SVGs properly, probably due to
+     incompatibility issues with <pattern> elements. Detect support for CSS Gradients to avoid displaying broken graphics. */
+  @at-root .no-csscalc,
+           .no-cssgradients,
+           /* IE < 10 dont't support innerHTML on html elements. */
+           .no-generatedcontent {
+    body,
+    /* Remember, IE8 only supports the single-colon CSS 2.1 syntax (i.e. :pseudo-class). This is fixed width Autoprefixer. */
+    ::after {
+      @include full-page-msg($browser-is-too-old);
+    }
+             
+    .board {
+      display: none;
+    }
+  }
+}
+
+// EXAMPLES
+
+.bulletin {
+  height: 95%; // Total height of the board and chains.
+  left: 35%;
+  margin-left: -30%;
+  min-height: 30%;
+  min-width: 40%;
+  width: 60%;
+}
+
+.sign {
+  height: 95%; // Total height of the board and chains.
+  right: 35%;
+  margin-right: -30%;
+  min-height: 30%;
+  min-width: 15%;
+  width: 25%;
+}
