@@ -127,8 +127,8 @@ var data = {
                 "extremely aggressive and followed the group for several hours. Exact location unknown."
             },
             "Ruined Lizardman Camp": {
-                "y": 328.22,
-                "x": 1192.5,
+                "y": 131.4375,
+                "x": 1365,
                 "info": "A burned down lizardman camp. The camp was eliminated by Reginald, Loraleth, and Tyrik. Exact location unknown."
             },
         }
