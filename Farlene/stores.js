@@ -26,6 +26,24 @@ var items = {
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100g"
     },
+    "Potion of Invigoration": {
+        "type": "potion",
+        "Classification":"Uncommon Item",
+        "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
+        "Cost": "50g"
+    },
+    "Potion of Healing": {
+        "type": "potion",
+        "Classification":"Uncommon Item",
+        "Description": "Restores 2d4+2 hit points to the imbiber.",
+        "Cost": "50g"
+    },
+    "Potion of Greater Healing": {
+        "type": "potion",
+        "Classification":"Uncommon Item",
+        "Description": "Restores 4d4+4 hit points to the imbiber.",
+        "Cost": "100g"
+    },
 }
 
 /* This is a layout for the items
