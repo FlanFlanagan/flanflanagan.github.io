@@ -141,10 +141,6 @@ var data = {
                    ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
                    ' damage weapons that come in contact with it. Each killed Sucker will reward 400 gold.'
         },
-        "Perch Guard Patrol Request – Dangers Unknown" : {
-            'employer': 'perchGuard',
-            'job': "The Perch Guard is concerned about the safety of a ruined temple on the far side of The Flower Jungle. Adventurers interested in supporting the efforts of the Perch Guard in the area should contact Garry Hamford at the Perch Guard barracks in Hamlet. 40 gold per week, per adventurer. Of chief concern are the native lizard folk who have shown some interest in the temple. "
-        },
         "Alchemist Society – Reagent Run" :{
             'employer': 'alchemistSociety',
             'job': "The alchemist society is looking for brewing supplies. Of primary interest are the red flowers discovered in The Flower Jungle. The society will pay 10g per flower. For other herb rewards please see Tessa Smoak at the Alchemist Supply Store."
@@ -161,6 +157,18 @@ var data = {
             'employer': 'misc',
             'job': "Douglus Downey Dalahart is looking for more honey. His Outlands Flavoriffic BeeBeeQue Sauce is a huge hit and he needs more honey to keep up with demand. 200g per flask of honey! This truly is flavor country!"
         },
+        "Plants to the north": {
+            'employer': 'alchemistSociety',
+            'job': "Explorers returning from North of the Flower Forest, and the Willow Marsh report a river and a large deciduous forest. Some have claimed to create some interesting alchemical concoctions from the components they have found there. The alchemical society is looking for adventures to search the area. 100 gold will be given for any such alchemical components."
+        },
+        'Lizards in the Jungle': {
+            'employer': 'perchGuard',
+            'job': 'Reports from scouts indicate that the lizard folk are moving from the large Jungle to the south and heading north. There is concern that the lizard folk are massing a large force somewhere between the Jungle and the ruined temple. Adventures are asked to determine the location of such a force, and deal with it if required. A 20 gold per diem is alloted to adventures.'
+        },
+        'Avium School of History and Magic - Long term exploration': {
+            'employer': 'ASoHM',
+            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer.'
+        }
     }
 }
 

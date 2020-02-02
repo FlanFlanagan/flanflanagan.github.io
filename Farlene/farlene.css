@@ -29,7 +29,7 @@ body {
 
 #vizFrame {
 	margin-top: 0.5%;
-	height: 45em;
+	height: 55em;
 	width: 100%;
 	background: #00B366;
 	float: left;
@@ -169,6 +169,7 @@ form button {
 	background-color: coral;
 	text-align: left;
 	padding: 0.5em 1em 0.5em 1em;
+	width: 500px;
 	line-height: normal;
 }
 
@@ -179,8 +180,7 @@ form button {
 .items {
 	color: #FFFFFF;
 	flex-flow: wrap;
-	justify-content: space-evenly;
-	align-items: center;
+	align-items: baseline;
 }
 
 .weapon {
