@@ -143,7 +143,7 @@ var data = {
         },
         "Alchemist Society – Reagent Run" :{
             'employer': 'alchemistSociety',
-            'job': "The alchemist society is looking for brewing supplies. Of primary interest are the red flowers discovered in The Flower Jungle. The society will pay 10g per flower. For other herb rewards please see Tessa Smoak at the Alchemist Supply Store."
+            'job': "The alchemist society is in desperate need of new potion supplies. Rates have increased for each reagent found in the flower forest. Red Flowers - 20g, Purple Flowers - 20g."
         },
         "Smithing Guild – Exploration" :{
             'employer': 'smithingGuild',
@@ -153,21 +153,29 @@ var data = {
             'employer': 'ASoHM',
             'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 700g total reward.  "
         },
-        "More Honey" :{
-            'employer': 'misc',
-            'job': "Douglus Downey Dalahart is looking for more honey. His Outlands Flavoriffic BeeBeeQue Sauce is a huge hit and he needs more honey to keep up with demand. 200g per flask of honey! This truly is flavor country!"
-        },
         "Plants to the north": {
             'employer': 'alchemistSociety',
             'job': "Explorers returning from North of the Flower Forest, and the Willow Marsh report a river and a large deciduous forest. Some have claimed to create some interesting alchemical concoctions from the components they have found there. The alchemical society is looking for adventures to search the area. 100 gold will be given for any such alchemical components."
         },
         'Lizards in the Jungle': {
             'employer': 'perchGuard',
-            'job': 'Reports from scouts indicate that the lizard folk are moving from the large Jungle to the south and heading north. There is concern that the lizard folk are massing a large force somewhere between the Jungle and the ruined temple. Adventures are asked to determine the location of such a force, and deal with it if required. A 20 gold per diem is alloted to adventures.'
+            'job': 'With the threat of the Lizard folk invasion quelled, it is important the Perch Guard understands their remaining strength. Adventurers are asked to head into the southern jungle and discover more about their strengths.'
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
-            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer.'
+            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
+        },
+        'Looking for Lizard Man Metal': {
+            'employer': 'SW',
+            'job': 'The Storm Warriors are looking to aquire the rare metal from the lizard folk, offering 5 gold a coin.'
+        },
+        'Laborers Wanted': {
+            'employer': 'SW',
+            'job': 'The Storm Warriors are looking for abled bodied citizens willing to help construct and staff a Storm Warrior Tavern. Rates vary by job.'
+        },
+        'Missing Adventuers': {
+            'employer': 'misc',
+            'job': 'The Quillgressive Spineco insurance company is looking for adventurers to find missing adventures that have gone missing in the area north of the Willow Marsh. 200g for any information found about the adventurers. Passage to the northern edge of the swamp is provided via Terry\'s Ferrys'
         }
     }
 }
