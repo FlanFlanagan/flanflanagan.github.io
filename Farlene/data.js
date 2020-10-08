@@ -134,7 +134,7 @@ var data = {
             "Giant Tortoise Sighting": {
                 "y": 184.10938,
                 "x": 1319.5,
-                "info": "A burned down lizardman camp. The camp was eliminated by Reginald, Loraleth, and Tyrik. Exact location unknown."
+                "info": "A giant tortoise was seen in these parts by a group of adventures. Location marked my Yoret Amon."
             },
         }
     },
