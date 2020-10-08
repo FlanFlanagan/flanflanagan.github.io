@@ -30,25 +30,26 @@ var items = {
         "into the bag and thinking of the item. The bag holds up to 500lbs and a maximum of 64 cubic feet.",
         "Cost": "500 gold"
     },
-    "Potion of Bravery - Out of Stock": {
+    "Potion of Bravery": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 1
+        "Quantity": 2
     },
-    "Potion of Invigoration - Out of Stock": {
+    "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
-    "Potion of Healing - Out of Stock": {
+    "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
+        "Quantity" : 2
     },
     "Potion of Greater Healing - Out of Stock": {
         "type": "potion",
@@ -57,23 +58,26 @@ var items = {
         "Cost": "100 gold",
         "Quantity" : 0
     },
-    "Potion of Fate - x1": {
+    "Potion of Fate": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
-        "Cost": "200 gold"
+        "Cost": "200 gold",
+        "Quantity" : 1
     },
-    "Potion of Fate - x1": {
-        "type": "potion",
-        "Classification":"Uncommon Item",
-        "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
-        "Cost": "200 gold"
-    },
-    "Potion of Mind Protection - x5": {
+    "Potion of Mind Protection": {
         "type": "potion",
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
-        "Cost": "200 gold"
+        "Cost": "200 gold",
+        "Quantity" : 5
+    },
+    "Vial of Heightened Mind Drops": {
+        "type": "potion",
+        "Classification":"Rare Item",
+        "Description": "Adding this vial to a potion will cause the potion to increase intelligence by 2 points in additon to the potions normal effects. The intelligence lasts for 24 hours.",
+        "Cost": "200 gold",
+        "Quantity" : 1
     },
 }
 

@@ -131,6 +131,11 @@ var data = {
                 "x": 1365,
                 "info": "A burned down lizardman camp. The camp was eliminated by Reginald, Loraleth, and Tyrik. Exact location unknown."
             },
+            "Giant Tortoise Sighting": {
+                "y": 184.10938,
+                "x": 1319.5,
+                "info": "A burned down lizardman camp. The camp was eliminated by Reginald, Loraleth, and Tyrik. Exact location unknown."
+            },
         }
     },
     'jobs': {
@@ -139,11 +144,11 @@ var data = {
             'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
                    ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
                    ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
-                   ' damage weapons that come in contact with it. Each killed Sucker will reward 400 gold.'
+                   ' damage weapons that come in contact with it. Each killed Sucker will reward 500 gold.'
         },
         "Alchemist Society – Reagent Run" :{
             'employer': 'alchemistSociety',
-            'job': "The alchemist society is in desperate need of new potion supplies. Rates have increased for each reagent found in the flower forest. Red Flowers - 20g, Purple Flowers - 20g."
+            'job': "The alchemist society is in desperate need of new potion supplies. Rates have increased for each reagent found in the flower forest. Red Flowers - 30g, Purple Flowers - 20g."
         },
         "Smithing Guild – Exploration" :{
             'employer': 'smithingGuild',
@@ -159,7 +164,7 @@ var data = {
         },
         'Lizards in the Jungle': {
             'employer': 'perchGuard',
-            'job': 'With the threat of the Lizard folk invasion quelled, it is important the Perch Guard understands their remaining strength. Adventurers are asked to head into the southern jungle and discover more about their strengths.'
+            'job': 'With the threat of the Lizard folk invasion quelled, it is important the Perch Guard understands their remaining strength. Adventurers are asked to head into the southern jungle and discover more about their numbers and society.'
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
@@ -169,13 +174,13 @@ var data = {
             'employer': 'SW',
             'job': 'The Storm Warriors are looking to aquire the rare metal from the lizard folk, offering 5 gold a coin.'
         },
-        'Laborers Wanted': {
-            'employer': 'SW',
-            'job': 'The Storm Warriors are looking for abled bodied citizens willing to help construct and staff a Storm Warrior Tavern. Rates vary by job.'
-        },
         'Missing Adventuers': {
             'employer': 'misc',
             'job': 'The Quillgressive Spineco insurance company is looking for adventurers to find missing adventures that have gone missing in the area north of the Willow Marsh. 200g for any information found about the adventurers. Passage to the northern edge of the swamp is provided via Terry\'s Ferrys'
+        },
+        'Suspicious Activity': {
+            'employer': 'perchGuard',
+            'job': 'The Perch Guard are looking for adventures to investigate a string of disapearences in the wild lands to the west. Contact Cpt. Hamfold for more information.'
         }
     }
 }
