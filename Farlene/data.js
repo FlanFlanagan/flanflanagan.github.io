@@ -144,11 +144,7 @@ var data = {
             'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
                    ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
                    ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
-                   ' damage weapons that come in contact with it. Each killed Sucker will reward 500 gold.'
-        },
-        "Alchemist Society – Reagent Run" :{
-            'employer': 'alchemistSociety',
-            'job': "The alchemist society is in desperate need of new potion supplies. Rates have increased for each reagent found in the flower forest. Red Flowers - 30g, Purple Flowers - 20g."
+                   ' damage weapons that come in contact with it. Each killed Sucker will reward 700 gold.'
         },
         "Smithing Guild – Exploration" :{
             'employer': 'smithingGuild',
@@ -156,7 +152,7 @@ var data = {
         },
         "Avium School of History and Magic – Extreme Danger" :{
             'employer': 'ASoHM',
-            'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 700g total reward.  "
+            'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 800g total reward.  "
         },
         "Plants to the north": {
             'employer': 'alchemistSociety',
@@ -164,24 +160,24 @@ var data = {
         },
         'Lizards in the Jungle': {
             'employer': 'perchGuard',
-            'job': 'With the threat of the Lizard folk invasion quelled, it is important the Perch Guard understands their remaining strength. Adventurers are asked to head into the southern jungle and discover more about their numbers and society.'
+            'job': 'With the threat of the Lizard folk invasion quelled, it is important the Perch Guard understands their remaining strength. Adventurers are asked to head into the southern jungle and discover more about their numbers and society. A perch guard employee will accompany the group. 30g per day per diem. Plus a bonus upon return demending on the success of the mission.'
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
             'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
-        'Looking for Lizard Man Metal': {
+        'Skystone Amulet Retrieval': {
             'employer': 'SW',
-            'job': 'The Storm Warriors are looking to aquire the rare metal from the lizard folk, offering 5 gold a coin.'
-        },
-        'Missing Adventuers': {
-            'employer': 'misc',
-            'job': 'The Quillgressive Spineco insurance company is looking for adventurers to find missing adventures that have gone missing in the area north of the Willow Marsh. 200g for any information found about the adventurers. Passage to the northern edge of the swamp is provided via Terry\'s Ferrys'
+            'job': 'A skystone amulet is said to be in the River Forest. The Storm Warriors are paying 400g for the amulet.'
         },
         'Suspicious Activity': {
             'employer': 'perchGuard',
             'job': 'The Perch Guard are looking for adventures to investigate a string of disapearences in the wild lands to the west. Contact Cpt. Hamfold for more information.'
-        }
+        },
+        "Locate Bee Hives" :{
+            'employer': 'SW',
+            'job': "The location of the bee hives in the flower forest are of great value to the Storm Warriors. A verified location of the hives will be rewarded with 100g."
+        },
     }
 }
 

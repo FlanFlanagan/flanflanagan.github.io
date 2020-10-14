@@ -49,7 +49,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 2
+        "Quantity" : 1
     },
     "Potion of Greater Healing - Out of Stock": {
         "type": "potion",
@@ -77,6 +77,20 @@ var items = {
         "Classification":"Rare Item",
         "Description": "Adding this vial to a potion will cause the potion to increase intelligence by 2 points in additon to the potions normal effects. The intelligence lasts for 24 hours.",
         "Cost": "200 gold",
+        "Quantity" : 1
+    },
+    "Acid Bomb": {
+        "type": "potion",
+        "Classification":"Very Rare Item",
+        "Description": "The acidic sap found in this bomb is derived from the sap found in the River Forest. When thrown the bomb will explode upon impact, dealing 12d10 acid damage to all creatures within 10 feet.",
+        "Cost": "1000 gold",
+        "Quantity" : 1
+    },
+    "Basilisk Dagger": {
+        "type": "weapon",
+        "Classification":"Rare Item",
+        "Description": "This magic dagger was made from pieces of a slain basilisk and still retains some of its properties. The dagger deals an extra 1d4 poison damage to any target it hits. In addition, when you score a critical hit with this weapon against a Large or smaller creature, that creature must succeed on a DC 13 Constitution saving throw or be restrained until the end of your next turn.",
+        "Cost": "900 gold",
         "Quantity" : 1
     },
 }
