@@ -49,7 +49,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 1
+        "Quantity" : 0
     },
     "Potion of Greater Healing - Out of Stock": {
         "type": "potion",
