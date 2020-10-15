@@ -136,6 +136,11 @@ var data = {
                 "x": 1319.5,
                 "info": "A giant tortoise was seen in these parts by a group of adventures. Location marked by Yoret Amon."
             },
+            "Ancient Temple to Kren": {
+                "y": 42.17969,
+                "x": 1193.5,
+                "info": "Temple to dedicated to Kren by ancient vulpin. A sword hilt and religious texts were found here. The temple was found underground accessed by a mud shoot. General location known by Baily, Thadd, Emerena, and Perry"
+            },
         }
     },
     'jobs': {
