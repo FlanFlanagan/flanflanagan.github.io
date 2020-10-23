@@ -141,6 +141,12 @@ var data = {
                 "x": 1193.5,
                 "info": "Temple to dedicated to Kren by ancient vulpin. A sword hilt and religious texts were found here. The temple was found underground accessed by a mud shoot. General location known by Baily, Thadd, Emerena, and Perry"
             },
+            "Lizard Man Outpost": {
+                "y": 12.71875,
+                "x": 1181,
+                "info": "Lizard man outpost. 10-25 inhabitants. Seems like a military outpost. "
+            },
+
         }
     },
     'jobs': {
