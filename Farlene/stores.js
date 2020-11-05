@@ -51,12 +51,12 @@ var items = {
         "Cost": "50 gold",
         "Quantity" : 0
     },
-    "Potion of Greater Healing - Out of Stock": {
+    "Potion of Greater Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Potion of Fate": {
         "type": "potion",
@@ -77,7 +77,7 @@ var items = {
         "Classification":"Rare Item",
         "Description": "Adding this vial to a potion will cause the potion to increase intelligence by 2 points in additon to the potions normal effects. The intelligence lasts for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 1
+        "Quantity" : 2
     },
     "Acid Bomb": {
         "type": "potion",
@@ -90,7 +90,7 @@ var items = {
         "type": "weapon",
         "Classification":"Rare Item",
         "Description": "This magic dagger was made from pieces of a slain basilisk and still retains some of its properties. The dagger deals an extra 1d4 poison damage to any target it hits. In addition, when you score a critical hit with this weapon against a Large or smaller creature, that creature must succeed on a DC 13 Constitution saving throw or be restrained until the end of your next turn.",
-        "Cost": "900 gold",
+        "Cost": "1500 gold",
         "Quantity" : 1
     },
 }

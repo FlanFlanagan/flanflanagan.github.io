@@ -150,6 +150,10 @@ var data = {
         }
     },
     'jobs': {
+        "Smithing Guild – Find Missing Surverors" :{
+            'employer': 'smithingGuild',
+            'job': "Adventures are asked to search for missing surverors in the crag area. A smithing guild member will lead adventures to the correct area to begin the search. At this point it is likely a rescue mission, or worse. 25g perdiem per adventure. 200g bonus for safe return of the missing individuals."
+        },
         "Perch Guard Kill Order – Flesh Sucking Killer – EXTREME DANGER" : {
             'employer': 'perchGuard',
             'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
@@ -164,14 +168,6 @@ var data = {
         "Avium School of History and Magic – Extreme Danger" :{
             'employer': 'ASoHM',
             'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 800g total reward.  "
-        },
-        "Plants to the north": {
-            'employer': 'alchemistSociety',
-            'job': "Explorers returning from North of the Flower Forest, and the Willow Marsh report a river and a large deciduous forest. Some have claimed to create some interesting alchemical concoctions from the components they have found there. The alchemical society is looking for adventures to search the area. 100 gold will be given for any such alchemical components."
-        },
-        'Lizards in the Jungle': {
-            'employer': 'perchGuard',
-            'job': 'With the threat of the Lizard folk invasion quelled, it is important the Perch Guard understands their remaining strength. Adventurers are asked to head into the southern jungle and discover more about their numbers and society. A perch guard employee will accompany the group. 30g per day per diem. Plus a bonus upon return demending on the success of the mission.'
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
