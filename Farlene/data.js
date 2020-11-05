@@ -163,7 +163,7 @@ var data = {
             'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
                    ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
                    ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
-                   ' damage weapons that come in contact with it. Each killed Sucker will reward 700 gold.'
+                   ' damage weapons that come in contact with it. Each killed Sucker will reward 1000 gold.'
         },
         "Smithing Guild – Exploration" :{
             'employer': 'smithingGuild',
@@ -171,7 +171,7 @@ var data = {
         },
         "Avium School of History and Magic – Extreme Danger" :{
             'employer': 'ASoHM',
-            'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 800g total reward.  "
+            'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 1500g total reward.  "
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
@@ -179,7 +179,7 @@ var data = {
         },
         'Skystone Amulet Retrieval': {
             'employer': 'SW',
-            'job': 'A skystone amulet is said to be in the River Forest. The Storm Warriors are paying 400g for the amulet.'
+            'job': 'A skystone amulet is said to be in the River Forest. The Storm Warriors are paying 500g for the amulet.'
         },
         'Suspicious Activity': {
             'employer': 'perchGuard',
