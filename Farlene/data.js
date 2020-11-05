@@ -152,7 +152,11 @@ var data = {
     'jobs': {
         "Smithing Guild – Find Missing Surverors" :{
             'employer': 'smithingGuild',
-            'job': "Adventures are asked to search for missing surverors in the crag area. A smithing guild member will lead adventures to the correct area to begin the search. At this point it is likely a rescue mission, or worse. 25g perdiem per adventure. 200g bonus for safe return of the missing individuals."
+            'job': "Adventures are asked to search for missing surverors in the crag area. A smithing guild member will lead adventures to the correct area to begin the search. At this point it is likely a rescue mission, or worse. 25g perdiem per adventure. 200g bonus for safe return of the missing individuals. ."
+        },
+        'Avium School of History and Magic - Long term exploration': {
+            'employer': 'ASoHM',
+            'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
         },
         "Perch Guard Kill Order – Flesh Sucking Killer – EXTREME DANGER" : {
             'employer': 'perchGuard',
