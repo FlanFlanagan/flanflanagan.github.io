@@ -241,3 +241,32 @@ form button {
 	font-family: 'Lobster Two';
 	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
 }
+.enchant {
+	color: #FFFFFF;
+	font-size: 20px;
+	border: 4px solid black;
+	text-align: center;
+	text-shadow: black 0.1em 0.1em 0.1em;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+   	border-radius: 10px;
+}
+
+.eArmor{
+	background-color: #6c6f8a;
+	font-family: 'Times';
+	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
+}
+
+.eWeapon{
+	background-color: #910730;
+	font-family: 'Times';
+	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
+}
+
+.eItem{
+	background-color: #968d0f;
+	font-family: 'Times';
+	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
+}

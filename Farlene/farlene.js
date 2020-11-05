@@ -26,8 +26,7 @@ function jobs(){
 		p.style.marginBottom = "0em";
 		p1.append(jobsList[key]['job']);
 		div1.append(p, p1);
-		jobsDiv.append(div1)
-		
+		jobsDiv.append(div1)	
 	}
 	$("#vizFrame").append(jobsDiv);
 	return;	
@@ -41,6 +40,30 @@ function shops(){
 		itemsDiv.append(weaponItem(items, key))
 	}
 	$("#vizFrame").append(itemsDiv);
+	return;	
+
+}
+function enchants(){
+	$('#vizFrame').empty();
+	var enchantDiv = document.createElement("div");
+	/*jobsDiv.id = 'jobs';*/
+	enchantDiv.className = 'board board--type-bulletin bulletin'
+	enchantList = data['enchants'];
+	console.log(enchantList)
+	for(var key in enchantList){
+		var div1 = document.createElement("div");
+		div1.className = 'enchant ' + enchantList[key]['type']
+		p = document.createElement('p');
+		p1 = document.createElement('p');
+		p.append(key + ": " + enchantList[key]['d'])
+		p.className = 'enchantTitle';
+		p1.className = 'Desc';
+		p.style.marginBottom = "0em";
+		p1.append(enchantList[key]['cost']);
+		div1.append(p, p1);
+		enchantDiv.append(div1)
+	}
+	$("#vizFrame").append(enchantDiv);
 	return;	
 }
 

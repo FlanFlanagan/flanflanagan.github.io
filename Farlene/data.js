@@ -189,12 +189,31 @@ var data = {
             'employer': 'SW',
             'job': "The location of the bee hives in the flower forest are of great value to the Storm Warriors. A verified location of the hives will be rewarded with 100g."
         },
-    }
+    },
+    'enchants': {
+        "Vitality" : {
+            'd':'Enchant armor to increase your maximum health by 5 while wearing it.',
+            'type': 'eArmor',
+            'cost': '100 gold'
+        },
+        "Savage" : {
+            'd':'Enchant a weapon to deal one additional dice of weapon damage on critical hit.',
+            'type': 'eWeapon',
+            'cost': '400 gold'
+        }
+    },
 }
 
 /*
 "title" :{
     'employer': '',
     'job': ""
+},
+*/
+
+/*
+"enchant" :{
+    'title': '',
+    'd': ""
 },
 */
