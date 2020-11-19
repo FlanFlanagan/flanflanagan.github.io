@@ -20,7 +20,6 @@ var items = {
         "carrying any passengers and items along with it. This perch lasts up to 8 hours, at which point the tree will retreat into the ground and the platform will shrink, eventually " +
         "curling back into the small charm. At any time the command word can be spoken again to dismiss the perch in a similar fashion. Once the nest charm’s power is used it requires a long rest to restore.",
         "Cost": "10000 gold"
-
     },
     "Bag of Holding": {
         "type": "item",
@@ -35,7 +34,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 2
+        "Quantity": 0
     },
     "Potion of Invigoration": {
         "type": "potion",
@@ -49,7 +48,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 0
+        "Quantity" : 2
     },
     "Potion of Greater Healing": {
         "type": "potion",
@@ -63,14 +62,14 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
-        "Quantity" : 1
+        "Quantity" : 0
     },
     "Potion of Mind Protection": {
         "type": "potion",
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 5
+        "Quantity" : 2
     },
     "Vial of Heightened Mind Drops": {
         "type": "potion",
@@ -86,13 +85,13 @@ var items = {
         "Cost": "1000 gold",
         "Quantity" : 1
     },
-    "Basilisk Dagger": {
-        "type": "weapon",
-        "Classification":"Rare Item",
-        "Description": "This magic dagger was made from pieces of a slain basilisk and still retains some of its properties. The dagger deals an extra 1d4 poison damage to any target it hits. In addition, when you score a critical hit with this weapon against a Large or smaller creature, that creature must succeed on a DC 13 Constitution saving throw or be restrained until the end of your next turn.",
-        "Cost": "1500 gold",
-        "Quantity" : 1
-    },
+    'Dagger +1': {
+        'type': 'weapon'
+        "ItemType": "Dagger +1",
+        "Description": "When you make attacks with this weapon to hit and damage rolls are increased by 1.",
+        "Cost": "900g",
+        "Quantity": '2'
+    }
 }
 
 /* This is a layout for the items

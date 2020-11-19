@@ -150,10 +150,6 @@ var data = {
         }
     },
     'jobs': {
-        "Smithing Guild – Find Missing Surverors" :{
-            'employer': 'smithingGuild',
-            'job': "Adventures are asked to search for missing surverors in the crag area. A smithing guild member will lead adventures to the correct area to begin the search. At this point it is likely a rescue mission, or worse. 25g perdiem per adventure. 200g bonus for safe return of the missing individuals. ."
-        },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
@@ -167,23 +163,18 @@ var data = {
         },
         "Smithing Guild – Exploration" :{
             'employer': 'smithingGuild',
-            'job': "The smithing guild is looking for individuals to explore the crag like area beyond The Flower Forest. These areas tend to host ore or gem veins. A smithing guild prospector will join the explorers to identify any valuables. 20 gold per day, per adventurer."
-        },
-        "Avium School of History and Magic – Extreme Danger" :{
-            'employer': 'ASoHM',
-            'job': "Adventurers are asked to investigate the large willow Tree north of the river crossing. The school of history and magic have heard rumor of a temple inside the tree. Given the recent discovery of teleportation circles in the outer lands, the school is interested in an information regarding this tree. 1500g total reward.  "
+            'job': 'The smithing guild is looking for individuals to explore the crag like area beyond The Flower Forest. These areas tend to host ore or gem veins.' +
+            'A smithing guild prospector will join the explorers to identify any valuables. 20 gold per day, per adventurer.'
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
-            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
+            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
+            ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
+            ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
         'Skystone Amulet Retrieval': {
             'employer': 'SW',
             'job': 'A skystone amulet is said to be in the River Forest. The Storm Warriors are paying 500g for the amulet.'
-        },
-        'Suspicious Activity': {
-            'employer': 'perchGuard',
-            'job': 'The Perch Guard are looking for adventures to investigate a string of disapearences in the wild lands to the west. Contact Cpt. Hamfold for more information.'
         },
         "Locate Bee Hives" :{
             'employer': 'SW',
