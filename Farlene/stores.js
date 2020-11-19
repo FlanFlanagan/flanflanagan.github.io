@@ -86,7 +86,7 @@ var items = {
         "Quantity" : 1
     },
     'Dagger +1': {
-        'type': 'weapon'
+        'type': 'weapon',
         "ItemType": "Dagger +1",
         "Description": "When you make attacks with this weapon to hit and damage rolls are increased by 1.",
         "Cost": "900g",
