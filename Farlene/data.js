@@ -180,6 +180,15 @@ var data = {
             'employer': 'SW',
             'job': "The location of the bee hives in the flower forest are of great value to the Storm Warriors. A verified location of the hives will be rewarded with 100g."
         },
+        "Jungle Safari Guards" :{
+            'employer': 'misc',
+            'job': "Baron Opron Ligimus is looking for capable adventures to ensure his safety on a Jungle Safari. 700g per guard."
+        },
+        "Increased Bee Activity" :{
+            'employer': 'perchGuard',
+            'job': "There are reports of increased activity within the flower fields of the bees. Large scale battles have been reported. The Perch Guard is looking for individuals" +
+            " to discover the cause of these battles. 300g per adventurer."
+        },
     },
     'enchants': {
         "Vitality" : {
