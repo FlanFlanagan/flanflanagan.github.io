@@ -184,11 +184,11 @@ var data = {
             'employer': 'misc',
             'job': "Baron Opron Ligimus is looking for capable adventures to ensure his safety on a Jungle Safari. 700g per guard."
         },
-        "Increased Bee Activity" :{
-            'employer': 'perchGuard',
-            'job': "There are reports of increased activity within the flower fields of the bees. Large scale battles have been reported. The Perch Guard is looking for individuals" +
-            " to discover the cause of these battles. 300g per adventurer."
+        'Travel Companions': {
+            'employer': 'misc',
+            'job': "Looking for strong warriors to escort a biological study group. Long journal. 50g per diem."
         },
+
     },
     'enchants': {
         "Vitality" : {
