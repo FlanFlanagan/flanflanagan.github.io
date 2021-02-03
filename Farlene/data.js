@@ -146,6 +146,11 @@ var data = {
                 "x": 1181,
                 "info": "Lizard man outpost. 10-25 inhabitants. Seems like a military outpost. "
             },
+            "Lizard Man Outpost": {
+                "y": 12.71875,
+                "x": 1181,
+                "info": "Lizard man outpost. 10-25 inhabitants. Seems like a military outpost. "
+            },
 
         }
     },
@@ -159,7 +164,7 @@ var data = {
             'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
                    ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
                    ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
-                   ' damage weapons that come in contact with it. Each killed Sucker will reward 1000 gold.'
+                   ' damage weapons that come in contact with it. Each killed Sucker will reward 1500 gold.'
         },
         "Smithing Guild – Exploration" :{
             'employer': 'smithingGuild',
@@ -171,10 +176,6 @@ var data = {
             'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
             ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
             ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
-        },
-        'Skystone Amulet Retrieval': {
-            'employer': 'SW',
-            'job': 'A skystone amulet is said to be in the River Forest. The Storm Warriors are paying 500g for the amulet.'
         },
         "Locate Bee Hives" :{
             'employer': 'SW',
@@ -188,7 +189,10 @@ var data = {
             'employer': 'misc',
             'job': "Looking for strong warriors to escort a biological study group. Long journal. 50g per diem."
         },
-
+        'Crab Legs!': {
+            'employer': 'misc',
+            'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
+        },
     },
     'enchants': {
         "Vitality" : {
@@ -200,6 +204,11 @@ var data = {
             'd':'Enchant a weapon to deal one additional dice of weapon damage on critical hit.',
             'type': 'eWeapon',
             'cost': '400 gold'
+        },
+        'Broad Swipes': {
+            'd':'A slashing weapon with this enchant will deal normal weapon damage to all enemies within range on a critical hit.',
+            'type': 'eWeapon',
+            'cost': '1500 gold'
         }
     },
 }
