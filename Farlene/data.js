@@ -146,16 +146,15 @@ var data = {
                 "x": 1181,
                 "info": "Lizard man outpost. 10-25 inhabitants. Seems like a military outpost. "
             },
-            "Lizard Man Outpost": {
-                "y": 12.71875,
-                "x": 1181,
+            "Weird Tower": {
+                "y": 815.75598,
+                "x": 1436.43752,
                 "info": "Lizard man outpost. 10-25 inhabitants. Seems like a military outpost. "
             },
-
         }
     },
     'jobs': {
-        'Avium School of History and Magic - Long term exploration': {
+        'Avium School of History and Magic - Teleportation Circle': {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
         },
@@ -192,6 +191,10 @@ var data = {
         'Crab Legs!': {
             'employer': 'misc',
             'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
+        },
+        "title" :{
+            'employer': '',
+            'job': ""
         },
     },
     'enchants': {
