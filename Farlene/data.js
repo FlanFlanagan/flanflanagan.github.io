@@ -192,10 +192,6 @@ var data = {
             'employer': 'misc',
             'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
         },
-        "title" :{
-            'employer': '',
-            'job': ""
-        },
     },
     'enchants': {
         "Vitality" : {
