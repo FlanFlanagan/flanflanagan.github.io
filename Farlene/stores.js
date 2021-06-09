@@ -91,7 +91,20 @@ var items = {
         "Description": "When you make attacks with this weapon to hit and damage rolls are increased by 1.",
         "Cost": "900g",
         "Quantity": '2'
+    },
+    'War Standard of Battlecries': {
+        'type': 'item',
+        "ItemType": "item",
+        "Description": "This magic battle standard reinforces the fervor of nearby allies. The standard stands up to 10 feet tall but can be collapsed down to 2 feet tall for transport " +
+        "You can extend the standard to its full height as an action and can hold it aloft or plant it upright in an unoccupied space on solid ground. You can retrieve the planted standard as a free action. " +
+        "While the standard is extended, allies within 15 feet of it at the start of combat gain a +3 bonus to their initiative. The standard has 4 charges and regains d4 charges at after a long rest. While "+ 
+        "within 15 feet of the standard you may use a bonus action to shout the command word 'Charge!', and immediately take the dash action. When you do this allies within 15 feet of the standard may also " + 
+        "take the Dash action as a bonus action on their turn. You may concentrate on the banner for 30 minutes to change the emblem depicted on it." +
+        "\n Requires attunment.",
+        "Cost": "2000g",
+        "Quantity": '1'
     }
+
 }
 
 /* This is a layout for the items

@@ -170,15 +170,19 @@ var data = {
             'job': 'The smithing guild is looking for individuals to explore the crag like area beyond The Flower Forest. These areas tend to host ore or gem veins.' +
             'A smithing guild prospector will join the explorers to identify any valuables. 20 gold per day, per adventurer.'
         },
+        'Crab Legs!': {
+            'employer': 'misc',
+            'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
+        },
+        "Locate Bee Hives" :{
+            'employer': 'SW',
+            'job': "The location of the bee hives in the flower forest are of great value to the Storm Warriors. A verified location of the hives will be rewarded with 100g."
+        },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
             'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
             ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
             ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
-        },
-        "Locate Bee Hives" :{
-            'employer': 'SW',
-            'job': "The location of the bee hives in the flower forest are of great value to the Storm Warriors. A verified location of the hives will be rewarded with 100g."
         },
         "Jungle Safari Guards" :{
             'employer': 'misc',
@@ -188,16 +192,22 @@ var data = {
             'employer': 'misc',
             'job': "Looking for strong warriors to escort a biological study group. Long journal. 50g per diem."
         },
-        'Crab Legs!': {
-            'employer': 'misc',
-            'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
-        },
+        'Strange Storm': {
+            'employer': 'perchGuard',
+            'job': "A strange and very large storm has settled over the marshlands to the north of town. The Perch Guard is looking for adventurers to investigate the storm's origin."
+        }
     },
     'enchants': {
         "Vitality" : {
             'd':'Enchant armor to increase your maximum health by 5 while wearing it.',
             'type': 'eArmor',
             'cost': '100 gold'
+        },
+        "Blink Guard" : {
+            'd':'Enchant armor to increase your evasiveness. When you are struck in combat you may use your reaction to instantly blink out of existance to the etheral plane. '+
+            'You are in the etheral plane until the start of your next turn. You return to the space nearest to the space you left (if the space you left is already occupied.)' ,
+            'type': 'eArmor',
+            'cost': '2500 gold'
         },
         "Savage" : {
             'd':'Enchant a weapon to deal one additional dice of weapon damage on critical hit.',
