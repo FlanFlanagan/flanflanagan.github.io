@@ -1,16 +1,4 @@
 var items = {
-    "Red Feather Bow": {
-        "type": "weapon",
-        "Weapon Type": "Longbow +1",
-        "Classification": "Uncommon Item",
-        "Attunement": "Yes",
-        "Description": "A prized hunting weapon among mistral raptors,this \n bow is imbued with magic to help the wielder see their prey " + 
-        "from afar. The bow has 3 charges. When you fire an arrow from this bow, you can speak the command word and use a charge to " +
-        "see through the arrow as a bonus action. You can see from the point your arrow lands as if you were there for 1 minute. " +
-        "If the arrow strikes a creature, you see what they see for the same duration. The bow regains 1d3 charges each day at dawn.",
-        "Cost": "2000 gold",
-        "Quantity": 1
-    },
     "Nest Charm": {
         "type": "item",
         "Classification": "Wonderous Item",
@@ -41,35 +29,35 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 1
+        "Quantity" : 0
     },
     "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 2
+        "Quantity" : 0
     },
     "Potion of Greater Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
-        "Quantity" : 3
+        "Quantity" : 0
     },
     "Potion of Fate": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
-        "Quantity" : 1
+        "Quantity" : 0
     },
     "Potion of Mind Protection": {
         "type": "potion",
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 0
+        "Quantity" : 2
     },
     "Vial of Heightened Mind Drops": {
         "type": "potion",
@@ -92,19 +80,6 @@ var items = {
         "Cost": "900g",
         "Quantity": '2'
     },
-    'War Standard of Battlecries': {
-        'type': 'item',
-        "ItemType": "item",
-        "Description": "This magic battle standard reinforces the fervor of nearby allies. The standard stands up to 10 feet tall but can be collapsed down to 2 feet tall for transport " +
-        "You can extend the standard to its full height as an action and can hold it aloft or plant it upright in an unoccupied space on solid ground. You can retrieve the planted standard as a free action. " +
-        "While the standard is extended, allies within 15 feet of it at the start of combat gain a +3 bonus to their initiative. The standard has 4 charges and regains d4 charges at after a long rest. While "+ 
-        "within 15 feet of the standard you may use a bonus action to shout the command word 'Charge!', and immediately take the dash action. When you do this allies within 15 feet of the standard may also " + 
-        "take the Dash action as a bonus action on their turn. You may concentrate on the banner for 30 minutes to change the emblem depicted on it." +
-        "\n Requires attunment.",
-        "Cost": "2000g",
-        "Quantity": '1'
-    }
-
 }
 
 /* This is a layout for the items

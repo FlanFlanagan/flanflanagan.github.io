@@ -149,7 +149,7 @@ var data = {
             "Weird Tower": {
                 "y": 815.75598,
                 "x": 1436.43752,
-                "info": "Lizard man outpost. 10-25 inhabitants. Seems like a military outpost. "
+                "info": "A weird tower that seemed to house a number of dangerous creatures and rewards adventurers when they scale it's levels."
             },
         }
     },
