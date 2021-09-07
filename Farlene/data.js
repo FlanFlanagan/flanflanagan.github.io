@@ -151,6 +151,11 @@ var data = {
                 "x": 1436.43752,
                 "info": "A weird tower that seemed to house a number of dangerous creatures and rewards adventurers when they scale it's levels."
             },
+            "Gate to Gesme's Forge": {
+                "y": 434.125,
+                "x": 928.5,
+                "info": "Entrance to the Gesme's forge."
+            },
         }
     },
     'jobs': {
@@ -165,18 +170,9 @@ var data = {
                    ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
                    ' damage weapons that come in contact with it. Each killed Sucker will reward 1500 gold.'
         },
-        "Smithing Guild – Exploration" :{
-            'employer': 'smithingGuild',
-            'job': 'The smithing guild is looking for individuals to explore the crag like area beyond The Flower Forest. These areas tend to host ore or gem veins.' +
-            'A smithing guild prospector will join the explorers to identify any valuables. 20 gold per day, per adventurer.'
-        },
         'Crab Legs!': {
             'employer': 'misc',
             'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
-        },
-        "Locate Bee Hives" :{
-            'employer': 'SW',
-            'job': "The location of the bee hives in the flower forest are of great value to the Storm Warriors. A verified location of the hives will be rewarded with 100g."
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
@@ -184,19 +180,27 @@ var data = {
             ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
             ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
-        "Jungle Safari Guards" :{
-            'employer': 'misc',
-            'job': "Baron Opron Ligimus is looking for capable adventures to ensure his safety on a Jungle Safari. 700g per guard."
+        'Potion Materials Required': {
+            'employer': 'alchemistSociety',
+            'job': 'The Alchemists Society is in need of potion materials of all kinds. Offering up to half the cost of a potion per material component.'
         },
-        'Travel Companions': {
+        'WANTED: Rage Bear': {
             'employer': 'misc',
-            'job': "Looking for strong warriors to escort a biological study group. Long journal. 50g per diem."
+            'job': 'A bounty has been placed on a particular "Rage Bear" in the River Forest. Look for a brown and red spotted bear with 6 claws on the right foot. A 800g reward is being offered.'
         },
-        'Strange Storm': {
-            'employer': 'perchGuard',
-            'job': "A strange and very large storm has settled over the marshlands to the north of town. The Perch Guard is looking for adventurers to investigate the storm's origin."
-        }
+        'WANTED: The Big One!': {
+            'employer': 'misc',
+            'job': 'Tripled D here, looking for some sick fish this time. I hear there are some LAKE MONSTERS in the lake to the north. Bring back what you can and you\'ll be rewarded with a trip to flavor town! (and some sweet cash).'
+
+        },
+        'Item Procurement': {
+            'employer': 'misc',
+            'job': 'I\'ve had a vision. I\'ve seen where it is. I must have it. Bring it to me. I don\t know what it is exactly but I must have it. \n ~Huron Suffron.'
+            
+        },
+
     },
+
     'enchants': {
         "Vitality" : {
             'd':'Enchant armor to increase your maximum health by 5 while wearing it.',

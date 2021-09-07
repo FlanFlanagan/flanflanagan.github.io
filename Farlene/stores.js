@@ -22,21 +22,21 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 3
+        "Quantity": 0
     },
     "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Potion of Greater Healing": {
         "type": "potion",
@@ -57,7 +57,7 @@ var items = {
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 2
+        "Quantity" : 1
     },
     "Vial of Heightened Mind Drops": {
         "type": "potion",
@@ -71,14 +71,21 @@ var items = {
         "Classification":"Very Rare Item",
         "Description": "The acidic sap found in this bomb is derived from the sap found in the River Forest. When thrown the bomb will explode upon impact, dealing 12d10 acid damage to all creatures within 10 feet.",
         "Cost": "1000 gold",
-        "Quantity" : 2
+        "Quantity" : 0
     },
-    'Dagger +1': {
-        'type': 'weapon',
-        "ItemType": "Dagger +1",
-        "Description": "When you make attacks with this weapon to hit and damage rolls are increased by 1.",
-        "Cost": "900g",
-        "Quantity": '2'
+    "Starmetal Ring": {
+        "type": "item",
+        "ItemType": "Ring",
+        "Description": "This ring allows you to bind to a mostly metal object of no more than 25lbs and allows you to pull that object to your hand from up to 20ft away.",
+        "Cost": "1000g",
+        "Quantity": 1
+    },
+    "Contingency Band":{
+        "type": "item",
+        "ItemType": "Ring",
+        "Description": "This ring consumes healing potions and allows you to store the capabilities within them to heal yourself as a reaction.",
+        "Cost": "1200g",
+        "Quantity": 1
     },
 }
 
