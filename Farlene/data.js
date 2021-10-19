@@ -159,6 +159,10 @@ var data = {
         }
     },
     'jobs': {
+        'Strange Activities': {
+            'employer': 'perchGuard',
+            'job': 'Adventurers are disappering again. The cause is unknown, looking for adventures to investigate. \n Cmd. Hamfold'
+        },
         'Avium School of History and Magic - Teleportation Circle': {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
