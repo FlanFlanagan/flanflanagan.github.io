@@ -163,13 +163,6 @@ var data = {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
         },
-        "Perch Guard Kill Order – Flesh Sucking Killer – EXTREME DANGER" : {
-            'employer': 'perchGuard',
-            'job': 'The perch guard is concerned about a flying creature that has been sucking the flesh from victims.' +
-                   ' The nature of the beast is still unclear, however encounters with it have proven it to be very deadly.' +
-                   ' It is capable of teleporting short distances as well as extremely dangerous attacks. Corrosive blood will' +
-                   ' damage weapons that come in contact with it. Each killed Sucker will reward 1500 gold.'
-        },
         'Crab Legs!': {
             'employer': 'misc',
             'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
@@ -192,12 +185,7 @@ var data = {
             'employer': 'misc',
             'job': 'Tripled D here, looking for some sick fish this time. I hear there are some LAKE MONSTERS in the lake to the north. Bring back what you can and you\'ll be rewarded with a trip to flavor town! (and some sweet cash).'
 
-        },
-        'Item Procurement': {
-            'employer': 'misc',
-            'job': 'I\'ve had a vision. I\'ve seen where it is. I must have it. Bring it to me. I don\t know what it is exactly but I must have it. \n ~Huron Suffron.'
-            
-        },
+        }
 
     },
 
