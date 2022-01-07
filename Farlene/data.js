@@ -159,10 +159,6 @@ var data = {
         }
     },
     'jobs': {
-        'Strange Activities': {
-            'employer': 'perchGuard',
-            'job': 'Adventurers are disappering again. The cause is unknown, looking for adventures to investigate. \n Cmd. Hamfold'
-        },
         'Avium School of History and Magic - Teleportation Circle': {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
@@ -188,9 +184,7 @@ var data = {
         'WANTED: The Big One!': {
             'employer': 'misc',
             'job': 'Tripled D here, looking for some sick fish this time. I hear there are some LAKE MONSTERS in the lake to the north. Bring back what you can and you\'ll be rewarded with a trip to flavor town! (and some sweet cash).'
-
         }
-
     },
 
     'enchants': {
