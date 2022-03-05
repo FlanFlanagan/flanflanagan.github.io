@@ -22,35 +22,35 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 0
+        "Quantity": 2
     },
     "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 1
+        "Quantity" : 5
     },
     "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 1
+        "Quantity" : 3
     },
     "Potion of Greater Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Potion of Fate": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Potion of Mind Protection": {
         "type": "potion",
@@ -71,7 +71,7 @@ var items = {
         "Classification":"Very Rare Item",
         "Description": "The acidic sap found in this bomb is derived from the sap found in the River Forest. When thrown the bomb will explode upon impact, dealing 12d10 acid damage to all creatures within 10 feet.",
         "Cost": "1000 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Starmetal Ring": {
         "type": "item",
