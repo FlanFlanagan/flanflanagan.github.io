@@ -22,42 +22,42 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 0
+        "Quantity": 5
     },
     "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 1
+        "Quantity" : 8
     },
     "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 1
+        "Quantity" : 6
     },
     "Potion of Greater Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
-        "Quantity" : 0
+        "Quantity" : 4
     },
     "Potion of Fate": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Potion of Mind Protection": {
         "type": "potion",
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 1
+        "Quantity" : 5
     },
     "Vial of Heightened Mind Drops": {
         "type": "potion",
@@ -73,10 +73,10 @@ var items = {
         "Cost": "1000 gold",
         "Quantity" : 0
     },
-    "Starmetal Ring": {
+    "Quick Change Bracelet": {
         "type": "item",
-        "ItemType": "Ring",
-        "Description": "This ring allows you to bind to a mostly metal object of no more than 25lbs and allows you to pull that object to your hand from up to 20ft away.",
+        "ItemType": "Bracelet",
+        "Description": "This item allows you to bind a set of equipment to yourself. When you speak the command word of the bracelet you will transform into that set of equipment or back into your previous outfit.",
         "Cost": "1000g",
         "Quantity": 1
     },

@@ -163,30 +163,25 @@ var data = {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
         },
-        'Crab Legs!': {
-            'employer': 'misc',
-            'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
-        },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
             'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
             ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
             ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
-        'Potion Materials Required': {
-            'employer': 'alchemistSociety',
-            'job': 'The Alchemists Society is in need of potion materials of all kinds. Offering up to half the cost of a potion per material component.'
-        },
-        'WANTED: Rage Bear': {
-            'employer': 'misc',
-            'job': 'A bounty has been placed on a particular "Rage Bear" in the River Forest. Look for a brown and red spotted bear with 6 claws on the right foot. A 800g reward is being offered.'
-        },
         'WANTED: The Big One!': {
             'employer': 'misc',
             'job': 'Tripled D here, looking for some sick fish this time. I hear there are some LAKE MONSTERS in the lake to the north. Bring back what you can and you\'ll be rewarded with a trip to flavor town! (and some sweet cash).'
+        },
+        'Enchanting Supplies Needed' : {
+            'employer': 'enchantersGuild',
+            'job': 'The Enchanter\'s Guild is looking for some enchanting raw materials. They can be found on the fungal type individuals in the southern jungle. 50g a \'head\', or store credit!'
+        },
+        'WANTED: Canid Man Bones' : {
+            'employer': 'misc',
+            'job': 'A job has come in seeking the bones of the canine type creatures out past the crag lands. 2g a pound.'
         }
     },
-
     'enchants': {
         "Vitality" : {
             'd':'Enchant armor to increase your maximum health by 5 while wearing it.',
