@@ -71,7 +71,7 @@ var items = {
         "Classification":"Very Rare Item",
         "Description": "The acidic sap found in this bomb is derived from the sap found in the River Forest. When thrown the bomb will explode upon impact, dealing 12d10 acid damage to all creatures within 10 feet.",
         "Cost": "1000 gold",
-        "Quantity" : 0
+        "Quantity" : 1
     },
     "Quick Change Bracelet": {
         "type": "item",
