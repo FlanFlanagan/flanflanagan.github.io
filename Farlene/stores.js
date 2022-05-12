@@ -73,13 +73,6 @@ var items = {
         "Cost": "1000 gold",
         "Quantity" : 1
     },
-    "Quick Change Bracelet": {
-        "type": "item",
-        "ItemType": "Bracelet",
-        "Description": "This item allows you to bind a set of equipment to yourself. When you speak the command word of the bracelet you will transform into that set of equipment or back into your previous outfit.",
-        "Cost": "1000g",
-        "Quantity": 1
-    },
     "Contingency Band":{
         "type": "item",
         "ItemType": "Ring",
