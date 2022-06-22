@@ -36,14 +36,14 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 6
+        "Quantity" : 2
     },
     "Potion of Greater Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
-        "Quantity" : 4
+        "Quantity" : 0
     },
     "Potion of Fate": {
         "type": "potion",
@@ -70,6 +70,13 @@ var items = {
         "type": "potion",
         "Classification":"Very Rare Item",
         "Description": "The acidic sap found in this bomb is derived from the sap found in the River Forest. When thrown the bomb will explode upon impact, dealing 12d10 acid damage to all creatures within 10 feet.",
+        "Cost": "1000 gold",
+        "Quantity" : 1
+    },
+    "Potion of Necrotic Invulnerability": {
+        "type": "potion",
+        "Classification":"Very Rare Item",
+        "Description": "This potion will protect the imbiber from necrotic damage for a day and cause necrotic damage done to them to heal them slightly.",
         "Cost": "1000 gold",
         "Quantity" : 1
     },
