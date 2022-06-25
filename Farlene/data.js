@@ -163,13 +163,14 @@ var data = {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
         },
-        'Crab Legs!': {
-            'employer': 'misc',
-            'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
+        'Salmon Run': {
+            'employer': 'So Bear - Owner of the Journey\'s End',
+            'job': "Terry tells me he's seen some familar shapes in the river from the ocean. He suspects they might be heading to the river forest to spawn." +
+            " I'd love to get my hands on some fresh salmon for the inn, or some roe."
         },
-        'Reagent: Storm Elemental Core': {
+        'Reagent: Storm Elemental Cores': {
             'employer': 'enchantersConvent',
-            'job': 'Reports of storm elementals and signs of said elementals have been seen in The Maelstrom and the High Steepes. The elements are know to' +
+            'job': 'Reports of storm elementals and signs of said elementals have been seen in remains of the maelstrome and the High Steepes. The elementals are known to' +
             'produce elemental cores. The Enchanters Convent is paying well for each such core. Eva Soal will facilitate the rewards for elemental cores.' +
             'Rewards will be determined by the quality and size of the core. Thank you for your attention.' 
         },
@@ -192,10 +193,9 @@ var data = {
         'Survey: Rag Elm': {
             'employer': 'smithingGuild',
             'job': 'Getting smithing materials out here is expensive. The smithing guild is looking for individuals capable of investigating the river forest ' +
-            'for rag elm. The smithing guild is offering 3 gold 5 silver per pound of elm returned. Storage contains are available for rent upon request.'
+            'for rag elm. The guild is offering 3 gold 5 silver per pound of elm returned. Storage contains are available for rent upon request.'
         }
     },
-
     'enchants': {
         "Vitality" : {
             'd':'Enchant armor to increase your maximum health by 5 while wearing it.',
@@ -204,7 +204,8 @@ var data = {
         },
         "Blink Guard" : {
             'd':'Enchant armor to increase your evasiveness. When you are struck in combat you may use your reaction to instantly blink out of existance to the etheral plane. '+
-            'You are in the etheral plane until the start of your next turn. You return to the space nearest to the space you left (if the space you left is already occupied.)' ,
+            'You are in the etheral plane until the start of your next turn. You return to the space nearest to the space you left (if the space you left is already occupied).' +
+            'The magic needs to recharges every long rest.',
             'type': 'eArmor',
             'cost': '2500 gold'
         },
@@ -217,6 +218,18 @@ var data = {
             'd':'A slashing weapon with this enchant will deal normal weapon damage to all enemies within range on a critical hit.',
             'type': 'eWeapon',
             'cost': '1500 gold'
+        },
+        'Rebounding Guard': {
+            'd':'Enchant a piece of armor to grant 10 temperary hit points each dawn. If those hitpoints are removed the creature that caused ' +
+            'the temperary hit points to fade takes 10 psychic damage.',
+            'type': 'eArmor',
+            'cost': '3900 gold'
+        },
+        'Ice Heart': {
+            'd':'Enchant a piece of armor to grant resistance to cold or ice damage. Additionally, Ice Heart armor provides an additional 1d4 to all' +
+            ' cold or ice damage spells.',
+            'type': 'eArmor',
+            'cost': '2100 gold'
         }
     },
 }

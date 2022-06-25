@@ -22,28 +22,28 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 2
+        "Quantity": 5
     },
     "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 5
+        "Quantity" : 8
     },
     "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 3
+        "Quantity" : 2
     },
     "Potion of Greater Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
-        "Quantity" : 1
+        "Quantity" : 0
     },
     "Potion of Fate": {
         "type": "potion",
@@ -57,7 +57,7 @@ var items = {
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 1
+        "Quantity" : 5
     },
     "Vial of Heightened Mind Drops": {
         "type": "potion",
@@ -73,12 +73,12 @@ var items = {
         "Cost": "1000 gold",
         "Quantity" : 1
     },
-    "Starmetal Ring": {
-        "type": "item",
-        "ItemType": "Ring",
-        "Description": "This ring allows you to bind to a mostly metal object of no more than 25lbs and allows you to pull that object to your hand from up to 20ft away.",
-        "Cost": "1000g",
-        "Quantity": 1
+    "Potion of Necrotic Invulnerability": {
+        "type": "potion",
+        "Classification":"Very Rare Item",
+        "Description": "This potion will protect the imbiber from necrotic damage for a day and cause necrotic damage done to them to heal them slightly.",
+        "Cost": "1000 gold",
+        "Quantity" : 1
     },
     "Contingency Band":{
         "type": "item",

@@ -236,6 +236,13 @@ form button {
 	text-shadow: 0px 0px 0px rgba(0,0,0,0.1), 0px 0px 0px rgba(0,0,0,0.05);
 }
 
+.enchantersGuild {
+	color: white;
+	background-color: rgb(11, 99, 128);
+	font-family: "Felix";
+	text-shadow: 0px 0px 0px rgba(0,0,0,0.1), 0px 0px 0px rgba(0,0,0,0.05);
+}
+
 .misc {
 	background-color: #2736B7;
 	font-family: 'Lobster Two';
