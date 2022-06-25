@@ -38,19 +38,21 @@ var items = {
         "Cost": "50 gold",
         "Quantity" : 2
     },
-    "Potion of Greater Healing": {
-        "type": "potion",
-        "Classification":"Uncommon Item",
-        "Description": "Restores 4d4+4 hit points to the imbiber.",
-        "Cost": "100 gold",
-        "Quantity" : 0
-    },
     "Potion of Fate": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
         "Quantity" : 1
+    },
+    "Cyclone Sandles": {
+        "type": "item",
+        "Classification":'Uncommon Item',
+        "Description": "A pair of reddish leather sandals with straps that spiral up to the knee." + 
+        " These sandals give you a burst of speed when you spend Sorcery Points with a magical wind that spins rapidly around your legs. " + 
+        "Whenever you spend Sorcery Points, your movement speed increases by 10 ft. for each Sorcery Point spent until your next turn.",
+        "Cost": "2350g",
+        "Quantity": 1
     },
     "Potion of Mind Protection": {
         "type": "potion",
@@ -65,13 +67,6 @@ var items = {
         "Description": "Adding this vial to a potion will cause the potion to increase intelligence by 2 points in additon to the potions normal effects. The intelligence lasts for 24 hours.",
         "Cost": "200 gold",
         "Quantity" : 2
-    },
-    "Acid Bomb": {
-        "type": "potion",
-        "Classification":"Very Rare Item",
-        "Description": "The acidic sap found in this bomb is derived from the sap found in the River Forest. When thrown the bomb will explode upon impact, dealing 12d10 acid damage to all creatures within 10 feet.",
-        "Cost": "1000 gold",
-        "Quantity" : 1
     },
     "Potion of Necrotic Invulnerability": {
         "type": "potion",
@@ -98,4 +93,19 @@ var items = {
     "Cost": "",
     "Quantity":
 },
+    "Acid Bomb": {
+        "type": "potion",
+        "Classification":"Very Rare Item",
+        "Description": "The acidic sap found in this bomb is derived from the sap found in the River Forest. When thrown the bomb will explode upon impact, dealing 12d10 acid damage to all creatures within 10 feet.",
+        "Cost": "1000 gold",
+        "Quantity" : 1
+    },
+    "Potion of Greater Healing": {
+        "type": "potion",
+        "Classification":"Uncommon Item",
+        "Description": "Restores 4d4+4 hit points to the imbiber.",
+        "Cost": "100 gold",
+        "Quantity" : 0
+    },
+
 */
