@@ -167,23 +167,32 @@ var data = {
             'employer': 'misc',
             'job': "I've heard rumors of tree crabs in the southern jungles. I need me some of that crab meat! ~Triple D."
         },
+        'Reagent: Storm Elemental Core': {
+            'employer': 'enchantersConvent',
+            'job': 'Reports of storm elementals and signs of said elementals have been seen in The Maelstrom and the High Steepes. The elements are know to' +
+            'produce elemental cores. The Enchanters Convent is paying well for each such core. Eva Soal will facilitate the rewards for elemental cores.' +
+            'Rewards will be determined by the quality and size of the core. Thank you for your attention.' 
+        },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
             'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
             ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
             ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
-        'Potion Materials Required': {
-            'employer': 'alchemistSociety',
-            'job': 'The Alchemists Society is in need of potion materials of all kinds. Offering up to half the cost of a potion per material component.'
-        },
-        'WANTED: Rage Bear': {
-            'employer': 'misc',
-            'job': 'A bounty has been placed on a particular "Rage Bear" in the River Forest. Look for a brown and red spotted bear with 6 claws on the right foot. A 800g reward is being offered.'
-        },
-        'WANTED: The Big One!': {
+       'WANTED: The Big One!': {
             'employer': 'misc',
             'job': 'Tripled D here, looking for some sick fish this time. I hear there are some LAKE MONSTERS in the lake to the north. Bring back what you can and you\'ll be rewarded with a trip to flavor town! (and some sweet cash).'
+        },
+        'Guards wanted for expedition protection': {
+            'employer': 'SW',
+            'job': 'The Storm Warriors are in need of additional guards for a relic found in the Craglands. A high value employer is funding the expedition,' + 
+            ' and as such we are able to offer 1000g to any group willing to aid our short staffed team. The location of the relic is known and should be no ' +
+            'more than 4 days total work.'
+        },
+        'Survey: Rag Elm': {
+            'employer': 'smithingGuild',
+            'job': 'Getting smithing materials out here is expensive. The smithing guild is looking for individuals capable of investigating the river forest ' +
+            'for rag elm. The smithing guild is offering 3 gold 5 silver per pound of elm returned. Storage contains are available for rent upon request.'
         }
     },
 

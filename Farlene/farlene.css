@@ -241,6 +241,13 @@ form button {
 	font-family: 'Lobster Two';
 	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
 }
+
+.enchantersConvent {
+	background-color: #23AC11;
+	font-family: 'Times';
+	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
+}
+
 .enchant {
 	color: #FFFFFF;
 	font-size: 20px;
