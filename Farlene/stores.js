@@ -45,7 +45,7 @@ var items = {
         "Cost": "200 gold",
         "Quantity" : 1
     },
-    "Cyclone Sandles": {
+    "Cyclone Sandals": {
         "type": "item",
         "Classification":'Uncommon Item',
         "Description": "A pair of reddish leather sandals with straps that spiral up to the knee." + 

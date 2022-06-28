@@ -46,21 +46,21 @@ function shops(){
 function enchants(){
 	$('#vizFrame').empty();
 	var enchantDiv = document.createElement("div");
-	/*jobsDiv.id = 'jobs';*/
-	enchantDiv.className = 'board board--type-bulletin bulletin'
+	enchantDiv.className = 'items'
 	enchantList = data['enchants'];
-	console.log(enchantList)
 	for(var key in enchantList){
 		var div1 = document.createElement("div");
 		div1.className = 'enchant ' + enchantList[key]['type']
 		p = document.createElement('p');
 		p1 = document.createElement('p');
-		p.append(key + ": " + enchantList[key]['d'])
+		p2 = document.createElement('p');
+		p.append(key)
+		p1.append(enchantList[key]['d'])
 		p.className = 'enchantTitle';
 		p1.className = 'Desc';
 		p.style.marginBottom = "0em";
-		p1.append(enchantList[key]['cost']);
-		div1.append(p, p1);
+		p2.append(enchantList[key]['cost']);
+		div1.append(p, p1, p2);
 		enchantDiv.append(div1)
 	}
 	$("#vizFrame").append(enchantDiv);
