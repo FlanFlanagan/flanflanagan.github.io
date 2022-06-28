@@ -164,7 +164,7 @@ var data = {
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
         },
         'Salmon Run': {
-            'employer': 'So Bear - Owner of the Journey\'s End',
+            'employer': 'fireTail',
             'job': "Terry tells me he's seen some familar shapes in the river from the ocean. He suspects they might be heading to the river forest to spawn." +
             " I'd love to get my hands on some fresh salmon for the inn, or some roe. ~Firetail"
         },

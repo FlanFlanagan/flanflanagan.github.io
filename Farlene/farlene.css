@@ -166,7 +166,7 @@ form button {
    	box-shadow:         inset 0 0 10px #000000;
 	border-radius: 10px;
 	display: inline-block;
-	background-color: rgb(28, 8, 71);
+	background-color: rgb(51, 25, 108);
 	text-align: left;
 	padding: 0.5em 1em 0.5em 1em;
 	line-height: normal;
@@ -236,9 +236,11 @@ form button {
 }
 
 .jaspersLeague {
-	color: white;
-	background-color: rgb(191, 196, 119);
-	font-family: "Felix";
+	color: rgb(8, 0, 0);
+	background:
+		radial-gradient(rgb(191, 196, 119), rgb(115, 91, 11));
+	background-blend-mode: screen;
+	font-family: "monospace";
 	text-shadow: 0px 0px 0px rgba(0,0,0,0.1), 0px 0px 0px rgba(0,0,0,0.05);
 }
 
@@ -249,9 +251,26 @@ form button {
 }
 
 .enchantersConvent {
+	color: rgb(8, 0, 0);
+	background:
+		linear-gradient(rgb(8, 79, 141), transparent),
+		linear-gradient(to bottom right, rgb(139, 73, 87), rgb(182, 0, 199));
+	background-blend-mode: screen;
 	background-color: #570634;
+	font-family: 'Oleo Script Swash Caps', cursive;
+	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
+}
+
+.fireTail {
+	background:
+		linear-gradient(red, transparent),
+		linear-gradient(to top left, rgb(217, 149, 23), transparent),
+		linear-gradient(to top right, rgb(189, 42, 2), rgb(78, 20, 4));
+	background-blend-mode: screen;
+	color: rgb(0, 0, 0);
+	mix-blend-mode: normal;
 	font-family: 'Times';
-	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
+	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
 }
 
 .enchant {
