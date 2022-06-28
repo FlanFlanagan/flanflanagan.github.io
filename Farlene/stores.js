@@ -82,6 +82,13 @@ var items = {
         "Cost": "1200g",
         "Quantity": 1
     },
+    "Necklace of Exertion":{
+        "type": "item",
+        "ItemType": "Necklace",
+        "Description": "While wearing this necklace, the wearer can spend a hit dice to add 5 to any dice roll. Requires attunement",
+        "Cost": "3000g",
+        "Quantity": 1
+    },
 }
 
 /* This is a layout for the items
