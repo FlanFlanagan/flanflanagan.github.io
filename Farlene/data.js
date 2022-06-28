@@ -166,11 +166,11 @@ var data = {
         'Salmon Run': {
             'employer': 'So Bear - Owner of the Journey\'s End',
             'job': "Terry tells me he's seen some familar shapes in the river from the ocean. He suspects they might be heading to the river forest to spawn." +
-            " I'd love to get my hands on some fresh salmon for the inn, or some roe."
+            " I'd love to get my hands on some fresh salmon for the inn, or some roe. ~Firetail"
         },
         'Reagent: Storm Elemental Cores': {
             'employer': 'enchantersConvent',
-            'job': 'Reports of storm elementals and signs of said elementals have been seen in remains of the maelstrome and the High Steepes. The elementals are known to' +
+            'job': 'Reports of storm elementals and signs of said elementals have been seen in remains of the maelstrome and the High Steepes. The elementals are known to ' +
             'produce elemental cores. The Enchanters Convent is paying well for each such core. Eva Soal will facilitate the rewards for elemental cores.' +
             'Rewards will be determined by the quality and size of the core. Thank you for your attention.' 
         },
@@ -193,7 +193,7 @@ var data = {
         'Survey: Rag Elm': {
             'employer': 'smithingGuild',
             'job': 'Getting smithing materials out here is expensive. The smithing guild is looking for individuals capable of investigating the river forest ' +
-            'for rag elm. The guild is offering 3 gold 5 silver per pound of elm returned. Storage contains are available for rent upon request.'
+            'for rag elm. The guild is offering 3 gold 5 silver per pound of elm returned. Storage containers are available for rent upon request.'
         }
     },
     'enchants': {
