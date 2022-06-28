@@ -194,6 +194,11 @@ var data = {
             'employer': 'smithingGuild',
             'job': 'Getting smithing materials out here is expensive. The smithing guild is looking for individuals capable of investigating the river forest ' +
             'for rag elm. The guild is offering 3 gold 5 silver per pound of elm returned. Storage containers are available for rent upon request.'
+        },
+        'Cassawary Hunt': {
+            'employer': 'jaspersLeague',
+            'job': 'Jasper\'s League is offering 3000g for the untarnish head of an \'alpha cassawary\' from the deepest regions of the Jungle. Equipment for transporting of the ' +
+            'head is made available by the league from Emmet Thyme.'
         }
     },
     'enchants': {
@@ -229,7 +234,7 @@ var data = {
             'd':'Enchant a piece of armor to grant resistance to cold or ice damage. Additionally, Ice Heart armor provides an additional 1d4 to all' +
             ' cold or ice damage spells.',
             'type': 'eArmor',
-            'cost': '2100 gold'
+            'cost': '2500 gold'
         }
     },
 }
