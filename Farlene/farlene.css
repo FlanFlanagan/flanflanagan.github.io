@@ -156,45 +156,6 @@ form button {
    	border-radius: 10px;
 }
 
-.item {
-	color: #FFFFFF;
-	font-size: 0.7em;
-	border: 4px solid black;
-	text-shadow: black 0.1em 0.1em 0.1em;
-   	-moz-box-shadow:    inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-   	box-shadow:         inset 0 0 10px #000000;
-	border-radius: 10px;
-	display: inline-block;
-	background-color: rgb(51, 25, 108);
-	text-align: left;
-	padding: 0.5em 1em 0.5em 1em;
-	line-height: normal;
-	min-width: 300px;
-	max-width: 300px;
-	min-height: 300px;
-	max-height: 300px;
-	overflow-x: auto
-}
-
-.item p{
-	margin: 0.4em;
-}
-
-.items {
-	color: #FFFFFF;
-	flex-flow: wrap;
-	align-items: baseline;
-}
-
-.weapon {
-	background-color: rgb(104, 39, 13);
-}
-
-.potion {
-	background-color: rgb(53, 139, 155);
-}
-
 .jobTitle {
 	margin-bottom: 0em;
 	padding: 0% 1% 0% 1%;
@@ -318,4 +279,43 @@ form button {
 	background-color: #968d0f;
 	font-family: 'Times';
 	text-shadow: 0px 0px 0px #ededed, 0px 0px 0px rgba(0,0,0,0.15);
+}
+
+.item {
+	color: #FFFFFF;
+	font-size: 0.7em;
+	border: 4px solid black;
+	text-shadow: black 0.1em 0.1em 0.1em;
+   	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+   	box-shadow:         inset 0 0 10px #000000;
+	border-radius: 10px;
+	display: inline-block;
+	background-color: rgb(51, 25, 108);
+	text-align: left;
+	padding: 0.5em 1em 0.5em 1em;
+	line-height: normal;
+	min-width: 300px;
+	max-width: 300px;
+	min-height: 300px;
+	max-height: 300px;
+	overflow-x: auto
+}
+
+.item p{
+	margin: 0.4em;
+}
+
+.items {
+	color: #FFFFFF;
+	flex-flow: wrap;
+	align-items: baseline;
+}
+
+.weapon {
+	background-color: rgb(104, 39, 13);
+}
+
+.potion {
+	background-color: rgb(53, 139, 155);
 }
