@@ -9,14 +9,6 @@ var items = {
         "curling back into the small charm. At any time the command word can be spoken again to dismiss the perch in a similar fashion. Once the nest charm’s power is used it requires a long rest to restore.",
         "Cost": "10000 gold"
     },
-    "Bag of Holding": {
-        "type": "item",
-        "Classification": "Wonderous Item",
-        "Attunement" : "No",
-        "Description": "This bag opens to an extradimensional space, items stored in the bag are stored in a vaccum seperate from each other unless otherwise instructed. Items are recalled from the bag by reaching" + 
-        "into the bag and thinking of the item. The bag holds up to 500lbs and a maximum of 64 cubic feet.",
-        "Cost": "500 gold"
-    },
     "Potion of Bravery": {
         "type": "potion",
         "Classification":"Uncommon Item",
@@ -29,7 +21,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 8
+        "Quantity" : 5 
     },
     "Potion of Healing": {
         "type": "potion",
@@ -113,6 +105,14 @@ var items = {
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
         "Quantity" : 0
+    },
+    "Bag of Holding": {
+        "type": "item",
+        "Classification": "Wonderous Item",
+        "Attunement" : "No",
+        "Description": "This bag opens to an extradimensional space, items stored in the bag are stored in a vaccum seperate from each other unless otherwise instructed. Items are recalled from the bag by reaching" + 
+        "into the bag and thinking of the item. The bag holds up to 500lbs and a maximum of 64 cubic feet.",
+        "Cost": "500 gold"
     },
 
 */
