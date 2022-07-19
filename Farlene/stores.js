@@ -14,7 +14,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 5
+        "Quantity": 1
     },
     "Potion of Invigoration": {
         "type": "potion",
@@ -28,7 +28,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 2
+        "Quantity" : 0
     },
     "Potion of Fate": {
         "type": "potion",

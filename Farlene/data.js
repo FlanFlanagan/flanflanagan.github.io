@@ -184,17 +184,6 @@ var data = {
             'employer': 'misc',
             'job': 'Tripled D here, looking for some sick fish this time. I hear there are some LAKE MONSTERS in the lake to the north. Bring back what you can and you\'ll be rewarded with a trip to flavor town! (and some sweet cash).'
         },
-        'Guards wanted for expedition protection': {
-            'employer': 'SW',
-            'job': 'The Storm Warriors are in need of additional guards for a relic found in the Craglands. A high value employer is funding the expedition,' + 
-            ' and as such we are able to offer 1000g to any group willing to aid our short staffed team. The location of the relic is known and should be no ' +
-            'more than 4 days total work.'
-        },
-        'Survey: Rag Elm': {
-            'employer': 'smithingGuild',
-            'job': 'Getting smithing materials out here is expensive. The smithing guild is looking for individuals capable of investigating the river forest ' +
-            'for rag elm. The guild is offering 3 gold 5 silver per pound of elm returned. Storage containers are available for rent upon request.'
-        },
         'Cassawary Hunt': {
             'employer': 'jaspersLeague',
             'job': 'Jasper\'s League is offering 3000g for the untarnish head of an \'alpha cassawary\' from the deepest regions of the Jungle. Equipment for transporting of the ' +
