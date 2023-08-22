@@ -159,21 +159,11 @@ var data = {
         }
     },
     'jobs': {
-        'Avium School of History and Magic - Teleportation Circle': {
-            'employer': 'ASoHM',
-            'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
-        },
         'Reagent: Storm Elemental Cores': {
             'employer': 'enchantersConvent',
             'job': 'Reports of storm elementals and signs of said elementals have been seen in remains of the maelstrome and the High Steepes. The elementals are known to ' +
             'produce elemental cores. The Enchanters Convent is paying well for each such core. Eva Soal will facilitate the rewards for elemental cores.' +
             'Rewards will be determined by the quality and size of the core. Thank you for your attention.' 
-        },
-        'Avium School of History and Magic - Long term exploration': {
-            'employer': 'ASoHM',
-            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
-            ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
-            ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
        'WANTED: The Big One!': {
             'employer': 'misc',
@@ -183,10 +173,20 @@ var data = {
             'employer': 'perchGuard',
             'job': 'Information about the number and movement of the strange dog like creatures to the west. A qualified perch guard member will accompany you if required. 1500g minimum.'
         },
+        'Avium School of History and Magic - Teleportation Circle': {
+            'employer': 'ASoHM',
+            'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
+        },
         'Marshlands to the North': {
             'employer': 'jaspersLeague',
             'job': 'The Jasper\'s league is funding an expedition to the marshlands to the northwest. The goal of the expedition is to seek out any creatures that might be of value to ' +
             'collectors. 3000g. Additional contracts might be available upon successful return.'
+        },
+        'Avium School of History and Magic - Long term exploration': {
+            'employer': 'ASoHM',
+            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
+            ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
+            ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
     },
     'enchants': {
