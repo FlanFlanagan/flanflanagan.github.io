@@ -163,11 +163,6 @@ var data = {
             'employer': 'ASoHM',
             'job': 'Dean Far Seer has reason to believe that further teleportation circles exist in the outlands. A gold reward of 2000g is offered for each found circle.'
         },
-        'Salmon Run': {
-            'employer': 'fireTail',
-            'job': "Terry tells me he's seen some familar shapes in the river from the ocean. He suspects they might be heading to the river forest to spawn." +
-            " I'd love to get my hands on some fresh salmon for the inn, or some roe. ~Firetail"
-        },
         'Reagent: Storm Elemental Cores': {
             'employer': 'enchantersConvent',
             'job': 'Reports of storm elementals and signs of said elementals have been seen in remains of the maelstrome and the High Steepes. The elementals are known to ' +
@@ -184,11 +179,15 @@ var data = {
             'employer': 'misc',
             'job': 'Tripled D here, looking for some sick fish this time. I hear there are some LAKE MONSTERS in the lake to the north. Bring back what you can and you\'ll be rewarded with a trip to flavor town! (and some sweet cash).'
         },
-        'Cassawary Hunt': {
+        'Gnolls in the west': {
+            'employer': 'perchGuard',
+            'job': 'Information about the number and movement of the strange dog like creatures to the west. A qualified perch guard member will accompany you if required. 1500g minimum.'
+        },
+        'Marshlands to the North': {
             'employer': 'jaspersLeague',
-            'job': 'Jasper\'s League is offering 3000g for the untarnish head of an \'alpha cassawary\' from the deepest regions of the Jungle. Equipment for transporting of the ' +
-            'head is made available by the league from Emmet Thyme.'
-        }
+            'job': 'The Jasper\'s league is funding an expedition to the marshlands to the northwest. The goal of the expedition is to seek out any creatures that might be of value to ' +
+            'collectors. 3000g. Additional contracts might be available upon successful return.'
+        },
     },
     'enchants': {
         "Vitality" : {
