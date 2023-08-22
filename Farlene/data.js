@@ -223,6 +223,12 @@ var data = {
             ' cold or ice damage spells.',
             'type': 'eArmor',
             'cost': '2500 gold'
+        },        
+        'Storm Guard': {
+            'd':'Enchant a piece of armor to grant immunity to lightning or thunder damage. Additionally, Storm Guard armor provides an additional spell level to all' +
+            ' lightning or thunder damage spells. (up to 9th level)',
+            'type': 'eArmor',
+            'cost': '18000 gold'
         }
     },
 }
