@@ -14,28 +14,28 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 1
+        "Quantity": 6
     },
     "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 5 
+        "Quantity" : 15 
     },
     "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 0
+        "Quantity" : 10
     },
     "Potion of Fate": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
-        "Quantity" : 1
+        "Quantity" : 4
     },
     "Cyclone Sandals": {
         "type": "item",
@@ -51,7 +51,7 @@ var items = {
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 5
+        "Quantity" : 0
     },
     "Vial of Heightened Mind Drops": {
         "type": "potion",
@@ -65,7 +65,7 @@ var items = {
         "Classification":"Very Rare Item",
         "Description": "This potion will protect the imbiber from necrotic damage for a day and cause necrotic damage done to them to heal them slightly.",
         "Cost": "1000 gold",
-        "Quantity" : 1
+        "Quantity" : 2
     },
     "Contingency Band":{
         "type": "item",
