@@ -170,6 +170,18 @@ var data = {
             ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
             ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
+        'Missing Miners': {
+            'employer': 'smithingGuild',
+            'job': 'Members of the smithing guild went missing in the crag out of the mountain. We are paying 1000g for any information about their fate.' 
+        },
+        'Missing Miners': {
+            'employer': 'smithingGuild',
+            'job': 'Members of the smithing guild went missing in the crag out of the mountain. We are paying 1000g for any information about their fate.' 
+        },
+        'Sharpcap Search': {
+            'employer': 'fireTail',
+            'job': 'A contact has requested sharpcap mushrooms for them. Sharpcap tend to grow in forests similar to the river forest. They are offering 50g per mushroom.' 
+        },
     },
     'enchants': {
         "Vitality" : {
