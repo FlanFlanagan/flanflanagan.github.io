@@ -28,7 +28,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 10
+        "Quantity" : 9
     },
     "Potion of Fate": {
         "type": "potion",
@@ -79,7 +79,7 @@ var items = {
         "ItemType": "Necklace",
         "Description": "While wearing this necklace, the wearer can spend a hit dice to add 5 to any dice roll. Requires attunement",
         "Cost": "3000g",
-        "Quantity": 1
+        "Quantity": 
     },
 }
 
