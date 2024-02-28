@@ -177,7 +177,8 @@ var data = {
         'Temple in the Jungle': {
             'employer': 'churchOfCairith',
             'job': 'A great temple to Cairith has been located in the jungle to the south. Unfortunately, it will not open. Our attempts to magically open it have been rebuffed ' + 
-            'Our only hint to open the door is a passage on the door. \nAscend the broken stair.\nEarn victory from the shattered star.\nThe remaining vision will show you the way.' 
+            'Our only hint to open the door is a passage on the door. \\nAscend the broken stair.\\nEarn victory from the shattered star.\\nThe remaining vision will show you the way.' +
+            '\\n Church Of Cairith' 
         },
     },
     'enchants': {
