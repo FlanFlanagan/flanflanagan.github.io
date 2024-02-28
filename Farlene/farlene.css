@@ -234,7 +234,7 @@ form button {
 		linear-gradient(to bottom right, rgb(99, 139, 73), rgb(1, 65, 47));
 	background-blend-mode: screen;
 	background-color: #063a05;
-	font-family: 'Oleo Script Swash Caps', cursive;
+	font-family: 'serif';
 	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
 }
 
