@@ -159,10 +159,10 @@ var data = {
         }
     },
     'jobs': {
-        'Marshlands to the North': {
-            'employer': 'jaspersLeague',
-            'job': 'The Jasper\'s league is funding an expedition to the marshlands to the northwest. The goal of the expedition is to seek out any creatures that might be of value to ' +
-            'collectors. 3000g. Additional contracts might be available upon successful return.'
+        'Storm Cores': {
+            'employer': 'enchantersConvent',
+            'job': 'Greetings Adventures! The Enchanter\'s Convent is seeking 2 storm cores for a job. We are paying the handsome reward of 3000g. ' +
+            'Storm cores can be found on powerful elemental creatures associated with storm elements.'
         },
         'Avium School of History and Magic - Long term exploration': {
             'employer': 'ASoHM',
@@ -170,17 +170,14 @@ var data = {
             ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
             ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
         },
-        'Missing Miners': {
-            'employer': 'smithingGuild',
-            'job': 'Members of the smithing guild went missing in the crag out of the mountain. We are paying 1000g for any information about their fate.' 
+        'Byson Meat': {
+            'employer': 'misc',
+            'job': 'Triple Dee here, offering up a sweet reward for any adventures that can bring me some of that tasty byson meat out in the low grasslands. 50s a pound.' 
         },
-        'Missing Miners': {
-            'employer': 'smithingGuild',
-            'job': 'Members of the smithing guild went missing in the crag out of the mountain. We are paying 1000g for any information about their fate.' 
-        },
-        'Sharpcap Search': {
-            'employer': 'fireTail',
-            'job': 'A contact has requested sharpcap mushrooms for them. Sharpcap tend to grow in forests similar to the river forest. They are offering 50g per mushroom.' 
+        'Temple in the Jungle': {
+            'employer': 'churchOfCairith',
+            'job': 'A great temple to Cairith has been located in the jungle to the south. Unfortunately, it will not open. Our attempts to magically open it have been rebuffed ' + 
+            'Our only hint to open the door is a passage on the door. \nAscend the broken stair.\nEarn victory from the shattered star.\nThe remaining vision will show you the way.' 
         },
     },
     'enchants': {

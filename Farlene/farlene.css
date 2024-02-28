@@ -227,6 +227,17 @@ form button {
 	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
 }
 
+.churchOfCairith {
+	color: rgb(8, 0, 0);
+	background:
+		linear-gradient(rgb(8, 79, 141), transparent),
+		linear-gradient(to bottom right, rgb(139, 73, 87), rgb(182, 0, 199));
+	background-blend-mode: screen;
+	background-color: #570634;
+	font-family: 'Oleo Script Swash Caps', cursive;
+	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
+}
+
 .fireTail {
 	background:
 		linear-gradient(red, transparent),
