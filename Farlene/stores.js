@@ -14,14 +14,14 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 6
+        "Quantity": 2
     },
     "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 15 
+        "Quantity" : 10 
     },
     "Potion of Healing": {
         "type": "potion",
@@ -35,7 +35,7 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
-        "Quantity" : 4
+        "Quantity" : 1
     },
     "Cyclone Sandals": {
         "type": "item",
@@ -79,7 +79,7 @@ var items = {
         "ItemType": "Necklace",
         "Description": "While wearing this necklace, the wearer can spend a hit dice to add 5 to any dice roll. Requires attunement",
         "Cost": "3000g",
-        "Quantity": 
+        "Quantity": 0
     },
 }
 
