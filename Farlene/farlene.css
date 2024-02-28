@@ -228,12 +228,12 @@ form button {
 }
 
 .churchOfCairith {
-	color: rgb(8, 0, 0);
+	color: rgb(255, 255, 255);
 	background:
-		linear-gradient(rgb(8, 79, 141), transparent),
-		linear-gradient(to bottom right, rgb(139, 73, 87), rgb(182, 0, 199));
+		linear-gradient(rgb(8, 141, 94), transparent),
+		linear-gradient(to bottom right, rgb(99, 139, 73), rgb(0, 199, 143));
 	background-blend-mode: screen;
-	background-color: #570634;
+	background-color: #063a05;
 	font-family: 'Oleo Script Swash Caps', cursive;
 	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
 }
