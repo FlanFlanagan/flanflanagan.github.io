@@ -30,6 +30,20 @@ var items = {
         "Cost": "50 gold",
         "Quantity" : 9
     },
+    "Potion of Healing (Greater)": {
+        "type": "potion",
+        "Classification":"Uncommon Item",
+        "Description": "Restores 4d4+4 hit points to the imbiber.",
+        "Cost": "100 gold",
+        "Quantity" : 2
+    },
+    "Potion of Healing (Superior)": {
+        "type": "potion",
+        "Classification":"Uncommon Item",
+        "Description": "Restores 8d4+8 hit points to the imbiber.",
+        "Cost": "200 gold",
+        "Quantity" : 1
+    },
     "Potion of Fate": {
         "type": "potion",
         "Classification":"Uncommon Item",

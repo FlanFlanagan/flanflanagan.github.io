@@ -164,21 +164,14 @@ var data = {
             'job': 'Greetings Adventures! The Enchanter\'s Convent is seeking 2 storm cores for a job. We are paying the handsome reward of 3000g. ' +
             'Storm cores can be found on powerful elemental creatures associated with storm elements.'
         },
-        'Avium School of History and Magic - Long term exploration': {
+        'Avium School of History and Magic - Warning': {
             'employer': 'ASoHM',
-            'job': 'Early analysis of the notes taken from the ruined temple indicate a magical wound on the surface of the' +
-            ' world someplace far to the west of the temple. Any explorer that deems themselves brave enough to venture that' +
-            ' far will be rewarded handsomely; one artifact from the collection of the school as well as 2000 gold. Please contact Dean Far Seer via the sending stone provided.'
+            'job': 'Adventurers are advised not to head into the forest west of the swamps. Extremely dangerous conditions.' 
         },
-        'Byson Meat': {
-            'employer': 'misc',
-            'job': 'Triple Dee here, offering up a sweet reward for any adventures that can bring me some of that tasty byson meat out in the low grasslands. 50s a pound.' 
-        },
-        'Temple in the Jungle': {
-            'employer': 'churchOfCairith',
-            'job': 'A great temple to Cairith has been located in the jungle to the south. Unfortunately, it will not open. Our attempts to magically open it have been rebuffed ' + 
-            'Our only hint to open the door is a passage on the door. \rAscend the broken stair.\rEarn victory from the shattered star.\rThe remaining vision will show you the way.' +
-            '\r Best of luck adventurers! Church Of Cairith' 
+        'Storm Cores': {
+            'employer': 'firewaterSchool',
+            'job': 'The Firewater School of Adventuring is looking for recruits to go on a four day expedition into the Flower Forest. New adventurers are encouraged to join ' + 
+                   'instructors Perry and Yoret to learn basic survival skills.'
         },
     },
     'enchants': {

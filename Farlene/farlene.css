@@ -250,6 +250,17 @@ form button {
 	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
 }
 
+.firewaterSchool {
+	background:
+		linear-gradient(red, transparent),
+		linear-gradient(to top left, rgb(59, 176, 66), transparent),
+		linear-gradient(to top right, rgb(2, 2, 189), rgb(4, 56, 78));
+	background-blend-mode: screen;
+	color: rgb(0, 0, 0);
+	mix-blend-mode: normal;
+	font-family: 'Times';
+	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
+
 .enchant {
 	color: #FFFFFF;
 	font-size: 0.9em;
