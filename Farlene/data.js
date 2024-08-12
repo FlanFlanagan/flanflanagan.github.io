@@ -174,10 +174,19 @@ var data = {
             'job': 'The Firewater School of Adventuring is looking for recruits to go on a four day expedition into the Flower Forest. New adventurers are encouraged to join ' + 
                    'instructors Perry and Yoret to learn basic survival skills.'
         },
-        '': {
-            'employer': 'firewaterSchool',
-            'job': 'The Firewater School of Adventuring is looking for recruits to go on a four day expedition into the Flower Forest. New adventurers are encouraged to join ' + 
-                   'instructors Perry and Yoret to learn basic survival skills.'
+        'Smithing Guild - Protection Job': {
+            'employer': 'smithingGuild',
+            'job': 'The Smithing Guild is looking for indivduals capable of protecting a team of miners in setting up, and protecting, a camp in the Craglands. Expected timeline ' +
+                   'is likely to be one month. Oftering 1000g per individual for the full time frame.'
+        },
+        'Smithing Guild - Protection Job': {
+            'employer': 'smithingGuild',
+            'job': 'The Smithing Guild is looking for indivduals capable of protecting a team of miners in setting up, and protecting, a camp in the Craglands. Expected timeline ' +
+                   'is likely to be one month. Oftering 1000g per individual for the full time frame.'
+        },
+        'River Forest Temple': {
+            'employer': 'misc',
+            'job': 'Looking for adventurers to go to the temple found near the river in the River Forest. Paying well. Please contact Alvin Pinhedge at Journey\'s End. Paying well.'
         },
     },
 
