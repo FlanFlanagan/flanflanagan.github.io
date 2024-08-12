@@ -260,6 +260,7 @@ form button {
 	mix-blend-mode: normal;
 	font-family: 'Times';
 	text-shadow: 0px 0px 0px #000000, 0px 0px 0px rgba(0,0,0,0.15);
+}
 
 .enchant {
 	color: #FFFFFF;
