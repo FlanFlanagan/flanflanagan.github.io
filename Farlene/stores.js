@@ -1,5 +1,5 @@
 var items = {
-    "Nest Charm": {
+    /*"Nest Charm": {
         "type": "item",
         "Classification": "Wonderous Item",
         "Attunement" : "Yes",
@@ -8,34 +8,34 @@ var items = {
         "carrying any passengers and items along with it. This perch lasts up to 8 hours, at which point the tree will retreat into the ground and the platform will shrink, eventually " +
         "curling back into the small charm. At any time the command word can be spoken again to dismiss the perch in a similar fashion. Once the nest charm’s power is used it requires a long rest to restore.",
         "Cost": "10000 gold"
-    },
+    },*/
     "Potion of Bravery": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove any fear affects currently affecting an individual. Additionally it will provide 24 hours of fear immunity.",
         "Cost": "100 gold",
-        "Quantity": 2
+        "Quantity": 1
     },
     "Potion of Invigoration": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "This potion will remove one point of exhaustion from the imbiber. Created by Tessa Smoak at Hamlet branch of the Alchemical Society.",
         "Cost": "50 gold",
-        "Quantity" : 10 
+        "Quantity" : 4 
     },
     "Potion of Healing": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 2d4+2 hit points to the imbiber.",
         "Cost": "50 gold",
-        "Quantity" : 9
+        "Quantity" : 2
     },
     "Potion of Healing (Greater)": {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "Restores 4d4+4 hit points to the imbiber.",
         "Cost": "100 gold",
-        "Quantity" : 2
+        "Quantity" : 3
     },
     "Potion of Healing (Superior)": {
         "type": "potion",
@@ -49,9 +49,9 @@ var items = {
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
         "Cost": "200 gold",
-        "Quantity" : 1
+        "Quantity" : 2
     },
-    "Cyclone Sandals": {
+    /*"Cyclone Sandals": {
         "type": "item",
         "Classification":'Uncommon Item',
         "Description": "A pair of reddish leather sandals with straps that spiral up to the knee." + 
@@ -59,29 +59,29 @@ var items = {
         "Whenever you spend Sorcery Points, your movement speed increases by 10 ft. for each Sorcery Point spent until your next turn.",
         "Cost": "2350g",
         "Quantity": 1
-    },
+    },*/
     "Potion of Mind Protection": {
         "type": "potion",
         "Classification":"Rare Item",
         "Description": "Drinking this potion protects the user from all mind altering magic for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 0
+        "Quantity" : 4
     },
     "Vial of Heightened Mind Drops": {
         "type": "potion",
         "Classification":"Rare Item",
         "Description": "Adding this vial to a potion will cause the potion to increase intelligence by 2 points in additon to the potions normal effects. The intelligence lasts for 24 hours.",
         "Cost": "200 gold",
-        "Quantity" : 2
+        "Quantity" : 1
     },
     "Potion of Necrotic Invulnerability": {
         "type": "potion",
         "Classification":"Very Rare Item",
         "Description": "This potion will protect the imbiber from necrotic damage for a day and cause necrotic damage done to them to heal them slightly.",
         "Cost": "1000 gold",
-        "Quantity" : 2
+        "Quantity" : 1
     },
-    "Contingency Band":{
+    /*"Contingency Band":{
         "type": "item",
         "ItemType": "Ring",
         "Description": "This ring consumes healing potions and allows you to store the capabilities within them to heal yourself as a reaction.",
@@ -94,7 +94,7 @@ var items = {
         "Description": "While wearing this necklace, the wearer can spend a hit dice to add 5 to any dice roll. Requires attunement",
         "Cost": "3000g",
         "Quantity": 0
-    },
+    },*/
 }
 
 /* This is a layout for the items
