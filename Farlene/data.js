@@ -158,6 +158,7 @@ var data = {
             },
         }
     },
+
     'jobs': {
         'Storm Cores': {
             'employer': 'enchantersConvent',
@@ -168,17 +169,23 @@ var data = {
             'employer': 'ASoHM',
             'job': 'Adventurers are advised not to head into the forest west of the swamps. Extremely dangerous conditions.' 
         },
-        'Storm Cores': {
+        'Firewater School seeking adventurers and recruits!': {
+            'employer': 'firewaterSchool',
+            'job': 'The Firewater School of Adventuring is looking for recruits to go on a four day expedition into the Flower Forest. New adventurers are encouraged to join ' + 
+                   'instructors Perry and Yoret to learn basic survival skills.'
+        },
+        '': {
             'employer': 'firewaterSchool',
             'job': 'The Firewater School of Adventuring is looking for recruits to go on a four day expedition into the Flower Forest. New adventurers are encouraged to join ' + 
                    'instructors Perry and Yoret to learn basic survival skills.'
         },
     },
+
     'enchants': {
-        "Vitality" : {
-            'd':'Enchant armor to increase your maximum health by 5 while wearing it.',
+        "Vitality I/II/III" : {
+            'd':'Enchant armor to increase your maximum health by 5/10/15 while wearing it.',
             'type': 'eArmor',
-            'cost': '100 gold'
+            'cost': '100g/1000g/10000g'
         },
         "Blink Guard" : {
             'd':'Enchant armor to increase your evasiveness. When you are struck in combat you may use your reaction to instantly blink out of existance to the etheral plane. '+
@@ -190,30 +197,35 @@ var data = {
         "Savage" : {
             'd':'Enchant a weapon to deal one additional dice of weapon damage on critical hit.',
             'type': 'eWeapon',
-            'cost': '400 gold'
+            'cost': '800 gold'
         },
         'Broad Swipes': {
             'd':'A slashing weapon with this enchant will deal normal weapon damage to all enemies within range on a critical hit.',
             'type': 'eWeapon',
-            'cost': '1500 gold'
+            'cost': '2300 gold'
         },
         'Rebounding Guard': {
             'd':'Enchant a piece of armor to grant 10 temperary hit points each dawn. If those hitpoints are removed the creature that caused ' +
             'the temperary hit points to fade takes 10 psychic damage.',
             'type': 'eArmor',
-            'cost': '3900 gold'
+            'cost': '4900 gold'
         },
         'Ice Heart': {
             'd':'Enchant a piece of armor to grant resistance to cold or ice damage. Additionally, Ice Heart armor provides an additional 1d4 to all' +
             ' cold or ice damage spells.',
             'type': 'eArmor',
-            'cost': '2500 gold'
+            'cost': '5100 gold'
         },        
         'Storm Guard': {
             'd':'Enchant a piece of armor to grant immunity to lightning or thunder damage. Additionally, Storm Guard armor provides an additional spell level to all' +
             ' lightning or thunder damage spells. (up to 9th level)',
             'type': 'eArmor',
             'cost': '18000 gold'
+        },
+        'Blazing Blade': {
+            'd':'Enchant a bladed weapon increase damage done by 1d6 fire damage.',
+            'type': 'eWeapon',
+            'cost': '9300 gold'
         }
     },
 }

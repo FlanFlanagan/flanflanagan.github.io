@@ -252,9 +252,9 @@ form button {
 
 .firewaterSchool {
 	background:
-		linear-gradient(red, transparent),
-		linear-gradient(to top left, rgb(59, 176, 66), transparent),
-		linear-gradient(to top right, rgb(2, 2, 189), rgb(4, 56, 78));
+		linear-gradient(rgb(148, 5, 5), transparent),
+		linear-gradient(to top left, rgb(59, 146, 64), transparent),
+		linear-gradient(to top right, rgb(2, 2, 189), rgb(22, 2, 134));
 	background-blend-mode: screen;
 	color: rgb(0, 0, 0);
 	mix-blend-mode: normal;
