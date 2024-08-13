@@ -203,6 +203,11 @@ var data = {
     },
 
     'enchants': {
+        'Blazing Blade': {
+            'd':'Enchant a bladed weapon increase damage done by 1d6 fire damage.',
+            'type': 'eWeapon',
+            'cost': '9300 gold'
+        },
         "Vitality I/II/III" : {
             'd':'Enchant armor to increase your maximum health by 5/10/15 while wearing it.',
             'type': 'eArmor',
@@ -243,11 +248,6 @@ var data = {
             'type': 'eArmor',
             'cost': '18000 gold'
         },
-        'Blazing Blade': {
-            'd':'Enchant a bladed weapon increase damage done by 1d6 fire damage.',
-            'type': 'eWeapon',
-            'cost': '9300 gold'
-        }
     },
 }
 
