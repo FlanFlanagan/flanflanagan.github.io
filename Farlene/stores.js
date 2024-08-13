@@ -62,7 +62,13 @@ var items = {
         "Cost": "1000 gold",
         "Quantity" : 1
     },
-
+    "Amulet of the Tactician":{
+        "type": "item",
+        "ItemType": "Necklace",
+        "Description": "While wearing this necklace, once per day, you may swap the initiative of two creatures in a combat.",
+        "Cost": "8000g",
+        "Quantity": 1
+    },
 }
 
 /* This is a layout for the items

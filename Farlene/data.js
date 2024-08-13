@@ -248,6 +248,11 @@ var data = {
             'type': 'eArmor',
             'cost': '18000 gold'
         },
+        'Heartseeker I/II/III': {
+            'd':'Enchant a weapon to increase the critical range of the weapon by 1/2/3',
+            'type': 'eWeapon',
+            'cost': '15000g/30000g/60000g'
+        },
     },
 }
 
