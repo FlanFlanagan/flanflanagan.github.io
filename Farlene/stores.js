@@ -1,14 +1,4 @@
 var items = {
-    /*"Nest Charm": {
-        "type": "item",
-        "Classification": "Wonderous Item",
-        "Attunement" : "Yes",
-        "Description": "This charm is a sphere of intricate metal branches, interwoven to form a sort of nest. By placing the charm on the ground and speaking its command word, you can cause it to unfold, creating a" + 
-        " 30-foot-diameter circular platform of interwoven branches. Once the platform has reached its full size, a magical tree grows beneath it, lifting the platform 50 feet into the air, "+
-        "carrying any passengers and items along with it. This perch lasts up to 8 hours, at which point the tree will retreat into the ground and the platform will shrink, eventually " +
-        "curling back into the small charm. At any time the command word can be spoken again to dismiss the perch in a similar fashion. Once the nest charm’s power is used it requires a long rest to restore.",
-        "Cost": "10000 gold"
-    },*/
     "Potion of Bravery": {
         "type": "potion",
         "Classification":"Uncommon Item",
@@ -48,18 +38,9 @@ var items = {
         "type": "potion",
         "Classification":"Uncommon Item",
         "Description": "The imbiber rolls 4d6, the first two determine the stats being modified, the second two determine the amount the stats increase. The effects last for 1 hour, at the end of the hour the imbiber gains one stack of exhaustion.",
-        "Cost": "200 gold",
+        "Cost": "300 gold",
         "Quantity" : 2
     },
-    /*"Cyclone Sandals": {
-        "type": "item",
-        "Classification":'Uncommon Item',
-        "Description": "A pair of reddish leather sandals with straps that spiral up to the knee." + 
-        " These sandals give you a burst of speed when you spend Sorcery Points with a magical wind that spins rapidly around your legs. " + 
-        "Whenever you spend Sorcery Points, your movement speed increases by 10 ft. for each Sorcery Point spent until your next turn.",
-        "Cost": "2350g",
-        "Quantity": 1
-    },*/
     "Potion of Mind Protection": {
         "type": "potion",
         "Classification":"Rare Item",
@@ -81,20 +62,7 @@ var items = {
         "Cost": "1000 gold",
         "Quantity" : 1
     },
-    /*"Contingency Band":{
-        "type": "item",
-        "ItemType": "Ring",
-        "Description": "This ring consumes healing potions and allows you to store the capabilities within them to heal yourself as a reaction.",
-        "Cost": "1200g",
-        "Quantity": 1
-    },
-    "Necklace of Exertion":{
-        "type": "item",
-        "ItemType": "Necklace",
-        "Description": "While wearing this necklace, the wearer can spend a hit dice to add 5 to any dice roll. Requires attunement",
-        "Cost": "3000g",
-        "Quantity": 0
-    },*/
+
 }
 
 /* This is a layout for the items
@@ -128,5 +96,37 @@ var items = {
         "into the bag and thinking of the item. The bag holds up to 500lbs and a maximum of 64 cubic feet.",
         "Cost": "500 gold"
     },
-
+    /*"Contingency Band":{
+        "type": "item",
+        "ItemType": "Ring",
+        "Description": "This ring consumes healing potions and allows you to store the capabilities within them to heal yourself as a reaction.",
+        "Cost": "1200g",
+        "Quantity": 1
+    },
+    "Necklace of Exertion":{
+        "type": "item",
+        "ItemType": "Necklace",
+        "Description": "While wearing this necklace, the wearer can spend a hit dice to add 5 to any dice roll. Requires attunement",
+        "Cost": "3000g",
+        "Quantity": 0
+    },
+    "Cyclone Sandals": {
+        "type": "item",
+        "Classification":'Uncommon Item',
+        "Description": "A pair of reddish leather sandals with straps that spiral up to the knee." + 
+        " These sandals give you a burst of speed when you spend Sorcery Points with a magical wind that spins rapidly around your legs. " + 
+        "Whenever you spend Sorcery Points, your movement speed increases by 10 ft. for each Sorcery Point spent until your next turn.",
+        "Cost": "2350g",
+        "Quantity": 1
+    },
+    "Nest Charm": {
+        "type": "item",
+        "Classification": "Wonderous Item",
+        "Attunement" : "Yes",
+        "Description": "This charm is a sphere of intricate metal branches, interwoven to form a sort of nest. By placing the charm on the ground and speaking its command word, you can cause it to unfold, creating a" + 
+        " 30-foot-diameter circular platform of interwoven branches. Once the platform has reached its full size, a magical tree grows beneath it, lifting the platform 50 feet into the air, "+
+        "carrying any passengers and items along with it. This perch lasts up to 8 hours, at which point the tree will retreat into the ground and the platform will shrink, eventually " +
+        "curling back into the small charm. At any time the command word can be spoken again to dismiss the perch in a similar fashion. Once the nest charm’s power is used it requires a long rest to restore.",
+        "Cost": "10000 gold"
+    },
 */

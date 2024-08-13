@@ -179,14 +179,26 @@ var data = {
             'job': 'The Smithing Guild is looking for indivduals capable of protecting a team of miners in setting up, and protecting, a camp in the Craglands. Expected timeline ' +
                    'is likely to be one month. Oftering 1000g per individual for the full time frame.'
         },
-        'Smithing Guild - Protection Job': {
-            'employer': 'smithingGuild',
-            'job': 'The Smithing Guild is looking for indivduals capable of protecting a team of miners in setting up, and protecting, a camp in the Craglands. Expected timeline ' +
-                   'is likely to be one month. Oftering 1000g per individual for the full time frame.'
-        },
         'River Forest Temple': {
             'employer': 'misc',
             'job': 'Looking for adventurers to go to the temple found near the river in the River Forest. Paying well. Please contact Alvin Pinhedge at Journey\'s End. Paying well.'
+        },
+        'Steppes Warning': {
+            'employer': 'perchGuard',
+            'job': 'The Perch Guard is warning individuals that there are battles occuring between the lizard folk and the \'gnolls\' of the High Steppes.'
+        },
+        'Jasper\'s League Escort': {
+            'employer': 'jaspersLeague',
+            'job': 'The Jasper\'s League is looking for mercenary escorts with knowledge of the deep jungle for a well financed hunting expedition. Minimum pay 1500g per escort.'
+        },
+        'Silk in the Craglands': {
+            'employer': 'tailorsGuild',
+            'job': 'There are reports of Cadice Moth larva in the caves of the craglands. These larva are impossible to grow in captivity. The Tailor\'s Guild is' +
+            ' paying 20g per pound of silk collected.'
+        },
+        'Flower Forest Warning': {
+            'employer': 'perchGuard',
+            'job': 'It appears that the bee hives in the flower forest are going through nuptial flights. Adventuring groups venturing there should be wary.'
         },
     },
 
@@ -211,7 +223,7 @@ var data = {
         'Broad Swipes': {
             'd':'A slashing weapon with this enchant will deal normal weapon damage to all enemies within range on a critical hit.',
             'type': 'eWeapon',
-            'cost': '2300 gold'
+            'cost': '1800 gold'
         },
         'Rebounding Guard': {
             'd':'Enchant a piece of armor to grant 10 temperary hit points each dawn. If those hitpoints are removed the creature that caused ' +
