@@ -156,11 +156,6 @@ var data = {
                 "x": 928.5,
                 "info": "Entrance to the Gesme's forge."
             },
-            "Gate to Gesme's Forge": {
-                "y": 434.125,
-                "x": 928.5,
-                "info": "Entrance to the Gesme's forge."
-            },
         }
     },
 
